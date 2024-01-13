@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { Double } = require("mongodb");
 require("dotenv").config();
 
 var neString = "";
@@ -59,77 +60,77 @@ const UserSchema = new mongoose.Schema(
     },
 
     totalBalance: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     balanceInc: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     totalEarnings: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     dailyEarnings: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     totaldeposite: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     btc: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     usdt: {
       trim: true,
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
     },
     bnb: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     eth: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     depositeBonus: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     referalBonus: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     capital: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     signupBonus: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 10,
       trim: true,
     },
     withdrawableBalance: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
     beforeWithdraw: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },
@@ -138,7 +139,7 @@ const UserSchema = new mongoose.Schema(
       default: "USDT",
     },
     depositeAmount: {
-      type: Number,
+      type: mongoose.Decimal128,
       default: 0,
       trim: true,
     },

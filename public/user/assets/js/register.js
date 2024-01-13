@@ -54,7 +54,7 @@ window.addEventListener("load", async () => {
 
       console.log(data);
 
-      window.location = "../users/verification";
+      window.location = "../user/verification";
       document.getElementById("status").textContent = "token present";
     } catch (error) {
       setTimeout(() => {

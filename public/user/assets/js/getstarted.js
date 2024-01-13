@@ -25,7 +25,8 @@ window.addEventListener('load', () => {
                 const data = await axios.post('/apex/auth/updateactiveplan' , {
                     email:email,
                     activePlan:plan,
-                    amount:getstartedAmount
+                    amount:getstartedAmount,
+                   dailyEarnings: 0.01
                 })
                 console.log(data)
             window.location = '../dashboard'

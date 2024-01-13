@@ -404,8 +404,8 @@ const generalUpdate = async (req, res) =>{
 }
 
 const updateStatusEarning = async (req,res, next) =>{
-    const {activePlan, email, amount } = req.body
-    const user = await User.findOneAndUpdate({email:email}, {activePlan:activePlan, capital:amount}, {
+    const {activePlan, email, amount, dailyEarnings } = req.body
+    const user = await User.findOneAndUpdate({email:email}, {activePlan:activePlan, dailyEarnings:dailyEarnings, capital:amount}, {
         new:true,
         runValidators:true
     })

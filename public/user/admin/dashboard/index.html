@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Apex Corporate Investment Firm">
+	<meta name="author" content="Apex Corporate Investment">
+	<meta name="keywords" content="Apex Corporate Investment">
+
+	<link rel="preconnect" href="../external.html?link=https://fonts.gstatic.com/">
+	<link rel="shortcut icon" href="../img/icons/icon-48x48.png" />
+
+	<link rel="canonical" href="index.html" />
+	<link rel="stylesheet" href="../assets/css/new.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<title> Apex Corporate Investment Firm</title>
+
+	<link href="../assets/css/app.css" rel="stylesheet">
+	<link href="../external.html?link=https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<!-- TradingView Widget BEGIN -->
+	<div class="tradingview-widget-container">
+		<div class="tradingview-widget-container__widget"></div>
+		<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+			async>
+				{
+					"symbols": [
+						{
+							"proName": "BITSTAMP:BTCUSD",
+							"title": "Bitcoin"
+						},
+						{
+							"proName": "BITSTAMP:ETHUSD",
+							"title": "Ethereum"
+						},
+						{
+							"description": "Doge",
+							"proName": "BINANCE:DOGEUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:BTCUSDTPERP"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:LINKUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:SANDUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:MATICUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:CHZUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:ETCUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:SOLUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:ADAUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:ATOMUSDT"
+						}
+					],
+						"showSymbolLogo": true,
+							"colorTheme": "light",
+								"isTransparent": false,
+									"displayMode": "adaptive",
+										"locale": "en"
+				}
+			</script>
+	</div>
+	<!-- TradingView Widget END -->
+
+
+
+	<div class="wrapper" id="wrapper">
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="dashboard.html">
+					<img src="../assets/img/uploads/apex-white.jpg" width="100%" height="60" alt="" srcset="">
+
+				</a>
+
+				<ul class="sidebar-nav">
+					<!-- <li class="sidebar-header">
+						Active Plans
+					</li>
+					<ul id="activeplans"
+						style="padding-bottom: 20px; width:80%;font-size: 16px !important; display: flex; justify-content: space-between;">
+
+                       
+					</ul>
+					<button id="stopinvestment">Stop Investement </button> -->
+					
+
+					<!-- <li class="sidebar-header">
+						Connected Wallet
+					</li>
+					<ul id="wallet"
+						style="padding-bottom: 20px; color: bisque; width:80%;font-size: 16px !important; display: flex; justify-content: space-between;">
+						None
+
+					</ul> -->
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="https://apexcorporategroup.com">
+							<i class="align-middle" data-feather="home"></i> <span class="align-middle">Homepage</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="index.html">
+							<i class="align-middle" data-feather="sliders"></i> <span
+								class="align-middle">Dashboard</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="../clients">
+							<i class="align-middle" data-feather="arrow-down-circle"></i> <span
+								class="align-middle">View All Clients</span>
+						</a>
+					</li>
+
+					<!-- <li class="sidebar-item ">
+						<a class="sidebar-link" href="../withdraw">
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span
+								class="align-middle">Withdraw</span>
+						</a>
+					</li> -->
+
+					<!-- <li class="sidebar-item ">
+						<a class="sidebar-link" href="../wallets">
+							<i class="align-middle" data-feather="external-link"></i> <span class="align-middle">Connect
+								Wallet</span>
+						</a>
+					</li>-->
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="../investment">
+							<i class="align-middle" data-feather="feather"></i> <span class="align-middle">Investment
+								Plans</span>
+						</a>
+					</li>
+
+					<!-- <li class="sidebar-item ">
+						<a class="sidebar-link" href="../history">
+							<i class="align-middle" data-feather="info"></i> <span class="align-middle">History</span>
+						</a>
+					</li> -->
+
+
+
+
+					<!-- <li class="sidebar-item">
+						<a class="sidebar-link" href="../guides">
+							<i class="align-middle" data-feather="book"></i> <span class="align-middle">Guides</span>
+						</a>
+					</li> -->
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="../login" onclick="logOut()">
+							<i class="align-middle" data-feather="log-out"></i> <span class="align-middle"
+								onclick="logOut()">Quit</span>
+						</a>
+					</li>
+
+					<!-- <li class="sidebar-item">
+						<a class="sidebar-link" href="../">
+							<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Open
+								Another Acount</span>
+						</a>
+					</li> -->
+
+
+				</ul>
+
+
+			</div>
+		</nav>
+
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle js-sidebar-toggle" id="hide">
+					<i class="hamburger align-self-center" id="hide"></i>
+
+				</a>
+				<div style="text-align: left; display:flex; justify-content:flex-end; padding:4px">
+					<div id="google_translate_element"></div>
+
+					<script type="text/javascript">
+						function googleTranslateElementInit() {
+							new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.VERTICAL }, 'google_translate_element');
+						}
+					</script>
+
+					<script type="text/javascript"
+						src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+				</div>
+
+
+				<style>
+					.goog-te-gadget-simple {
+						background-color: #fff;
+						border-left: 1px solid #d5d5d5;
+						border-top: 1px solid #9b9b9b;
+						border-bottom: 1px solid #e8e8e8;
+						border-right: 1px solid #d5d5d5;
+						font-size: 10pt;
+						display: inline-block;
+						padding-top: 1px;
+						padding-bottom: 2px;
+						cursor: pointer;
+						zoom: 1;
+						border-radius: 20px;
+					}
+
+					.goog-te-gadget img {
+						vertical-align: middle;
+						display: none;
+						border: none;
+					}
+				</style>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+								<!-- <div class="position-relative">
+									<i class="align-middle" data-feather="bell"></i>
+									<span class="indicator" id="indicator">0</span>
+								</div> -->
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+								aria-labelledby="alertsDropdown">
+								<div class="dropdown-menu-header" id="notifications">
+									<span id="notifications"> No Notifications </span>
+								</div>
+								<div class="list-group">
+
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-warning" data-feather="bell"></i>
+											</div>
+											<div class="col-10" id="appenddiv">
+												<!--<div class="text-dark">Hi! <span id="name"></span></div>
+												<div class="text-muted small mt-1">Welcome to Apex Corporate IC, an investment company for smart people. <b>Check out</b> Investment plans to get started</div>
+												<div class="text-muted small mt-1"> < 1min ago</div>-->
+											</div>
+										</div>
+									</a>
+
+
+
+
+								</div>
+
+							</div>
+						</li>
+
+
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+								data-bs-toggle="dropdown">
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
+
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+								data-bs-toggle="dropdown">
+								<img src="../assets/img/icons/Picon.png" class="avatar img-fluid rounded me-1"
+									alt=" " /> <span class="text-dark" id="user">Admin</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="https://apexcorporategroup.com"><i
+										class="align-middle me-1" data-feather="home"></i> Go to Hompage</a>
+
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../contact"><i class="align-middle me-1"
+										data-feather="help-circle"></i> Help Center</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../changepassword" id="logout"><i
+										class="align-middle me-1" data-feather="edit"></i>Change Password</a>
+
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../" id="logout"><i class="align-middle me-1"
+										data-feather="log-out"></i>Log out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<!-- <h1 class="badge  h3 mb-3" style="width: 90% !important;color: #fff;
+					background-color: #42258a;
+					border-color: #3e2280"><strong></strong> Your Portfolio</h1> -->
+
+					<div class="row" id="rows">
+						<div class="col-xl-6 col-xxl-5 d-flex">
+							<div class="w-100" id="wrapper">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="card bg-gradient-blue">
+											<div id="balance" class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title">Total Number Of Clients</h5>
+													</div>
+
+													<div class="col-auto">
+														<div class="stat text-primary">
+															<i class="align-middle" data-feather="user"></i>
+														</div>
+													</div>
+												</div>
+												<h1 id='clients' class="mt-1 mb-3">0</h1>
+												<!--<div id="balanceProfit"class="mb-0">
+													<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right">
+
+													</i> -3.65% </span>
+													<span class="text-muted">Since last week</span>
+												</div>-->
+											</div>
+										</div>
+										<div class="card bg-gradient-blue">
+											<div id="bonuses" class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title">Active Accounts</h5>
+													</div>
+
+													<div class="col-auto">
+														<div class="stat text-primary">
+															<i class="align-middle" data-feather="user"></i>
+														</div>
+													</div>
+												</div>
+												<h1 id='activeclients' class="mt-1 mb-3"></h1>
+												<!-- <div id="bonus"class="mb-0">
+													<span id="depositebonuss" class="text-muted">deposite bonus: </span>
+													<span class="text-dark"> <i class="mdi mdi-arrow-bottom-right">
+													</i> 50$ </span><br/>
+													<span id="signupbonus" class="text-muted">Sign up bonus: </span>
+													<span class="text-dark"> <i class="mdi mdi-arrow-bottom-right">
+													</i> 10$ </span><br/>
+													<span id="referalbonus" class="text-muted">Referral bonus: </span>
+													<span class="text-dark"> <i class="mdi mdi-arrow-bottom-right">
+													</i> 0$ </span>
+													
+												</div>--> 
+											</div>
+										</div>
+
+										
+
+									</div>
+									<div class="col-sm-6">
+										<div class="card bg-gradient-blue">
+											<div id="deposite" class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title">Blocked Accounts</h5>
+													</div>
+
+													<div class="col-auto">
+														<div class="stat text-primary">
+															<i class="align-middle"
+																data-feather="user"></i>
+														</div>
+													</div>
+												</div>
+												<h1 id="blockedclients" class="mt-1 mb-3">0</h1>-->
+												<!--<div class="mb-0">
+													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.25% </span>
+													<span class="text-muted">Since last week</span>
+												</div> -->
+											</div>
+										</div>
+
+
+
+										<!-- <div class="card bg-gradient-blue">
+											<div id="withdrawalbalbalance" class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title">Total Amount Spent</h5>
+													</div>
+
+													<div class="col-auto">
+														<div class="stat text-primary">
+															<i class="align-middle" data-feather="dollar-sign"></i>
+														</div>
+													</div>
+												</div>
+												<!--h1 id='before' class="mt-1 mb-3">2.382</h1>
+												<div id="withrawable"class="mb-0">
+													<span id="Recharge" class="text-muted">deposite
+												
+													<i class="mdi mdi-arrow-bottom-right">
+
+													</i> <strong class="text-dark" id="beforeamount">200$ </strong>  to unlock bonuses 
+												</span>
+											</div>
+											</div>
+										</div> -->
+
+										<!-- <div class="card bg-gradient-blue">
+											<div id="transaction" class="card-body">
+												<div class="row">
+													<div class="col mt-0">
+														<h5 class="card-title">Total Withdrawal</h5>
+													</div>
+
+													<div class="col-auto">
+
+														<div class="stat text-primary">
+															<i class="align-middle" data-feather="bar-chart-2"></i>
+														</div>
+													</div>
+												</div>
+												-<h1 class="mt-1 mb-3">24</h1>-->
+												<!--<div class="mb-0">
+													<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span>
+													<span class="text-muted">Since last week</span>
+												</div> 
+											</div>
+										</div> -->
+
+										
+
+									</div>
+									
+				<!-- TradingView Widget BEGIN -->
+				<div class="tradingview-widget-container" id="tradingview" style="padding-top: 20px;">
+					<div id="tradingview_b36f0"></div>
+					<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+					<script type="text/javascript">
+						new TradingView.widget(
+							{
+								"width": "100%",
+								"height": "400px",
+								"autosize": false,
+								"symbol": "BINANCE:BTCUSDT",
+								"interval": "D",
+								"timezone": "Etc/UTC",
+								"theme": "dark",
+								"style": "3",
+								"locale": "en",
+								"toolbar_bg": "#f1f3f6",
+								"enable_publishing": false,
+								"allow_symbol_change": true,
+								"container_id": "tradingview_b36f0"
+							}
+						);
+					</script>
+				</div>
+				<!-- TradingView Widget END -->
+									<!-- <h5 class="badge " style="width: 100% !important;color: #fff;
+									background-color: #42258a;
+									border-color: #3e2280">Assets</h5>
+
+									<hr />
+									<span id="assets"
+										style="display:flex !important; flex-direction: column; overflow: hidden; justify-content: space-between;">
+										<div class="row"
+											style="width:100%; align-items:center; justify-content:space-around; display:flex !important">
+											<div class="col mt-0">
+												<h5 class="card-title" style="margin-left: 20px !important;">USDT</h5>
+											</div>
+
+											<div class="col-auto">
+												<div class="stat text-primary"
+													style="background-color: inherit !important;">
+													<img class="align-middle" src="../assets/img/icons/usdt.png"
+														style="background-color: rgba(255, 255, 255, 0) !important;"
+														width="40px" height="40px" />
+												</div>
+											</div>
+											<span
+												style=" width: 90% !important; justify-content: space-between; display:flex !important; align-items: center;">
+												<h1 style="font-size:14px;" class="text-muted"> Amount: </h1>
+												<h1 style="font-size:16px;" class="mt-1 mb-3" id="usdt"></h1>
+											</span>
+
+											<span
+												style=" width: 90% !important; justify-content: space-between; display:flex !important; align-items: center;">
+												<h1 style="font-size:14px;" class="text-muted"> $Amount: </h1>
+												<h1 style="font-size:16px;" class="mt-1 mb-3" id="equiusdt"></h1>
+											</span>
+
+										</div>
+
+										<hr />
+										<div class="row"
+											style="width:100%; align-items:center; justify-content:space-around; display:flex !important">
+											<div class="col mt-0">
+												<h5 class="card-title" style="margin-left: 20px !important;">BTC</h5>
+											</div>
+
+											<div class="col-auto">
+												<div class="stat text-primary"
+													style="background-color: inherit !important;">
+													<img class="align-middle" src="../assets/img/icons/btc.png"
+														style="background-color: rgba(255, 255, 255, 0) !important;"
+														width="40px" height="40px" />
+												</div>
+											</div>
+											<span
+												style=" width: 90% !important; justify-content: space-between; display:flex !important; align-items: center;">
+												<h1 style="font-size:14px;" class="text-muted"> Amount: </h1>
+												<h1 style="font-size:16px;" class="mt-1 mb-3" id="btc"></h1>
+											</span>
+
+											<span
+												style=" width: 90% !important; justify-content: space-between; display:flex !important; align-items: center;">
+												<h1 style="font-size:14px;" class="text-muted"> $Amount: </h1>
+												<h1 style="font-size:16px;" class="mt-1 mb-3" id="equibtc"></h1>
+											</span>
+
+										</div>
+										<hr />
+									</span>
+									<hr />
+									<span id="assets"
+										style="display:flex;  flex-direction:column;overflow: hidden; justify-content: space-between;">
+										<div class="row"
+											style="width:100%; align-items:center; justify-content:space-around; display:flex !important">
+											<div class="col mt-0">
+												<h5 class="card-title" style="margin-left: 20px !important;">ETH</h5>
+											</div>
+
+											<div class="col-auto">
+												<div class="stat text-primary"
+													style="background-color: inherit !important;">
+													<img class="align-middle" src="../assets/img/icons/eth.png"
+														style="background-color: rgba(255, 255, 255, 0) !important;"
+														width="40px" height="40px" />
+												</div>
+											</div>
+											<span
+												style=" width: 90% !important; justify-content: space-between; display:flex !important; align-items: center;">
+												<h1 style="font-size:14px;" class="text-muted"> Amount: </h1>
+												<h1 style="font-size:16px;" class="mt-1 mb-3" id="eth"></h1>
+											</span>
+
+											<span
+												style=" width: 90% !important; justify-content: space-between; display:flex !important; align-items: center;">
+												<h1 style="font-size:14px;" class="text-muted"> $Amount: </h1>
+												<h1 style="font-size:16px;" class="mt-1 mb-3" id="equieth"></h1>
+											</span>
+
+										</div>
+										<hr />
+
+										<div class="row"
+											style="width:100%; align-items:center; justify-content:space-around; display:flex !important">
+											<div class="col mt-0">
+												<h5 class="card-title" style="margin-left: 20px !important;">BNB</h5>
+											</div>
+
+											<div class="col-auto">
+												<div class="stat text-primary"
+													style="background-color: inherit !important;">
+													<img class="align-middle" src="../assets/img/icons/bnb.png"
+														style="background-color: rgba(255, 255, 255, 0) !important;"
+														width="40px" height="40px" />
+												</div>
+											</div>
+											<span
+												style=" width: 90% !important; justify-content: space-between; display:flex !important; align-items: center;">
+												<h1 style="font-size:14px;" class="text-muted"> Amount: </h1>
+												<h1 style="font-size:16px;" class="mt-1 mb-3" id="bnb"></h1>
+											</span>
+
+											<span
+												style=" width: 90% !important; justify-content: space-between; display:flex !important; align-items: center;">
+												<h1 style="font-size:14px;" class="text-muted"> $Amount: </h1>
+												<h1 style="font-size:16px;" class="mt-1 mb-3" id="equibnb"></h1>
+											</span>
+
+										</div>
+
+									</span>
+									<hr />
+									<span id="assets" style="display:flex;  flex-direction:column;overflow: hidden; justify-content: space-between;"> -->
+										
+									 <!-- <a href="withdraw.html">
+											<button class="btn btn-primary p-1 m-1" style="width:100%">  Withdraw</button> 
+		
+										</a>
+										<a href="deposite1.html">
+											<button class="btn btn-secondary p-1 m-1" style="width:100%">deposite</button>
+										
+										</a>
+									</span> --> 
+
+								</div>
+							</div>
+
+						</div>
+
+						<!-- <div class="container-fluid p-10" style="margin-top: 40px !important;">
+
+							<div class="mb-3">
+								<h5 class="badge"
+								style="width: 45% !important;color: #fff;
+									background-color: #42258a;
+									border-color: #3e2280">
+									Investment Plans</h5>
+								</a>
+							</div>
+							<div class="row"
+								style="display:flex; width:50%; flex-wrap: wrap; justify-content:flex-start;">
+
+								<div class="col-12 col-md-6">
+									<div class="card">
+										<div class="card-header" style="background-color:#343a40">
+											<h5 class="card-title mb-0" style="font-size: 25px; ">Basic Plan <small
+													style="font-size: 11px; color:darkcyan">mini</small> </h5>
+										</div>
+										<div class="card-body" style="text-align:center">
+
+											<p><b style="font-size: 40px;" id="getstartedamount">$200</b><span><small
+														class="card-text" style="color:coral">mininum</small></span></p>
+
+											<p style="font-size: 15px;">2% Daily for 7 Day(s) <span></span></p>
+											<p style="font-size: 15px;">Profit Withdrawal: <span><small
+														class="card-text">7 Days</small></span></p>
+											<p style="font-size: 15px;">Capital Withdrawal: <span><small
+														class="card-text">14 Days</small></span></p>
+
+											<p style="font-size: 15px;">Total RIO: <span><small class="card-text">20.3%
+														plus Capital</small></span></p>
+											<p style="font-size: 15px;">Referral bonus: <span><small
+														class="card-text">10%</small></span></p>
+
+
+											<a href="../getstarted" id="200,Basic Plan" onclick="getstartedAmount(this)"
+												class="btn" style="color: #fff;
+												background-color: #42258a;
+												border-color: #3e2280">Get Started</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="card">
+										<div class="card-header">
+											<h5 class="card-title mb-0" style="font-size: 25px;">Golden Plan</h5>
+										</div>
+										<div class="card-body" style="text-align:center">
+
+											<p><b style="font-size: 40px;" id="getstartedamount">$1000</b><span><small
+														class="card-text" style="color:coral">mininum</small></span></p>
+
+											<p style="font-size: 15px;">2.9% Daily for 7 Day(s) <span></span></p>
+											<p style="font-size: 15px;">Profit Withdrawal: <span><small
+														class="card-text">7 Days</small></span></p>
+											<p style="font-size: 15px;">Capital Withdrawal: <span><small
+														class="card-text">14 Days</small></span></p>
+
+											<p style="font-size: 15px;">Total RIO: <span><small class="card-text">20.3%
+														plus Capital</small></span></p>
+											<p style="font-size: 15px;">Referral bonus: <span><small
+														class="card-text">10%</small></span></p>
+
+
+											<a href="../getstarted" id="1000,Golden Plan" onclick="getstartedAmount(this)"
+												class="btn " style="color: #fff;
+												background-color: #42258a;
+												border-color: #3e2280">Get Started</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="card">
+										<div class="card-header">
+											<h5 class="card-title mb-0" style="font-size: 25px;">Mega Plan</h5>
+										</div>
+										<div class="card-body" style="text-align:center">
+
+											<p><b style="font-size: 40px;" id="getstartedamount">$5,000</b><span><small
+														class="card-text" style="color:coral">mininum</small></span></p>
+
+											<p style="font-size: 15px;">3.9% Daily for 7 Day(s) <span></span></p>
+											<p style="font-size: 15px;">Profit Withdrawal: <span><small
+														class="card-text">7 Days</small></span></p>
+											<p style="font-size: 15px;">Capital Withdrawal: <span><small
+														class="card-text">14 Days</small></span></p>
+
+											<p style="font-size: 15px;">Total RIO: <span><small class="card-text">27.3%
+														plus Capital</small></span></p>
+											<p style="font-size: 15px;">Referral bonus: <span><small
+														class="card-text">10%</small></span></p>
+
+											<a href="../getstarted" id="5000,Mega Plan" onclick="getstartedAmount(this)"
+												class="btn " style="color: #fff;
+												background-color: #42258a;
+												border-color: #3e2280">Get Started</a>
+										</div>
+									</div>
+								</div>
+
+
+
+
+
+
+							</div>
+							<div class="container-fluid p-10" style="margin-top: 40px !important;">
+
+
+								<div class="row" style="display:flex; width:50%; justify-content:flex-start;">
+
+									<div class="col-12 col-md-6">
+										<div class="card">
+											<div class="card-header" style="background-color:#343a40">
+												<h5 class="card-title mb-0" style="font-size: 25px; ">Premium Plan
+													<small style="font-size: 11px; color:darkcyan">pro</small>
+												</h5>
+											</div>
+											<div class="card-body" style="text-align:center">
+
+												<p><b style="font-size: 40px;"
+														id="getstartedamount">$10,000</b><span><small class="card-text"
+															style="color:coral">mininum</small></span></p>
+
+												<p style="font-size: 15px;">5% Daily for 7 Day(s) <span></span></p>
+												<p style="font-size: 15px;">Profit Withdrawal: <span><small
+															class="card-text">7 Days</small></span></p>
+												<p style="font-size: 15px;">Capital Withdrawal: <span><small
+															class="card-text">14 Days</small></span></p>
+
+												<p style="font-size: 15px;">Total RIO: <span><small
+															class="card-text">35% plus Capital</small></span></p>
+												<p style="font-size: 15px;">Referral bonus: <span><small
+															class="card-text">10%</small></span></p>
+
+
+												<a href="../getstarted" id="10000,Premium Plan" onclick="getstartedAmount(this)"
+													class="btn " style="color: #fff;
+													background-color: #42258a;
+													border-color: #3e2280">Get Started</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-md-6">
+										<div class="card">
+											<div class="card-header">
+												<h5 class="card-title mb-0" style="font-size: 25px;">Apex Corporate Pro
+												</h5>
+											</div>
+											<div class="card-body" style="text-align:center">
+
+												<p><b style="font-size: 40px;"
+														id="getstartedamount">$30,000</b><span><small class="card-text"
+															style="color:coral">mininum</small></span></p>
+
+												<p style="font-size: 15px;">Trade up to $50,000<span></span></p>
+												<p style="font-size: 15px;">ROI: <span><small class="card-text">42%
+														</small></span></p>
+
+												<p style="font-size: 15px;">Duration: One Month <span><small
+															class="card-text"></small></span></p>
+												<p style="font-size: 15px;">Referral bonus: <span><small
+															class="card-text">10%</small></span></p>
+
+
+												<a href="../getstarted" id="30000,Apex Corporate Pro" onclick="getstartedAmount(this)"
+													class="btn" style="color: #fff;
+													background-color: #42258a;
+													border-color: #3e2280">Get Started</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-md-6">
+										<div class="card">
+											<div class="card-header">
+												<h5 class="card-title mb-0" style="font-size: 25px;">Apex Corporate
+													Enterprise</h5>
+											</div>
+											<div class="card-body" style="text-align:center">
+
+												<p><b style="font-size: 40px;"
+														id="getstartedamount">$100,000</b><span><small class="card-text"
+															style="color:coral">mininum</small></span></p>
+
+												<p style="font-size: 15px;">Trade up to <span><small
+															class="card-text">$1,000,000</small></span></p>
+												<p style="font-size: 15px;">Duration: <span><small
+															class="card-text">Three Month</small></span></p>
+												<p style="font-size: 15px;">RIO: <span><small class="card-text">44%
+															Monthly</small></span></p>
+												<p style="font-size: 15px;">Referral bonus: <span><small
+															class="card-text">10%</small></span></p>
+
+
+												<a href="../getstarted" onclick="getstartedAmount(this)" id="100000,Apex Corporate
+												Enterprise"
+													class="btn " style="color: #fff;
+													background-color: #42258a;
+													border-color: #3e2280">Get Started</a>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+
+						</div> -->
+
+			</main>
+
+			<!-- <div class="mb-3" style="margin-left: 20px;">
+				<h5 class="badge bg-dark ml-2"
+					style="width: 70% !important; margin-left: 10px; text-align: center !important;;  font-size: 14px !important; margin:80px 0px 10px 0px">
+					Referal</h5>
+				</a>
+			</div> -->
+
+			<!-- <div class="card bg-gradient-orange mx-4" id="form" style="color: #e8e8e8 !important; padding: 20px;">
+				<div class="">
+					<input type="text" style="width:20%;  border: 0px; background-color: inherit;" class="copyText"
+						readonly name="referalcode" value="" id="referalcode">
+					<button type="submit" onclick="nowWhat()" class="btn" style="color: #fff;
+					background-color: #42258a;
+					border-color: #3e2280">Copy Referal Code</button>
+					<small id="small">
+						<p id="alert" class="badge bg-dark" style="text-align: center;"></p>
+					</small>
+				</div>
+				<div class="">
+					<h4
+						style="color: #e8e8e8 !important; text-align: center; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; ">
+						Your referal link</h4>
+					<input type="text" class="copyText" style="width: 50%; border: 0px; background-color: inherit;"
+						readonly name="referallink" id="referallink">
+					<button type="submit" onclick="whatNow()" class="btn" style="color: #fff;
+					background-color: #42258a;
+					border-color: #3e2280">copy link</button>
+					<small id="small2">
+						<p id="alert2" class="badge bg-dark" style="text-align: center;"></p>
+					</small>
+				</div>
+			</div>
+
+			<div class="row" id="trans" style="width: 100%;">
+				<div class="col-12 col-lg-8 col-xxl-9 d-flex" id="newcol">
+					<div class="card flex-fill" id="noleft" style="margin: 20px 0px 10px 40px;">
+						<div class="card-header">
+
+							<h5 class="card-title mb-0">Recent Transaction</h5>
+						</div>
+						<table class="table table-hover my-0" id="table">
+							<thead>
+								<tr>
+									<th>Type</th>
+									<th class="d-none d-xl-table-cell">Transaction Time</th>
+									<th>Status</th>
+									<th>Amount</th>
+								</tr>
+							</thead>
+							<!--<tbody>
+											<tr>
+												<td>Withdrawall</td>
+												<td class="d-none d-xl-table-cell">31/06/2021</td>
+												<td><span class="badge bg-success">Completed</span></td>
+												<td class="d-none d-md-table-cell">$1,000</td>
+											</tr>
+											
+										</tbody>
+									-->
+						</table>
+					</div>
+				</div>
+
+
+			</div>
+
+
+
+		</div>
+
+	</div>
+
+
+	<!-- <div class="row" style="padding:50px 40px 50px 40px; margin-bottom: 20px !important;">
+
+		<div class="col-12 p-2" style="margin-bottom: 20px;" >
+			<h4 class="title font-weight-700 margin-30px-bottom sm-margin-25px-bottom" style="color: #e8e8e8;">How you can join us</h4>
+			<h6 class="margin-30px-bottom sm-margin-25px-bottom"  style="color: #e8e8e8;">Here are few easy steps on how you can create an
+				account with us and start investing right away!</h6>
+		</div>
+
+		<div class="col-md-6 margin-30px-bottom pb-4">
+			<div class="feature-box-01">
+				<i
+					class="far fa-user-circle font-size36 md-font-size34 sm-font-size32 margin-20px-bottom md-margin-15px-bottom"></i>
+				<h5 class="text-uppercase font-weight-600 font-size14 margin-10px-bottom"><strong><a
+							style="color: #42258a;" href="../">Creat An Account</a> </strong> </h5>
+				<p class="no-margin text-light-gray">Hit the 'OPEN ACCOUNT' button at the top of the page, fill in your
+					details on the page that follows.</p>
+			</div>
+		</div>
+		<div class="col-md-6 margin-30px-bottom">
+			<div class="feature-box-01">
+				<i
+					class="fas fa-clipboard-check font-size36 md-font-size34 sm-font-size32 margin-20px-bottom md-margin-15px-bottom"></i>
+				<h5 class="text-uppercase font-weight-600 font-size14 margin-10px-bottom"><strong><a
+					style="color: #42258a;"	href="../investment"> SELECT A PLAN</a> </strong> </h5>
+				<p class="no-margin text-light-gray">From your Dashboard, select the deposite button to choose an
+					investment plan that suits your financial goal.</p>
+			</div>
+		</div>
+		<div class="col-md-6 xs-margin-30px-bottom">
+			<div class="feature-box-01">
+				<i
+					class="fab fa-bitcoin font-size36 md-font-size34 sm-font-size32 margin-20px-bottom md-margin-15px-bottom"></i>
+				<h5 class="text-uppercase font-weight-600 font-size14 margin-10px-bottom"><strong><a
+					style="color: #42258a;"	href="../deposite1">FUND YOUR ACCOUNT</a></strong> </h5>
+				<p class="no-margin text-light-gray">Fund your investment account quickly and easily, using our Bitcoin
+					payment system directly from your wallet.</p>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="feature-box-01">
+				<i
+					class="fas fa-share-alt-square font-size36 md-font-size34 sm-font-size32 margin-20px-bottom md-margin-15px-bottom"></i>
+				<h5 class="text-uppercase font-weight-600 font-size14 margin-10px-bottom"><strong><a
+					style="color: #42258a;"	href="#">Invite Others</a></strong> </h5>
+				<p class="no-margin text-light-gray">While experiencing the amazing benefits of investing us, you can
+					also earn bonuses when you refer us to others.</p>
+			</div>
+		</div>
+	</div> -->
+
+	</div>
+
+	<footer class="footer">
+		<div class="container-fluid">
+			<div class="row text-muted">
+				<div class="col-6 text-start">
+					<p class="mb-0">
+						&copy; <a class="text-muted" href="www.Apex Corporates.com" target="_blank"><strong>Apex
+								Corporate
+								Investment</strong></a>
+					</p>
+				</div>
+				<div class="col-6 text-end">
+					<ul class="list-inline">
+						<li class="list-inline-item">
+							<a class="text-muted" href="contact.html" target="_blank">Support</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="text-muted" href="contact.html" target="_blank">Help Center</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="text-muted" href="../external.html?link=https://Apex Corporate Investment.io/"
+								target="_blank">Privacy</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="text-muted" href="../external.html?link=https://Apex Corporate Investment.io/"
+								target="_blank">Terms</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	</div>
+	</div>
+
+	<script>
+		function nowWhat() {
+			var text = document.getElementById("referalcode");
+			text.select();
+			navigator.clipboard.writeText(text.value);
+
+			var div = document.getElementById('small')
+			var p = document.createElement('p');
+			p.classList.add('badge');
+			p.classList.add('bg-dark');
+			p.innerText = "Copied to clipboard";
+			div.appendChild(p)
+
+			setTimeout(() => {
+				div.style.display = 'none'
+			}, 3000)
+		}
+	</script>
+	<script>
+		function whatNow() {
+			var text = document.getElementById("referallink");
+			text.select();
+			navigator.clipboard.writeText(text.value);
+
+			var div = document.getElementById('small2')
+			var p = document.createElement('p');
+			p.classList.add('badge');
+			p.classList.add('bg-dark');
+			p.innerText = "Copied to clipboard";
+			div.appendChild(p)
+
+			setTimeout(() => {
+				div.style.display = 'none'
+			}, 3000)
+
+		}
+	</script>
+
+	<script>
+		function alertT() {
+			var text = document.getElementById("referalcode");
+			text.select();
+			navigator.clipboard.writeText(text.value);
+
+			var div = document.getElementById('small')
+			var p = document.createElement('p');
+			p.classList.add('badge');
+			p.classList.add('bg-dark');
+			p.innerText = "Copied to clipboard";
+			div.appendChild(p)
+
+			setTimeout(() => {
+				div.style.display = 'none'
+			}, 3000)
+
+
+		}
+
+		function alertT2() {
+			var text = document.getElementById("referallink");
+			text.select();
+			navigator.clipboard.writeText(text.value);
+
+			var div = document.getElementById('small2')
+			var p = document.createElement('p');
+			p.classList.add('badge');
+			p.classList.add('bg-dark');
+			p.innerText = "Copied to clipboard";
+			div.appendChild(p)
+
+			setTimeout(() => {
+				div.style.display = 'none'
+			}, 3000)
+
+
+	</script>
+
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/jquery/jquery.min.js"></script>
+	<script src="../assets/js/admindash.js"></script>
+	// <script src="../assets/js/navbar.js"></script>
+	// <script src="../assets/js/homeFetch copy.js"></script>
+	// <script src="../assets/js/notification.js"></script>
+	// <script src="../assets/js/planamount.js"></script>
+	// <script src="../assets/js/hiders.js"></script>
+
+
+	// <script src="../assets/js/activeplan.js"></script>
+
+	<script>
+			window.addEventListener('load', () => {
+				const logout = document.querySelector('#logout')
+
+				logout.addEventListener('click', () => {
+					localStorage.removeItem('dashboard')
+					window.location = 'index.html'
+				})
+			})
+	</script>
+	<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
+				var gradient = ctx.createLinearGradient(0, 0, 0, 225);
+				gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
+				gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
+				// Line chart
+				new Chart(document.getElementById("chartjs-dashboard-line"), {
+					type: "line",
+					data: {
+						labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+						datasets: [{
+							label: "Sales ($)",
+							fill: true,
+							backgroundColor: gradient,
+							borderColor: window.theme.primary,
+							data: [
+								2115,
+								1562,
+								1584,
+								1892,
+								1587,
+								1923,
+								2566,
+								2448,
+								2805,
+								3438,
+								2917,
+								3327
+							]
+						}]
+					},
+					options: {
+						maintainAspectRatio: false,
+						legend: {
+							display: false
+						},
+						tooltips: {
+							intersect: false
+						},
+						hover: {
+							intersect: true
+						},
+						plugins: {
+							filler: {
+								propagate: false
+							}
+						},
+						scales: {
+							xAxes: [{
+								reverse: true,
+								gridLines: {
+									color: "rgba(0,0,0,0.0)"
+								}
+							}],
+							yAxes: [{
+								ticks: {
+									stepSize: 1000
+								},
+								display: true,
+								borderDash: [3, 3],
+								gridLines: {
+									color: "rgba(0,0,0,0.0)"
+								}
+							}]
+						}
+					}
+				});
+			});
+	</script>
+	<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				// Pie chart
+				new Chart(document.getElementById("chartjs-dashboard-pie"), {
+					type: "pie",
+					data: {
+						labels: ["Chrome", "FireApex Corporate", "IE"],
+						datasets: [{
+							data: [4306, 3801, 1689],
+							backgroundColor: [
+								window.theme.primary,
+								window.theme.warning,
+								window.theme.danger
+							],
+							borderWidth: 5
+						}]
+					},
+					options: {
+						responsive: !window.MSInputMethodContext,
+						maintainAspectRatio: false,
+						legend: {
+							display: false
+						},
+						cutoutPercentage: 75
+					}
+				});
+			});
+	</script>
+	<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				// Bar chart
+				new Chart(document.getElementById("chartjs-dashboard-bar"), {
+					type: "bar",
+					data: {
+						labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+						datasets: [{
+							label: "This year",
+							backgroundColor: window.theme.primary,
+							borderColor: window.theme.primary,
+							hoverBackgroundColor: window.theme.primary,
+							hoverBorderColor: window.theme.primary,
+							data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
+							barPercentage: .75,
+							categoryPercentage: .5
+						}]
+					},
+					options: {
+						maintainAspectRatio: false,
+						legend: {
+							display: false
+						},
+						scales: {
+							yAxes: [{
+								gridLines: {
+									display: false
+								},
+								stacked: false,
+								ticks: {
+									stepSize: 20
+								}
+							}],
+							xAxes: [{
+								stacked: false,
+								gridLines: {
+									color: "transparent"
+								}
+							}]
+						}
+					}
+				});
+			});
+	</script>
+	<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				var markers = [{
+					coords: [31.230391, 121.473701],
+					name: "Shanghai"
+				},
+				{
+					coords: [28.704060, 77.102493],
+					name: "Delhi"
+				},
+				{
+					coords: [6.524379, 3.379206],
+					name: "Lagos"
+				},
+				{
+					coords: [35.689487, 139.691711],
+					name: "Tokyo"
+				},
+				{
+					coords: [23.129110, 113.264381],
+					name: "Guangzhou"
+				},
+				{
+					coords: [40.7127837, -74.0059413],
+					name: "New York"
+				},
+				{
+					coords: [34.052235, -118.243683],
+					name: "Los Angeles"
+				},
+				{
+					coords: [41.878113, -87.629799],
+					name: "Chicago"
+				},
+				{
+					coords: [51.507351, -0.127758],
+					name: "London"
+				},
+				{
+					coords: [40.416775, -3.703790],
+					name: "Madrid "
+				}
+				];
+				var map = new jsVectorMap({
+					map: "world",
+					selector: "#world_map",
+					zoomButtons: true,
+					markers: markers,
+					markerStyle: {
+						initial: {
+							r: 9,
+							strokeWidth: 7,
+							stokeOpacity: .4,
+							fill: window.theme.primary
+						},
+						hover: {
+							fill: window.theme.primary,
+							stroke: window.theme.primary
+						}
+					},
+					zoomOnScroll: false
+				});
+				window.addEventListener("resize", () => {
+					map.updateSize();
+				});
+			});
+	</script>
+	<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
+				var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+				document.getElementById("datetimepicker-dashboard").flatpickr({
+					inline: true,
+					prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+					nextArrow: "<span title=\"Next month\">&raquo;</span>",
+					defaultDate: defaultDate
+				});
+			});
+	</script>
+
+</body>
+
+
+<!-- Mirrored from demo-basic.Apex Corporate Investment.io/ by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 04 Apr 2022 11:06:13 GMT -->
+
+</html>

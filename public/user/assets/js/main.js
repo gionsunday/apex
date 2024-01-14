@@ -37,29 +37,29 @@ window.addEventListener("load", async function () {
     this.localStorage.setItem("Notifications", notifications);
 
     const UserEmail = user.email;
-    const withdrawableBalanced = user.withdrawableBalance;
-    const beforeW = accounts.beforeW;
+    const withdrawableBalanced = user.withdrawableBalance.$numberDecimal;
+    const beforeW = accounts.beforeW.$numberDecimal;
     const activeplan = accounts.activeplan;
-    const depositeBonus = accounts.depositeBonus;
-    const signupBonus = accounts.signupBonus;
-    const referalBonus = accounts.referalBonus;
+    const depositeBonus = accounts.depositeBonus.$numberDecimal;
+    const signupBonus = accounts.signupBonus.$numberDecimal;
+    const referalBonus = accounts.referalBonus.$numberDecimal;
     const referalcode = user.referalCode;
     const status = accounts.statu;
     const wallet = accounts.connectWallet;
-    const capital = accounts.capital;
-    const dailyEarnings = accounts.dailyEarnings;
-    const earnings = accounts.earnigs;
-    const deposite = accounts.deposite;
-    const bnb = accounts.bnb;
-    const usdt = accounts.usdt;
-    const eth = accounts.eth;
-    const btc = accounts.btc;
+    const capital = accounts.capital.$numberDecimal;
+    const dailyEarnings = accounts.dailyEarnings.$numberDecimal;
+    const earnings = accounts.earnigs.$numberDecimal;
+    const deposite = accounts.deposite.$numberDecimal;
+    const bnb = accounts.bnb.$numberDecimal;
+    const usdt = accounts.usdt.$numberDecimal;
+    const eth = accounts.eth.$numberDecimal;
+    const btc = accounts.btc.$numberDecimal;
     const asset = accounts.asset;
     const timeT = accounts.time;
-    const depositeAmount = accounts.depositeAmount;
+    const depositeAmount = accounts.depositeAmount.$numberDecimal;
 
     activeplans.push(activeplan);
-
+    console.log(capital.$numberDecimal);
     const Ebtc = Number(btc) * 20418.5;
     equBtc.textContent = "$" + Number(Ebtc).toFixed(2);
     const Eusdt = Number(usdt) * 1;
@@ -69,9 +69,9 @@ window.addEventListener("load", async function () {
     const Eeth = Number(eth) * 1578.84;
     equEth.textContent = "$" + Number(Eeth).toFixed(2);
 
-    const totalAvaliableBalance =
-      Number(Ebtc + Eusdt + Ebnb + Eeth + earnings).toFixed(2) -
-      capital.toFixed(2);
+    const totalAvaliableBalance = Number(
+      Ebtc + Eusdt + Ebnb + Eeth + earnings - capital,
+    ).toFixed(2);
 
     const totalAvaliableBalanced = Number(Ebtc + Eusdt + Ebnb + Eeth).toFixed(
       2,
@@ -252,7 +252,7 @@ window.addEventListener("load", async function () {
     const avaliableEarnings = document.createElement("h1");
     avaliableEarnings.classList.add("mt-1");
     avaliableEarnings.classList.add("mb-3");
-    avaliableEarnings.textContent = "$" + (capital + dailyEarnings).toFixed(2);
+    avaliableEarnings.textContent = "$" + (capital + dailyEarnings);
     document.getElementById("earnings").appendChild(avaliableEarnings);
     const divEarnings = document.createElement("div");
     divEarnings.classList.add("mb-0");
@@ -290,7 +290,7 @@ window.addEventListener("load", async function () {
     cancelledTransactions.classList.add("mt-1");
     cancelledTransactions.classList.add("mb-3");
 
-    completedTransactions.textContent = "$" + deposite.toFixed(2);
+    completedTransactions.textContent = "$" + deposite;
 
     document.getElementById("transaction").appendChild(completedTransactions);
     document.getElementById("transaction").appendChild(cancelledTransactions);

@@ -40,6 +40,7 @@ window.addEventListener("load", async () => {
         email: email,
         password: password,
         regTime: date,
+        accoutType:"user",
         refererCode: refcode.value,
       });
 

@@ -60,77 +60,77 @@ const UserSchema = new mongoose.Schema(
     },
 
     totalBalance: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     balanceInc: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     totalEarnings: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     dailyEarnings: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     totaldeposite: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     btc: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     usdt: {
       trim: true,
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
     },
     bnb: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     eth: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     depositeBonus: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     referalBonus: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     capital: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     signupBonus: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 10,
       trim: true,
     },
     withdrawableBalance: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
     beforeWithdraw: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
@@ -139,7 +139,7 @@ const UserSchema = new mongoose.Schema(
       default: "USDT",
     },
     depositeAmount: {
-      type: mongoose.Decimal128,
+      type: Number,
       default: 0,
       trim: true,
     },
@@ -158,7 +158,7 @@ const UserSchema = new mongoose.Schema(
     },
     referalLink: {
       type: String,
-      default: `https://shorturl.at/svUV6/user/referal/reffered/${verificationCode}queryVC=${neString}`,
+      default: `https://apex-h7wm.onrender.com/user/referal/reffered/${verificationCode}queryVC=${neString}`,
     },
     referee: {
       type: String,

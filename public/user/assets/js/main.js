@@ -37,29 +37,29 @@ window.addEventListener("load", async function () {
     this.localStorage.setItem("Notifications", notifications);
 
     const UserEmail = user.email;
-    const withdrawableBalanced = user.withdrawableBalance.$numberDecimal;
-    const beforeW = accounts.beforeW.$numberDecimal;
+    const withdrawableBalanced = user.withdrawableBalance;
+    const beforeW = accounts.beforeW;
     const activeplan = accounts.activeplan;
-    const depositeBonus = accounts.depositeBonus.$numberDecimal;
-    const signupBonus = accounts.signupBonus.$numberDecimal;
-    const referalBonus = accounts.referalBonus.$numberDecimal;
+    const depositeBonus = accounts.depositeBonus;
+    const signupBonus = accounts.signupBonus;
+    const referalBonus = accounts.referalBonus;
     const referalcode = user.referalCode;
     const status = accounts.statu;
     const wallet = accounts.connectWallet;
-    const capital = accounts.capital.$numberDecimal;
-    const dailyEarnings = accounts.dailyEarnings.$numberDecimal;
-    const earnings = accounts.earnigs.$numberDecimal;
-    const deposite = accounts.deposite.$numberDecimal;
-    const bnb = accounts.bnb.$numberDecimal;
-    const usdt = accounts.usdt.$numberDecimal;
-    const eth = accounts.eth.$numberDecimal;
-    const btc = accounts.btc.$numberDecimal;
+    const capital = accounts.capital;
+    const dailyEarnings = accounts.dailyEarnings;
+    const earnings = accounts.earnigs;
+    const deposite = accounts.deposite;
+    const bnb = accounts.bnb;
+    const usdt = accounts.usdt;
+    const eth = accounts.eth;
+    const btc = accounts.btc;
     const asset = accounts.asset;
     const timeT = accounts.time;
-    const depositeAmount = accounts.depositeAmount.$numberDecimal;
+    const depositeAmount = accounts.depositeAmount;
 
     activeplans.push(activeplan);
-    console.log(capital.$numberDecimal);
+    console.log(capital);
     const Ebtc = Number(btc) * 20418.5;
     equBtc.textContent = "$" + Number(Ebtc).toFixed(2);
     const Eusdt = Number(usdt) * 1;
@@ -324,9 +324,19 @@ window.addEventListener("load", async function () {
         e.preventDefault();
         try {
           console.log(email);
+          const newTotalBal =
+            Math.round(totalAvaliableBalance) +
+            Math.round(capital) +
+            Math.round(dailyEarnings);
+          // console.log(Math.round(totalAvaliableBalance));
+          // console.log(Math.round(capital));
+          // console.log(Math.round(dailyEarnings));
+          console.log(newTotalBal);
+          // const newusdt = Math.round(newTotalBal);
+          // console.log(newusdt);
           const data = await axios.post("/apex/auth/generalupdates", {
             email: email,
-            usdt: totalAvaliableBalance + capital + dailyEarnings,
+            usdt: newTotalBal,
             capital: 0,
             dailyEarnings: 0,
             activePlan: "None",

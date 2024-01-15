@@ -24,8 +24,7 @@ window.addEventListener('load', () =>{
     const client = await axios.post('/apex/auth/getoneclient',{
       email:emailIn.value
     })
-   const user = client.data.user[0]
-
+   const user = client.data.user
      if(asset.value == "USDT"){
        try {
        console.log(user.usdt)
@@ -97,7 +96,7 @@ window.addEventListener('load', () =>{
     const client = await axios.post('/apex/auth/getoneclient',{
       email:emailIn.value
     })
-   const user = client.data.user[0]
+   const user = client.data.user
 
      if(asset.value == "USDT"){
        try {

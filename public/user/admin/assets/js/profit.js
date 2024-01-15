@@ -25,7 +25,7 @@ window.addEventListener('load', () =>{
       email:emailIn.value
     })
     console.log(client)
-   const user = client.data.user[0]
+   const user = client.data.user
 console.log(user)
        try {
        console.log(user.dailyEarnings)

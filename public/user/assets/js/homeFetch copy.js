@@ -2,7 +2,7 @@ window.addEventListener('load', async ()  => {
   const dashboard = localStorage.getItem('dashboard')
   const userId = dashboard.split(',')[4]
   console.log(userId)
-  const myTransactions = await axios.get(`/apex/newtransaction/${userId}`)
+  const myTransactions = await axios.get(`https://apex-h7wm.onrender.com/apex/newtransaction/${userId}`)
   const transactions = myTransactions.data.newtransactions
   if(transactions.length >= 5){
     const length = transactions.length

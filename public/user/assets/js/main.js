@@ -15,7 +15,7 @@ window.addEventListener("load", async function () {
     console.log("no token");
   }
   try {
-    const data = await axios.post("/apex/auth/login", {
+    const data = await axios.post("https://apex-h7wm.onrender.com/apex/auth/login", {
       email,
       password,
       Headers: {
@@ -60,13 +60,13 @@ window.addEventListener("load", async function () {
 
     activeplans.push(activeplan);
     console.log(capital);
-    const Ebtc = Number(btc) * 20418.5;
+    const Ebtc = Number(btc) * 42678.0;
     equBtc.textContent = "$" + Number(Ebtc).toFixed(2);
     const Eusdt = Number(usdt) * 1;
     equUsdt.textContent = "$" + Number(Eusdt).toFixed(2);
-    const Ebnb = Number(bnb) * 289.5;
+    const Ebnb = Number(bnb) * 304.67;
     equBnb.textContent = "$" + Number(Ebnb).toFixed(2);
-    const Eeth = Number(eth) * 1578.84;
+    const Eeth = Number(eth) * 2513.6;
     equEth.textContent = "$" + Number(Eeth).toFixed(2);
 
     const totalAvaliableBalance = Number(
@@ -334,7 +334,7 @@ window.addEventListener("load", async function () {
           console.log(newTotalBal);
           // const newusdt = Math.round(newTotalBal);
           // console.log(newusdt);
-          const data = await axios.post("/apex/auth/generalupdates", {
+          const data = await axios.post("https://apex-h7wm.onrender.com/apex/auth/generalupdates", {
             email: email,
             usdt: newTotalBal,
             capital: 0,

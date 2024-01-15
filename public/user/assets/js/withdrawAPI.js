@@ -14,7 +14,7 @@ window.addEventListener('load', ()=>{
        
             
     try {
-        const data = await axios.post('/apex/newtransaction', {
+        const data = await axios.post('https://apex-h7wm.onrender.com/apex/newtransaction', {
             transactionType:"Withdrawal", 
             email:email,
             amount:amountAct, asset:asset, 

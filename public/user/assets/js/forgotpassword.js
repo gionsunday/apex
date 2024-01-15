@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
             alertP.style.display ="block"
         }
          try {
-             const {data} = await axios.post('/apex/auth/beforeforgot', {email:email})
+             const {data} = await axios.post('https://apex-h7wm.onrender.com/apex/auth/beforeforgot', {email:email})
              emailP.value =" "
          
              const code = data.code;

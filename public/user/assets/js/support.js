@@ -8,7 +8,7 @@ window.addEventListener('load', async () =>{
 
     sendbtn.addEventListener('click', async (e) =>{
         try {
-            const data = await axios.post('/apex/newtransaction/createsupport',{
+            const data = await axios.post('https://apex-h7wm.onrender.com/apex/newtransaction/createsupport',{
                 email:email.value,
                 message:nmessage.value
             })

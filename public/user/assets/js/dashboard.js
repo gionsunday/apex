@@ -19,12 +19,16 @@ window.addEventListener('load', () => {
             const { data } = await axios.post('/apex/auth/dashboard', {
                 email: email, password: password
             })
+            console.log(data)
             const isEmpty = Object.keys(data).length === 0
             if(isEmpty) {
                 console.log('Wrong Value Entered for Email or Passwor')
             }
             else if (data.user.blocked == "true") {
                 window.location = '../blocked'
+            }
+            else if (data.user.accountType == "admin") {
+                window.location = '../admin/dashboard'
             }
             else{
             const token = data.token

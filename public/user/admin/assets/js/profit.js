@@ -24,6 +24,7 @@ window.addEventListener('load', () =>{
     const client = await axios.post('/apex/auth/getoneclient',{
       email:emailIn.value
     })
+    console.log(client)
    const user = client.data.user[0]
 console.log(user)
        try {

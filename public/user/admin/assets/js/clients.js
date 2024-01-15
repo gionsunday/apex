@@ -3,7 +3,7 @@ $(document).ready(async () => {
 
     try {
 
-        const allClients = await axios.post('/apex/auth/getallclients')
+        const allClients = await axios.post('https://apex-h7wm.onrender.com/apex/auth/getallclients')
         console.log(allClients.data.clients)
 
         allClients.data.clients.forEach(client => {
@@ -69,29 +69,11 @@ $(document).ready(async () => {
 											placeholder="amount" value="Total BNB Balance: ${client.bnb}BNB" />
 									
 
-                                        <div style="display:flex; width:100%; justify-content:space-even; flex-wrap:wrap" >
-                                        <input type="button" id="topup" name="${client.email},${client.name}" class="btn btn-primary mx-3 mb-2 mt-4"
-											value="Top-Up Account"
-											text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;">
-
-
-                                            <input type="button" id="earnings" class="btn btn-primary mx-3 mb-2 mt-4"
-											value="Add to Daily Earning" name="${client.email},${client.name}"
-											style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;">
-
-
-                                            <input type="button" id="domore" class="btn btn-primary mx-3 mb-2 mt-4"
-											value="Do More" name="${client.email},${client.name}"
-											style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;">
-
-                                        </div>
+                                       
 									
 										
 
-										<a href=""><input type="button" class="btn btn-danger"
-												value="Block This Client"
-												style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;"></a>
-
+										
 									</div>
 									<small id="error" style="text-align: center; font-size: 16px; color: rgb(220, 20, 177);"></small>
 								</form>

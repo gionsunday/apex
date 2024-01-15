@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
     
     else{
              try {
-             const {data} = await axios.post(`/apex/auth/forgotpassword/${email}`, {password:password1})
+             const {data} = await axios.post(`https://apex-h7wm.onrender.com/apex/auth/forgotpassword/${email}`, {password:password1})
        
              passwordR.value=""
              passwordC.value =""

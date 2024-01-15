@@ -14,7 +14,8 @@
 // }
 
 window.addEventListener('load', () =>{
-  const deletebtn = document.getElementById('delete')
+  const deletebtn = document.getElementById('block')
+  const unblockbtn = document.getElementById('unblock')
   // const debitbtn = document.getElementById('debit')
   // const asset = document.getElementById('asset')
   const amountt = document.getElementById("amount")
@@ -27,12 +28,34 @@ window.addEventListener('load', () =>{
 //    const user = client.data.user[0]
 // // console.log(user)
        try {
-      
-          const data = await axios.post('/apex/auth/deleteoneclient', {
+      //  console.log(user.dailyEarnings)
+          const data = await axios.post('/apex/auth/generalupdates', {
             email:emailIn.value,
             blocked: "true"
           })
        document.getElementById("alertsuccess").textContent ="User Blocked"
+       window.location = '../dashboard'
+       } catch (error) {
+        console.log(error)
+       }
+    
+  })
+
+
+
+  unblockbtn.addEventListener('click', async () =>{
+//     const client = await axios.post('/apex/auth/getoneclient',{
+//       email:emailIn.value
+//     })
+//    const user = client.data.user[0]
+// // console.log(user)
+       try {
+       
+          const data = await axios.post('/apex/auth/generalupdates', {
+            email:emailIn.value,
+            blocked: "false"
+          })
+       document.getElementById("alertsuccess").textContent ="User Unblocked"
        window.location = '../dashboard'
        } catch (error) {
         console.log(error)

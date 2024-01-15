@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
 
       
             try {
-                const {data} = await axios.post('/apex/auth/register/accountactivation', {
+                const {data} = await axios.post('https://apex-h7wm.onrender.com/apex/auth/register/accountactivation', {
                  name:name, email:email,password:password, regTime:date })
 
                  window.location ="../redirect"

@@ -18,7 +18,7 @@ window.addEventListener('load', async function () {
     console.log('no token')
   }
   try {
-    const data = await axios.post('/apex/auth/login', {
+    const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/login', {
       email, password,
       Headers: {
         Authorization: `Bearer ${token}`,
@@ -322,7 +322,7 @@ window.addEventListener('load', async function () {
       e.preventDefault()
       try {
         console.log(email)
-        const data = await axios.post('/apex/auth/generalupdates',{
+        const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/generalupdates',{
           email:email,
           usdt: (totalAvaliableBalance + capital + dailyEarnings),
           capital:0,

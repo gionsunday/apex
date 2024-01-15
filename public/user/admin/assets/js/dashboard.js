@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
      
    }
     try {
-      const {data} = await axios.post('/apex/auth/dashboard', {
+      const {data} = await axios.post('https://apex-h7wm.onrender.com/apex/auth/dashboard', {
       email:email,password:password
      })
      const isEmpty = Object.keys(data).length === 0

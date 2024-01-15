@@ -24,7 +24,7 @@ form.addEventListener('submit', (e) => {
      console.log('no token')
      }
      try {
-       const data = await axios.post('/apex/auth/login', {
+       const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/login', {
          email, password,
          Headers:{
           Authorization:  `Bearer ${token}`,

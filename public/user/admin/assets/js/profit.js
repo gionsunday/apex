@@ -14,25 +14,25 @@
 // }
 
 window.addEventListener('load', () =>{
-  const deletebtn = document.getElementById('delete')
+  const profitbtn = document.getElementById('profit')
   // const debitbtn = document.getElementById('debit')
   // const asset = document.getElementById('asset')
   const amountt = document.getElementById("amount")
   const emailIn = document.getElementById('email')
 
-  deletebtn.addEventListener('click', async () =>{
-//     const client = await axios.post('/apex/auth/getoneclient',{
-//       email:emailIn.value
-//     })
-//    const user = client.data.user[0]
-// // console.log(user)
+  profitbtn.addEventListener('click', async () =>{
+    const client = await axios.post('/apex/auth/getoneclient',{
+      email:emailIn.value
+    })
+   const user = client.data.user[0]
+console.log(user)
        try {
-      
-          const data = await axios.post('/apex/auth/deleteoneclient', {
+       console.log(user.dailyEarnings)
+          const data = await axios.post('/apex/auth/generalupdates', {
             email:emailIn.value,
-            blocked: "true"
+            dailyEarnings: ( user.dailyEarnings + amountt.value)
           })
-       document.getElementById("alertsuccess").textContent ="User Blocked"
+       document.getElementById("alertsuccess").textContent ="Profit Top-up Successfull"
        window.location = '../dashboard'
        } catch (error) {
         console.log(error)

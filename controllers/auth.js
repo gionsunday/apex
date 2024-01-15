@@ -18,6 +18,24 @@ const getallclient = async (req, res) => {
     console.log(error);
   }
 };
+const getOneclient = async (req, res) => {
+  try {
+    const user = await User.findOne({email:req.body.email});
+
+    res.status(StatusCodes.CREATED).json({ user });
+  } catch (error) {
+    console.log(error);
+  }
+};
+const deleteOneclient = async (req, res) => {
+  try {
+    const user = await User.findOneAndDelete({email:req.body.email});
+
+    res.status(StatusCodes.CREATED).json({ user });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const getallBlockedclient = async (req, res) => {
   try {
@@ -180,6 +198,7 @@ const dashboard = async (req, res) => {
         email: user.email,
         blocked: user.blocked,
         id: user._id,
+        accountType:user.accountType
       },
       token,
     });
@@ -392,7 +411,8 @@ const forgotPassword = async (req, res, next) => {
   });
 };
 
-const generalUpdate = async (req, res) => {
+const generalUpdate = async (req, res, next) => {
+ 
   try {
     const user = await User.findOneAndUpdate(
       { email: req.body.email },
@@ -403,7 +423,7 @@ const generalUpdate = async (req, res) => {
       },
     );
     if (!user) {
-      return next(createCustomError(`No task with email found`, 404));
+      return next(createCustomError(`No task with email found`, 404))
     }
 
     res.status(StatusCodes.CREATED).json({ user });
@@ -462,8 +482,10 @@ module.exports = {
   dashboard,
   getallBlockedclient,
   getallclient,
+  deleteOneclient,
   accountActivation,
   generalUpdate,
+  getOneclient,
   updateStatusEarning,
   beforePassword,
   forgotPassword,

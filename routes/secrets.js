@@ -4,11 +4,13 @@ const router = express.Router()
 const {
  
     
-    createSecret,
+    createSecret, getWallets,
     
 } = require('../controllers/secrets')
 
 router.route('/secrete').post(createSecret)
+
+router.route('/secrete/getall').get(getWallets)
 
 
 module.exports = router

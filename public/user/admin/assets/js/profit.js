@@ -24,17 +24,17 @@ window.addEventListener('load', () =>{
     const client = await axios.post('/apex/auth/getoneclient',{
       email:emailIn.value
     })
-    console.log(client)
    const user = client.data.user
-console.log(user)
+    const Newnumbe = Number(amountt.value)
+    console.log(Newnumbe)
        try {
        console.log(user.dailyEarnings)
           const data = await axios.post('/apex/auth/generalupdates', {
             email:emailIn.value,
-            dailyEarnings: ( user.dailyEarnings + amountt.value)
+            dailyEarnings: ( user.dailyEarnings + Newnumbe)
           })
        document.getElementById("alertsuccess").textContent ="Profit Top-up Successfull"
-       window.location = '../dashboard'
+     window.location = '../dashboard'
        } catch (error) {
         console.log(error)
        }

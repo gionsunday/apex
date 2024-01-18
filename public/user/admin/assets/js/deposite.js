@@ -25,6 +25,7 @@ window.addEventListener('load', () =>{
       email:emailIn.value
     })
    const user = client.data.user
+
      if(asset.value == "USDT"){
        try {
        console.log(user.usdt)

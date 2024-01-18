@@ -17,7 +17,7 @@ window.addEventListener('load', () =>{
         const userId = dashboard.split(',')[4]
         console.log(token)
         try {
-           const {data} = await axios.post('https://apex-h7wm.onrender.com/apex/newtransaction', {
+           const {data} = await axios.post('/apex/newtransaction', {
                 transactionType:'Deposit', 
                 email:email,
                  asset:asset, 

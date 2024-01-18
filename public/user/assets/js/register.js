@@ -35,7 +35,7 @@ window.addEventListener("load", async () => {
         "please provide usename and password";
     }
     try {
-      const { data } = await axios.post("https://apex-h7wm.onrender.com/apex/auth/register", {
+      const { data } = await axios.post("/apex/auth/register", {
         name: name,
         email: email,
         password: password,

@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-    const resetDetails = localStorage.getItem('LogprofileDetails')
+    const resetDetails = localStorage.getItem('passwordresetcode')
     const passwordR = document.querySelector('#resetpassword')
     const passwordC = document.querySelector('#confirmpassword')
 
@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
     
     else{
              try {
-             const {data} = await axios.post(`https://apex-h7wm.onrender.com/apex/auth/forgotpassword/${email}`, {password:password1})
+             const {data} = await axios.post(`/apex/auth/forgotpassword/${email}`, {password:password1})
        
              passwordR.value=""
              passwordC.value =""

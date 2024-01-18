@@ -48,6 +48,7 @@ window.addEventListener('load', () => {
             }
         } catch (error) {
             localStorage.removeItem('token')
+            console.log(error)
             console.log('Wrong Value Entered for Email or Password')
             setTimeout(() => {
 

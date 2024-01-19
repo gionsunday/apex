@@ -10,10 +10,6 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-
-    <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="./swiper-bundle.min.css" />
-
     <!-- === IMPORT FOMTS ==== -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,700;1,600&family=Space+Grotesk:wght@300;400;500;700&display=swap");
@@ -27,7 +23,7 @@
     <header class="main">
       <nav class="container">
         <div class="logo-area">
-          <h2><img src="./user/assets/img/uploads/apex-white.jpg" style="width: 120px; height: 50px;" alt="Logo"></h2>
+          <h2>Apex Corporate Finance</h2>
         </div>
 
         <div class="header-right">
@@ -48,20 +44,28 @@
         </div>
       </nav>
     </header>
+    <!-- ===== BANNER  AREA ===== -->
+    <section class="banner about-banner">
+      <div class="container banner-area">
+        <h2>About Us</h2>
+      </div>
+    </section>
 
-    <!--==================== #HERO PAGE============== -->
-    <section class="hero">
-      <div class="container hero-area">
-        <div class="hero-gradient"></div>
-        <div class="hero-text">
-          <h2>
-            Join thousands of satisfied investors who have unlocked their
-            financial potential with Us.
-          </h2>
-          <div class="button hero-btn">
-            <a href="./user/" class="btn">Register</a>
-            <a href="./user//login/" class="btn-2">Login</a>
-          </div>
+    <!-- ===THE ABOUT US SECTION  -->
+    <section class="about" id="about">
+      <div class="container about-area">
+        <div class="about-text">
+          <h2>Grow Your Capital With Our Unique Strategy</h2>
+          <p>
+            We are a dynamic group whose main focus is to provide our clients
+            with the best possible service. We apply a systematic and
+            quantitative approach to investment management, with the aim of
+            generating high-quality and diversifying alpha for its clients’
+            portfolios.
+          </p>
+        </div>
+        <div class="about-img">
+          <img src="./images/aboutimg.jpg" alt="" />
         </div>
       </div>
     </section>
@@ -141,7 +145,7 @@
         <h2>We are actively investing in the following sectors</h2>
         <div class="sectors-card-container">
           <div class="sector-card">
-            <img src="./images/icon _currency exchange_.png" alt="" />
+            <img src="./images/🦆 icon _currency exchange_.png" alt="" />
             <h3>Foreign Exchange</h3>
             <p>
               Forex is a redistributed global market where all the world’s
@@ -152,7 +156,7 @@
             </p>
           </div>
           <div class="sector-card">
-            <img src="./images/icon _Bitcoin Cryptocurrency_.png" alt="" />
+            <img src="./images/🦆 icon _Bitcoin Cryptocurrency_.png" alt="" />
             <h3>Real Estate and Management</h3>
             <p>
               Cryptocurrencies have become the go-to investment option for many,
@@ -162,7 +166,7 @@
             </p>
           </div>
           <div class="sector-card">
-            <img src="./images/icon _Ethereum Cryptocurrency_.png" alt="" />
+            <img src="./images/🦆 icon _Ethereum Cryptocurrency_.png" alt="" />
             <h3>Crypto Exchange & Trading</h3>
             <p>
               We are one of the largest real estate managers globally committed
@@ -170,227 +174,6 @@
               With over 100 real estate professionals in 12 locations worldwide,
               our scale drives credibility and deal flow.
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =======  CHARTS AREA ========= -->
-    <!-- <section class="charts" id="charts">
-      <div class="container charts"></div>
-    </section> -->
-
-    <!-- ======= PRICES AREA ========= -->
-    <section class="prices" id="prices">
-      <h2>Live Exchange Prices</h2>
-      <div class="container prices-area">
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container">
-          <div class="tradingview-widget-container__widget"></div>
-          <div class="tradingview-widget-copyright">
-            <a
-              href="https://www.tradingview.com/"
-              rel="noopener nofollow"
-              target="_blank"
-              ><span class="blue-text"
-                >Track all markets on TradingView</span
-              ></a
-            >
-          </div>
-          <script
-            type="text/javascript"
-            src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js"
-            async
-          >
-              {
-              "width": 1000,
-              "height": 490,
-              "defaultColumn": "overview",
-              "screener_type": "crypto_mkt",
-              "displayCurrency": "USD",
-              "colorTheme": "light",
-              "locale": "en",
-              "isTransparent": false
-            }
-          </script>
-        </div>
-        <!-- TradingView Widget END -->
-      </div>
-    </section>
-
-    <!-- ======= PLANS AREA ========= -->
-    <section class="plans" id="plans">
-      <div class="container plans-area">
-        <h2>Investment Plans</h2>
-        <div class="plans-card-container">
-          <div class="plans-card">
-            <h3>Beginner Plan</h3>
-            <span>$200 - $3,999</span>
-            <ul>
-              <li>
-                <img src="./images/Tag.png" />0.99% daily profit every 6 days
-              </li>
-              <li>
-                <img src="./images/Add user.png" />Referral commissions: 5%
-              </li>
-              <li>
-                <img src="./images/Shopping basket.png" />Duration: 40 days
-              </li>
-              <li><img src="./images/Security.png" />Investment Security</li>
-              <li>
-                <img src="./images/Add database.png" />24/7 Premium support
-              </li>
-            </ul>
-            <a href="register.html">Invest Now</a>
-          </div>
-          <div class="plans-card">
-            <h3>Standard Plan</h3>
-            <span>$4,000 - $14,999</span>
-            <ul>
-              <li>
-                <img src="./images/Tag.png" />1.5% daily profit every 6 days
-              </li>
-              <li>
-                <img src="./images/Add user.png" />Referral commissions: 5%
-              </li>
-              <li>
-                <img src="./images/Shopping basket.png" />Duration: 30 days
-              </li>
-              <li><img src="./images/Security.png" />Investment Security</li>
-              <li>
-                <img src="./images/Add database.png" />24/7 Premium support
-              </li>
-            </ul>
-            <a href="register.html">Invest Now</a>
-          </div>
-          <div class="plans-card">
-            <h3>Premium Plan</h3>
-            <span>$15,000 - $39,999</span>
-            <ul>
-              <li>
-                <img src="./images/Tag.png" />2.5% daily profit every 6 days
-              </li>
-              <li>
-                <img src="./images/Add user.png" />Referral commissions: 5%
-              </li>
-              <li>
-                <img src="./images/Shopping basket.png" />Duration: 25 days
-              </li>
-              <li><img src="./images/Security.png" />Investment Security</li>
-              <li>
-                <img src="./images/Add database.png" />24/7 Premium support
-              </li>
-            </ul>
-            <a href="register.html">Invest Now</a>
-          </div>
-          <div class="plans-card">
-            <h3>Golden Plan</h3>
-            <span>$40,000 - $149,999</span>
-            <ul>
-              <li>
-                <img src="./images/Tag.png" />2.5% daily profit every 6 days
-              </li>
-              <li>
-                <img src="./images/Add user.png" />Referral commissions: 5%
-              </li>
-              <li>
-                <img src="./images/Shopping basket.png" />Duration: 15 days
-              </li>
-              <li><img src="./images/Security.png" />Investment Security</li>
-              <li>
-                <img src="./images/Add database.png" />24/7 Premium support
-              </li>
-            </ul>
-            <a href="register.html">Invest Now</a>
-          </div>
-          <div class="plans-card">
-            <h3>Enthusiast Plan</h3>
-            <span>$15,000 - Unlimited</span>
-            <ul>
-              <li>
-                <img src="./images/Tag.png" />3.0% daily profit every 6 days
-              </li>
-              <li>
-                <img src="./images/Add user.png" />Referral commissions: 5%
-              </li>
-              <li>
-                <img src="./images/Shopping basket.png" />Duration: 15 days
-              </li>
-              <li><img src="./images/Security.png" />Investment Security</li>
-              <li>
-                <img src="./images/Add database.png" />24/7 Premium support
-              </li>
-            </ul>
-            <a href="register.html">Invest Now</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--==================== TESTIMONIAL ====================-->
-    <section class="testimonial section" id="testimonial">
-      <div class="container">
-        <span class="section-subtitle">Reviews</span>
-        <h2 class="section-title">What others are saying <span>.</span></h2>
-
-        <div class="container-box">
-          <div class="testimonies swiper">
-            <div class="testimonies-content swiper-wrapper">
-              <div class="slide swiper-slide">
-                <img src="./images/george.jpg" alt="" class="image" />
-                <p>
-                  “Always wanted a trusted platform to let me put my money to
-                  good use, Apex Corporate Finance Limited came through
-                </p>
-
-                <!-- <i class="bx bxs-quote-alt-left quote-icon"></i> -->
-                <br />
-
-                <div class="details">
-                  <span class="name">George</span>
-                  <span class="job">Entrepreneur</span>
-                </div>
-              </div>
-
-              <div class="slide swiper-slide">
-                <img src="./images/johnson.jpg" alt="" class="image" />
-                <p>
-                  “Need a trusted platform and guaranteed returns? Elite Finance
-                  Group LTD, it is”.
-                </p>
-
-                <!-- <i class="bx bxs-quote-alt-left quote-icon"></i> -->
-                <br />
-
-                <div class="details">
-                  <span class="name">Johnson</span>
-                  <span class="job">Accountant</span>
-                </div>
-              </div>
-
-              <div class="slide swiper-slide">
-                <img src="./images/annabel.jpg" alt="" class="image" />
-                <p>
-                  “It took me a lot of courage to hit the invest button, but
-                  that was a choice i would never regret”.
-                </p>
-
-                <!-- <i class="bx bxs-quote-alt-left quote-icon"></i> -->
-                <br />
-
-                <div class="details">
-                  <span class="name">Annabel</span>
-                  <span class="job">Student</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-button-next bit">
-              <!-- <i class="bx bx-chevron-right"></i> -->
-            </div>
-            <div class="swiper-button-prev bit">
-              <!-- <i class="bx bx-chevron-left"></i> -->
-            </div>
           </div>
         </div>
       </div>
@@ -425,11 +208,6 @@
       </div>
     </section>
 
-    <!-- ===THE ABOUT US SECTION  -->
-    <!-- <section class="about" id="about">
-      <div class="container about-area"></div>
-    </section> -->
-
     <!-- ===THE CTA SECTION  -->
     <section class="cta" id="cta">
       <div class="container cta-area">
@@ -440,22 +218,6 @@
           weekly.
         </p>
         <a href="" class="btn">Invest Now!</a>
-      </div>
-    </section>
-
-    <!-- ===THE CONTACT US SECTION  -->
-    <section class="contact" id="contact">
-      <div class="container contact-area">
-        <h2>Contact Us</h2>
-        <p>
-          Get in touch with us and we will respond almost immediately or you can
-          use our WhatsApp live chat
-        </p>
-        <form action="mailto:anekeiifeanyi@gmail.com">
-          <input type="email" placeholder="email" />
-          <input type="text" placeholder="message" />
-          <button type="submit" class="btn">Send message</button>
-        </form>
       </div>
     </section>
 
@@ -530,7 +292,6 @@
       <img src="./images/chevronup.png" alt="" />
     </a>
 
-    
     <!-- ==== GOOGLE TRANSLATE ELEMENT ====== -->
     <div id="google_translate_element"></div>
 
@@ -550,9 +311,6 @@
 
     <!--=============== SCROLLREVEAL ===============-->
     <script src="./scrollreveal.min.js"></script>
-
-    <!--=============== SWIPER JS ===============-->
-    <script src="./swiper-bundle.min.js"></script>
 
     <!-- ===LINKING THE MAIN JAVASCRIPT -->
     <script src="./app.js"></script>

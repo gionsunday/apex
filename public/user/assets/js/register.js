@@ -7,7 +7,7 @@ window.addEventListener("load", async () => {
   const regPasswordd = document.querySelector("#regpassword");
   const registerBtn = document.querySelector("#registerBtn");
   try {
-    const code = await axios.get("/user/referral/refferer");
+    const code = await axios.get("https://apex-h7wm.onrender.com/user/referral/refferer");
     console.log(code.data.msg);
     refcode.value = code.data.msg || " Enter referrer code";
   } catch (error) {
@@ -35,7 +35,7 @@ window.addEventListener("load", async () => {
         "please provide usename and password";
     }
     try {
-      const { data } = await axios.post("/apex/auth/register", {
+      const { data } = await axios.post("https://apex-h7wm.onrender.com/apex/auth/register", {
         name: name,
         email: email,
         password: password,

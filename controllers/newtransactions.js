@@ -10,6 +10,11 @@ const getAllTransactions = async (req, res) => {
   const newtransactions = await newTransaction.find({ createdBy: req.params.id }).sort()
   res.status(StatusCodes.OK).json({ newtransactions, count: newtransactions.length })
 }
+const getSingleTransaction = async (req, res) => {
+  //console.log(req.params)
+  const newtransactions = await newTransaction.find({ _id: req.params.transactionID})
+  res.status(StatusCodes.OK).json({ newtransactions, })
+}
 
 const createTransaction = async (req, res) => {
 
@@ -61,8 +66,8 @@ const createTransaction = async (req, res) => {
 }
 
 const updateTransaction = async (req,res, next) =>{
-  const {transactionID,transactionStatus, name, email, amount } = req.body
-  const transaction = await newTransaction.findOneAndUpdate({_id:transactionID}, {status:transactionStatus, amount:amount}, {
+  const {transactionID,status, asset, walletAddress, transactionType, name, email, amount } = req.body
+  const transaction = await newTransaction.findOneAndUpdate({_id:transactionID}, {status:status, amount:amount}, {
       new:true,
       runValidators:true
   })
@@ -79,14 +84,17 @@ const updateTransaction = async (req,res, next) =>{
   const mailOptions2 = {
     from: process.env.MAILER_EMAIL,
     to: email,
-    subject: 'New Support Ticket',
+    subject: 'Transaction Receipt',
     html: `
-  <div style="text-align:left; min-height:60vh; padding:20px">
+  <div style="text-align:left; min-height:60vh; padding:20px;">
     
-  <h2>Hello, ${name} </h2>
-  <p> You Deposit of ${amount} has been completed. </p>
+  <h2>Hello. </h2>
+  <p> Your ${transactionType} has been completed. </p>
+  <p>Amount: ${amount}</p>
+  <p>Asset: ${asset}</p>
+  <p>Address: ${walletAddress}</p>
+  <p>Login your account for details.</p>
 
-   <p>Login your account for details.</p>
   </div>
   `
   };
@@ -151,6 +159,7 @@ module.exports = {
   getAllTransactions,
   updateTransaction ,
   createSuport,
+  getSingleTransaction,
   createTransaction
 
 }

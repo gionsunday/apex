@@ -49,7 +49,7 @@ const createTransaction = async (req, res) => {
 
    <p> Please check your wallet to confirm transaction. Then login admin top-up or debit the client with amount received.</p>
 
-   <button style="background-color:#3e2280; color: white; padding:4px"> <a href="https://apexcorporategroup.com">Goto Admin Dashboard</a> </button>
+   <button style="background-color:#3e2280; color: white; padding:4px"> <a href="https://apexcorporatefinanceltd.com/user">Goto Admin Dashboard</a> </button>
    
 
 

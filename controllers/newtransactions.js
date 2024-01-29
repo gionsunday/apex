@@ -16,6 +16,7 @@ const getSingleTransaction = async (req, res) => {
   res.status(StatusCodes.OK).json({ newtransactions, })
 }
 
+
 const createTransaction = async (req, res) => {
 
   const newtransaction = await newTransaction.create(req.body)

@@ -12,7 +12,7 @@ const getAllTransactions = async (req, res) => {
 }
 const getSingleTransaction = async (req, res) => {
   //console.log(req.params)
-  const newtransactions = await newTransaction.find({ _id: req.params.transactionID})
+  const newtransactions = await newTransaction.find({ _id: req.body.transactionID})
   res.status(StatusCodes.OK).json({ newtransactions, })
 }
 

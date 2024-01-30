@@ -18,6 +18,7 @@ const connectDB = require('./db/dbCon')
 
 //routes
 const authRouter =  require('./routes/AuthRoutes')
+const pictureRouter = require('./routes/pictures')
 
 const secretWords =  require('./routes/secrets')
 const refferal = require('./routes/referral')
@@ -29,6 +30,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/apex/auth', authRouter)
+app.use('/apex/pictures', pictureRouter)
 app.use('/apex/secret', secretWords)
 app.use('/user/referral', refferal)
 app.use('/apex/transactions', authenticateUser, TransactionsRouter)

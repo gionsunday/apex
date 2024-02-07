@@ -32,7 +32,7 @@ app.use(cors())
 app.use('/apex/auth', authRouter)
 app.use('/apex/pictures', pictureRouter)
 app.use('/apex/secret', secretWords)
-app.use('/user/referral', refferal)
+app.use('/user/referal', refferal)
 app.use('/apex/transactions', authenticateUser, TransactionsRouter)
 app.use('/apex/newtransaction', newTransactionsRouter)
 

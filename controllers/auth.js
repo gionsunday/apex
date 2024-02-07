@@ -136,7 +136,7 @@ const accountActivation = async (req, res) => {
         <p>Welcome to the investment company for smart investors, With profits and bonus that beats any other</p>
   
        
-        <p>  For assistance Email Us at <a href="mailto:contact@apexcorporatefinanceltd.com">contact@apexcorporatefinanceltd.com</a></p>
+        <p>  For assistance Email Us at <a href="contact@fox-funds.com"> or contact.Apex Corporates@gmail.com</a></p>
         </div>
         </body>
         `,
@@ -291,8 +291,10 @@ const login = async (req, res) => {
       balance: user.totalBalance,
       balanceIn: user.balanceInc,
       earnigs: user.totalEarnings,
-      deposite: user.totaldeposite,
+      totalDeposite: user.totaldeposite,
+      totalWithdraw : user.totalWithdraw,
       capital: user.capital,
+      withdrawableBalance: user.withdrawableBalance,
       dailyEarnings: user.dailyEarnings,
       btc: user.btc,
       usdt: user.usdt,
@@ -396,7 +398,7 @@ const forgotPassword = async (req, res, next) => {
       <div style="text-align:left; min-height:60vh; padding:20px">
       <h1>Apex Corporates</h1>
        <h2>Your password was changed <br/></h2>
-       <p> If this is not your doing, contact us contact@apexcorporatefinanceltd.com</p>
+       <p> If this is not your doing, contact us Apex Corporates@hotmail.com</p>
        
     
     

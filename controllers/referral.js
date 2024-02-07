@@ -2,7 +2,7 @@ var refferal_code = "";
 const referral = (req, res) => {
   console.log(req.params);
   refferal_code = req.params.referalcode;
-  return res.redirect("https://apexcorporatefinanceltd.com/user");
+  return res.redirect("https://apexcorporatefinanceltd.com/accounts/user");
 
   //   res.redirect("<script> window.location="https://apex.onrender.com/home"<script/>")
 };

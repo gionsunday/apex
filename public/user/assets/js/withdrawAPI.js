@@ -31,7 +31,7 @@ window.addEventListener('load', ()=>{
 
           localStorage.setItem("transaction", transaction)
          
-            window.location = "../preHistory"
+            window.location = "../prehistory"
         } catch (error) {
             console.log(error)
             document.getElementById("error").textContent = 'Can not complete transaction at the moment, try again later'

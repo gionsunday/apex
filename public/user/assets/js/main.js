@@ -26,10 +26,10 @@ window.addEventListener("load", async function () {
     if (!data) {
       console.log("Wrong email or password");
     }
-    console.log(data.data.accounts.balance);
+    //console.log(data.data.accounts);
     const user = data.data.user;
     const accounts = data.data.accounts;
-    console.log(user.name);
+   // console.log(user.name);
     const name = user.name;
     const notifications = user.notifications;
     const referalLink = user.referlink;
@@ -46,6 +46,8 @@ window.addEventListener("load", async function () {
     const referalcode = user.referalCode;
     const status = accounts.statu;
     const wallet = accounts.connectWallet;
+    const totaldeposite = accounts.totalDeposite;
+    const totalwithdraw = accounts.balanceIn;
     const capital = accounts.capital;
     const dailyEarnings = accounts.dailyEarnings;
     const earnings = accounts.earnigs;
@@ -59,14 +61,14 @@ window.addEventListener("load", async function () {
     const depositeAmount = accounts.depositeAmount;
 
     activeplans.push(activeplan);
-    console.log(capital);
-    const Ebtc = Number(btc) * 42678.0;
+   // console.log(capital);
+    const Ebtc = Number(btc) * 42777;
     equBtc.textContent = "$" + Number(Ebtc).toFixed(2);
     const Eusdt = Number(usdt) * 1;
     equUsdt.textContent = "$" + Number(Eusdt).toFixed(2);
-    const Ebnb = Number(bnb) * 304.67;
+    const Ebnb = Number(bnb) * 306;
     equBnb.textContent = "$" + Number(Ebnb).toFixed(2);
-    const Eeth = Number(eth) * 2513.6;
+    const Eeth = Number(eth) * 2294;
     equEth.textContent = "$" + Number(Eeth).toFixed(2);
 
     const totalAvaliableBalance = Number(
@@ -76,7 +78,7 @@ window.addEventListener("load", async function () {
     const totalAvaliableBalanced = Number(Ebtc + Eusdt + Ebnb + Eeth).toFixed(
       2,
     );
-    const totaldeposite = Number(Ebtc + Eusdt + Ebnb + Eeth).toFixed(2);
+    //const totaldeposite = Number(Ebtc + Eusdt + Ebnb + Eeth).toFixed(2);
     profileDetails.push(name, UserEmail, totalAvaliableBalanced);
 
     localStorage.setItem("LogprofileDetails", profileDetails);
@@ -89,10 +91,10 @@ window.addEventListener("load", async function () {
 
     //assets
     const initialAsset = "0.00";
-    document.querySelector("#btc").textContent = btc || initialAsset;
-    document.querySelector("#usdt").textContent = usdt || initialAsset;
-    document.querySelector("#eth").textContent = eth || initialAsset;
-    document.querySelector("#bnb").textContent = bnb || initialAsset;
+    document.querySelector("#btc").textContent = btc.toFixed(2) || initialAsset;
+    document.querySelector("#usdt").textContent = usdt.toFixed(2) || initialAsset;
+    document.querySelector("#eth").textContent = eth.toFixed(2) || initialAsset;
+    document.querySelector("#bnb").textContent = bnb.toFixed(2) || initialAsset;
 
     ///avaliableBalance
     const avaliableBalance = document.createElement("h1");
@@ -114,7 +116,7 @@ window.addEventListener("load", async function () {
 
     const profSpan1 = document.createElement("span");
     profSpan1.classList.add("text-muted");
-    profSpan1.textContent = " Since last week";
+    profSpan1.textContent = " Since: " + timeT;
     divBalance.appendChild(spanBalance);
     spanBalance.appendChild(balanceT);
     divBalance.appendChild(profSpan1);
@@ -126,7 +128,7 @@ window.addEventListener("load", async function () {
     const totalBonus = document.createElement("h1");
     totalBonus.classList.add("mt-1");
     totalBonus.classList.add("mb-3");
-    totalBonus.textContent = `$${totalBonuss}`;
+    totalBonus.textContent = `$${totalBonuss.toFixed(2)}`;
     document.getElementById("bonuses").appendChild(totalBonus);
 
     const divBonus = document.createElement("div");
@@ -143,7 +145,7 @@ window.addEventListener("load", async function () {
     const lineBreak1 = document.createElement("br");
     const bonusSpan1 = document.createElement("span");
     bonusSpan1.classList.add("text-muted");
-    bonusSpan1.textContent = `Deposit bonus: $${depositeBonus}`;
+    bonusSpan1.textContent = `Signup bonus: $${signupBonus}`;
     bonusSpan1.appendChild(lineBreak1);
     divBonus.appendChild(spanBonus1);
     spanBonus1.appendChild(bonus1);
@@ -192,7 +194,7 @@ window.addEventListener("load", async function () {
     const withdrawableBalance = document.createElement("h1");
     withdrawableBalance.classList.add("mt-1");
     withdrawableBalance.classList.add("mb-3");
-    withdrawableBalance.textContent = `$${withdrawableBalanced}`;
+    withdrawableBalance.textContent = `$${withdrawableBalanced.toFixed(2)}`;
     document
       .getElementById("withdrawalbalbalance")
       .appendChild(withdrawableBalance);
@@ -225,7 +227,7 @@ window.addEventListener("load", async function () {
     const availabledeposite = document.createElement("h1");
     availabledeposite.classList.add("mt-1");
     availabledeposite.classList.add("mb-3");
-    availabledeposite.textContent = `$${totaldeposite}`;
+    availabledeposite.textContent = `$${totaldeposite.toFixed(2)}`;
     document.getElementById("deposite").appendChild(availabledeposite);
     const divdeposite = document.createElement("div");
     divdeposite.classList.add("mb-0");
@@ -252,7 +254,7 @@ window.addEventListener("load", async function () {
     const avaliableEarnings = document.createElement("h1");
     avaliableEarnings.classList.add("mt-1");
     avaliableEarnings.classList.add("mb-3");
-    avaliableEarnings.textContent = "$" + (capital + dailyEarnings);
+    avaliableEarnings.textContent = "$" + (capital + dailyEarnings).toFixed(2);
     document.getElementById("earnings").appendChild(avaliableEarnings);
     const divEarnings = document.createElement("div");
     divEarnings.classList.add("mb-0");
@@ -290,7 +292,7 @@ window.addEventListener("load", async function () {
     cancelledTransactions.classList.add("mt-1");
     cancelledTransactions.classList.add("mb-3");
 
-    completedTransactions.textContent = "$" + deposite;
+    completedTransactions.textContent = "$" + totalwithdraw.toFixed(2);
 
     document.getElementById("transaction").appendChild(completedTransactions);
     document.getElementById("transaction").appendChild(cancelledTransactions);

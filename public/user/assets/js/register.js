@@ -7,7 +7,7 @@ window.addEventListener("load", async () => {
   const regPasswordd = document.querySelector("#regpassword");
   const registerBtn = document.querySelector("#registerBtn");
   try {
-    const code = await axios.get("https://apex-h7wm.onrender.com/user/referral/refferer");
+    const code = await axios.get("/user/referal/refferer");
     console.log(code.data.msg);
     refcode.value = code.data.msg || " Enter referrer code";
   } catch (error) {

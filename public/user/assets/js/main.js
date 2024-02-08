@@ -338,8 +338,9 @@ window.addEventListener("load", async function () {
           // console.log(newusdt);
           const data = await axios.post("https://apex-h7wm.onrender.com/apex/auth/generalupdates", {
             email: email,
-            usdt: newTotalBal,
+            usdt: (usdt + capital),
             capital: 0,
+            withdrawableBalance: (withdrawableBalanced + dailyEarnings), 
             dailyEarnings: 0,
             activePlan: "None",
           });

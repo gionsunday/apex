@@ -1,3 +1,4 @@
+
 window.addEventListener('load', ()=>{
     const transaction = []
     const dashboard = localStorage.getItem('dashboard')
@@ -5,6 +6,7 @@ window.addEventListener('load', ()=>{
     const withdrawBtn = document.querySelector('#withdrawbtn')
     const asset = document.querySelector('#asset').value
     const email = localStorage.getItem("LogprofileDetails").split(',')[1]
+    const whereIn = localStorage.getItem("where")
     
     const userId = dashboard.split(',')[4]
     const amountAct = details.split(',')[0]
@@ -19,8 +21,9 @@ window.addEventListener('load', ()=>{
             email:email,
             amount:amountAct, asset:asset, 
             createdBy: userId, 
+            where: whereIn,
             walletAddress:walletAct })
-          const typeT = data.data.newtransaction.transactionType
+            const typeT = data.data.newtransaction.transactionType
            const  assetT = data.data.newtransaction.asset
            const amount = data.data.newtransaction.amount
            const status=data.data.newtransaction.status

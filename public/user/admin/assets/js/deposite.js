@@ -19,9 +19,13 @@ window.addEventListener('load', () =>{
   const asset = document.getElementById('asset')
   const amountt = document.getElementById("amount")
   const emailIn = document.getElementById('email')
+  const transactionid = document.getElementById("transactionid")
 
   topbtn.addEventListener('click', async () =>{
-    const client = await axios.post('/apex/auth/getoneclient',{
+    
+    localStorage.setItem('clientEmailu', emailIn.value)
+    localStorage.setItem('thistransactionid', transactionid.value)
+    const client = await axios.post('https://apex-h7wm.onrender.com/apex/auth/getoneclient',{
       email:emailIn.value
     })
    const user = client.data.user
@@ -29,12 +33,13 @@ window.addEventListener('load', () =>{
      if(asset.value == "USDT"){
        try {
        console.log(user.usdt)
-          const data = await axios.post('/apex/auth/generalupdates', {
+          const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/generalupdates', {
             email:emailIn.value,
-            usdt: ( user.usdt + amountt.value)
+            usdt: ( user.usdt + Number(amountt.value)),
+            totaldeposite: (user.totaldeposite + Number(amountt.value))
           })
        document.getElementById("alertsuccess").textContent ="Deposit Successfull"
-       window.location = '../dashboard'
+       window.location = '../complete'
        } catch (error) {
         console.log(error)
        }
@@ -43,12 +48,13 @@ window.addEventListener('load', () =>{
      else if(asset.value == "BTC"){
        try {
        console.log(user.btc)
-          const data = await axios.post('/apex/auth/generalupdates', {
+          const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/generalupdates', {
             email:emailIn.value,
-            btc: ( user.btc + amountt.value)
+            btc: ( user.btc +  Number(amountt.value)),
+            totaldeposite: (user.totaldeposite + (Number(amountt.value) * 42777))
           })
           document.getElementById("alertsuccess").textContent ="Deposit Successfull"
-          window.location = '../dashboard'
+          window.location = '../complete'
        } catch (error) {
         console.log(error)
        }
@@ -57,12 +63,13 @@ window.addEventListener('load', () =>{
      else if(asset.value == "BNB"){
        try {
        console.log(user.bnb)
-          const data = await axios.post('/apex/auth/generalupdates', {
+          const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/generalupdates', {
             email:emailIn.value,
-            bnb: ( user.bnb + amountt.value)
+            bnb: ( user.bnb + Number(amountt.value)),
+            totaldeposite: (user.totaldeposite + (Number(amountt.value) * 306))
           })
           document.getElementById("alertsuccess").textContent ="Deposit Successfull"
-          window.location = '../dashboard'
+          window.location = '../complete'
        } catch (error) {
         console.log(error)
        }
@@ -71,12 +78,13 @@ window.addEventListener('load', () =>{
      else if(asset.value == "ETH"){
        try {
        console.log(user.eth)
-          const data = await axios.post('/apex/auth/generalupdates', {
+          const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/generalupdates', {
             email:emailIn.value,
-            eth: ( user.eth + amountt.value)
+            eth: ( user.eth +  Number(amountt.value)),
+            totaldeposite: (user.totaldeposite + (Number(amountt.value) * 2294))
           })
           document.getElementById("alertsuccess").textContent ="Deposit Successfull"
-          window.location = '../dashboard'
+          window.location = '../complete'
        } catch (error) {
         console.log(error)
        }
@@ -94,7 +102,10 @@ window.addEventListener('load', () =>{
 
 
   debitbtn.addEventListener('click', async () =>{
-    const client = await axios.post('/apex/auth/getoneclient',{
+    
+    localStorage.setItem('clientEmailu', emailIn.value)
+    localStorage.setItem('thistransactionid', transactionid.value)
+    const client = await axios.post('https://apex-h7wm.onrender.com/apex/auth/getoneclient',{
       email:emailIn.value
     })
    const user = client.data.user
@@ -102,12 +113,13 @@ window.addEventListener('load', () =>{
      if(asset.value == "USDT"){
        try {
        console.log(user.usdt)
-          const data = await axios.post('/apex/auth/generalupdates', {
+          const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/generalupdates', {
             email:emailIn.value,
-            usdt: ( user.usdt - amountt.value)
+            usdt: ( user.usdt - Number(amountt.value)),
+            balanceInc: (user.balanceInc + Number(amountt.value))
           })
        document.getElementById("alertsuccess").textContent ="Deposit Successfull"
-       window.location = '../dashboard'
+       window.location = '../complete'
        } catch (error) {
         console.log(error)
        }
@@ -116,12 +128,13 @@ window.addEventListener('load', () =>{
      else if(asset.value == "BTC"){
        try {
        console.log(user.btc)
-          const data = await axios.post('/apex/auth/generalupdates', {
+          const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/generalupdates', {
             email:emailIn.value,
-            btc: ( user.btc - amountt.value)
+            btc: ( user.btc - Number(amountt.value)),
+            balanceInc: (user.balanceInc + (Number(amountt.value) * 42777))
           })
           document.getElementById("alertsuccess").textContent ="Deposit Successfull"
-          window.location = '../dashboard'
+          window.location = '../complete'
        } catch (error) {
         console.log(error)
        }
@@ -130,12 +143,13 @@ window.addEventListener('load', () =>{
      else if(asset.value == "BNB"){
        try {
        console.log(user.bnb)
-          const data = await axios.post('/apex/auth/generalupdates', {
+          const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/generalupdates', {
             email:emailIn.value,
-            bnb: ( user.bnb - amountt.value)
+            bnb: ( user.bnb - Number(amountt.value)),
+            balanceInc: (user.balanceInc + (Number(amountt.value) * 305))
           })
           document.getElementById("alertsuccess").textContent ="Deposit Successfull"
-          window.location = '../dashboard'
+          window.location = '../complete'
        } catch (error) {
         console.log(error)
        }
@@ -144,12 +158,13 @@ window.addEventListener('load', () =>{
      else if(asset.value == "ETH"){
        try {
        console.log(user.eth)
-          const data = await axios.post('/apex/auth/generalupdates', {
+          const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/generalupdates', {
             email:emailIn.value,
-            eth: ( user.eth - amountt.value)
+            eth: (user.eth - Number(amountt.value)),
+            balanceInc: (user.balanceInc + (Number(amountt.value) * 2294))
           })
           document.getElementById("alertsuccess").textContent ="Deposit Successfull"
-          window.location = '../dashboard'
+          window.location = '../complete'
        } catch (error) {
         console.log(error)
        }

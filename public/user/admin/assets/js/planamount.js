@@ -34,7 +34,7 @@ window.addEventListener('load', () => {
         stopbtn.value = "Stoping Investment..."
         e.preventDefault();
         console.log(newUser)
-        const {usdt, capital, dailyEarnings, email} = newUser
+        const {usdt, capital, dailyEarnings, withdrawableBalance, email} = newUser
         try {
           const newTotalBal = Number(usdt) + Number(capital) + Number(dailyEarnings)
           console.log(newTotalBal);
@@ -42,7 +42,8 @@ window.addEventListener('load', () => {
           // console.log(newusdt);
           const data = await axios.post("https://apex-h7wm.onrender.com/apex/auth/generalupdates", {
             email: email,
-            usdt: newTotalBal,
+            usdt: (usdt + capital),
+            withdrawableBalance:(withdrawableBalance + dailyEarnings),
             capital: 0,
             dailyEarnings: 0,
             activePlan: "None",

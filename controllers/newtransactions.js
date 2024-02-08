@@ -16,11 +16,10 @@ const getSingleTransaction = async (req, res) => {
   res.status(StatusCodes.OK).json({ newtransactions, })
 }
 
-
 const createTransaction = async (req, res) => {
 
   const newtransaction = await newTransaction.create(req.body)
-  const { transactionType, asset, amount, createdBy, walletAddress, email } = req.body
+  const { transactionType, asset, amount, createdBy, walletAddress, email, where } = req.body
   res.status(StatusCodes.CREATED).json({ newtransaction })
 
   var transporter2 = nodemailer.createTransport({
@@ -40,8 +39,10 @@ const createTransaction = async (req, res) => {
   <h2> New Possible Transaction </h2>
    
   <h4>Client: ${email} <br/></h4>
-
+  
    <h4>Type: ${transactionType} <br/></h4>
+   
+   <h4>From: ${where} <br/></h4>
    <h4>Amount: ${amount} <br/></h4>
    <h4>Asset: ${asset} <br/></h4>
    <h4>Wallet Address: ${walletAddress} <br/></h4>
@@ -50,7 +51,7 @@ const createTransaction = async (req, res) => {
 
    <p> Please check your wallet to confirm transaction. Then login admin top-up or debit the client with amount received.</p>
 
-   <button style="background-color:#3e2280; color: white; padding:4px"> <a href="https://apexcorporatefinanceltd.com/user">Goto Admin Dashboard</a> </button>
+   <button style="background-color:#3e2280; color: white; padding:4px"> <a href="https://apexcorporategroup.com">Goto Admin Dashboard</a> </button>
    
 
 

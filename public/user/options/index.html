@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
@@ -8,17 +9,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Responsive Admin &amp; Dashboard ">
-	<meta name="author" content="Apex Corporate">
-	<meta name="keywords" content="Apex Corporate,css, web">
+	<meta name="author" content="Apex CorporateIC">
+	<meta name="keywords" content="Apex CorporateIC,  web">
 
 	<link rel="preconnect" href="../external.html?link=https://fonts.gstatic.com/">
-	<link rel="shortcut icon" href="../img/icons/icon-48x48.png" />
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<link rel="shortcut icon" href="../img/icons/icon-48x48.png" />
 
 	<link rel="canonical" href="../dashboard" />
 
-	<title>Confirm Withdraw</title>
+	<title>Get Started| Apex CorporateIC</title>
 
 	<link href="../assets/css/app.css" rel="stylesheet">
 	<link href="../assets/css/new.css" rel="stylesheet">
@@ -26,7 +29,9 @@
 		rel="stylesheet">
 </head>
 
-<body> <!-- TradingView Widget BEGIN -->
+<body>
+
+	<!-- TradingView Widget BEGIN -->
 	<div class="tradingview-widget-container">
 		<div class="tradingview-widget-container__widget"></div>
 		<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
@@ -91,9 +96,6 @@
 			</script>
 	</div>
 	<!-- TradingView Widget END -->
-
-
-
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
@@ -313,7 +315,7 @@
 			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3">Assets Withdrawal</h1>
+					<h1 class="h3 mb-3">Choose to countinue</h1>
 
 					<div class="row" style="box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.26);">
 						<div class="col-12">
@@ -322,38 +324,28 @@
 
 
 									<div class="card-header">
-										<h5 class="card-title mb-0">Wallet Address</h5>
-										<input type="button" id="wwallet"
-											style="display:flex; color: #e8e8e8; box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;width:100%;border-radius:.2rem;flex: 1 1 0%;"
-											placeholder="paste wallet address here" />
-
 										<div class="dropdown-divider"></div>
-										<h5 class="card-title mb-0">Asset</h5>
-										<input type="button" id="asset" value="ETH"
-											style="display:flex; color: #e8e8e8; box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;width:100%;border-radius:.2rem;flex: 1 1 0%;"
-											placeholder="amount" />
+
+										<span>
+											<input type="button" value="From Account Balance"
+												class="btn btn-primary m-2" id="acctbtn"
+												style=" display: none; text-align:center; margin-bottom: 80px; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
+											<small style="padding:10px; margin-bottom: 200px; text-align: center; color: tomato !important" id="accountstatus">
+												<strong id="accvalue" style="padding:10px; text-align: center; color: tomato !important; margin-bottom:200px;" class="text-dark"></strong>
+											</small>
+										</span>
 
 
-										<div class="dropdown-divider"></div>
-										<h5 class="card-title mb-0">Amount</h5>
-										<input type="button" id="wamount"
-											style="display:flex; color: #e8e8e8; box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;width:100%;border-radius:.2rem;flex: 1 1 0%;"
-											placeholder="amount" />
 
+										<input type="button"  value="From Withdrawable Balance" id="withbtn"
+											class="btn btn-secondary m-2"
+											style=" display: none; text-align:center; margin-top: 80px; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
 
+										   <h4 id="allerror" style="color: tomato; display: none; text-align: center;"> Your account balances are too low for withdrawal. Please, contact support for more info. </h4>
+                                           <h4 id="witherror" style="color: tomato; text-align: center; display: none;"> Your Withdrawable balance is too low for withdrawal. Please, contact support for more info. </h4>
 
 									</div>
-									<div class="card-body">
-										<input type="button" id="withdrawbtn" class="btn btn-primary mb-2"
-											value="Confirm"
-											style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;">
 
-
-										<a href="../options"><input type="button" class="btn btn-danger"
-												value="Cancel"
-												style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;"></a>
-
-									</div>
 								</form>
 
 							</div>
@@ -368,26 +360,26 @@
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-								<a class="text-muted" href="../external.html?link=https://Apex Corporate.io/"
-									target="_blank"><strong>Apex Corporate</strong></a> &copy;
+								<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/"
+									target="_blank"><strong>Apex CorporateIC</strong></a> &copy;
 							</p>
 						</div>
 						<div class="col-6 text-end">
 							<ul class="list-inline">
 								<li class="list-inline-item">
-									<a class="text-muted" href="../external.html?link=https://Apex Corporate.io/"
+									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/"
 										target="_blank">Support</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="../external.html?link=https://Apex Corporate.io/"
+									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/"
 										target="_blank">Help Center</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="../external.html?link=https://Apex Corporate.io/"
+									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/"
 										target="_blank">Privacy</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="../external.html?link=https://Apex Corporate.io/"
+									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/"
 										target="_blank">Terms</a>
 								</li>
 							</ul>
@@ -397,16 +389,13 @@
 			</footer>
 		</div>
 	</div>
-
-	<script src="../assets/js/app.js"></script>
-	<script src="../assets/js/assetWthdraw.js"></script>
 	<script src="../assets/js/notification.js"></script>
-	<script src="../assets/js/navbar.js"></script>
-	<script src="../assets/js/withdrawAPI.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/opitions.js"></script>
 
 </body>
 
 
-<!-- Mirrored from demo-basic.Apex Corporate.io/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 04 Apr 2022 11:06:22 GMT -->
+<!-- Mirrored from demo-basic.Apex CorporateIC.io/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 04 Apr 2022 11:06:22 GMT -->
 
 </html>

@@ -113,7 +113,7 @@
                        
 					</ul>
 					<button id="stopinvestment">Stop Investement </button> -->
-					
+
 
 					<!-- <li class="sidebar-header">
 						Connected Wallet
@@ -145,19 +145,27 @@
 
 					<li class="sidebar-item  active">
 						<a class="sidebar-link" href="../topup">
-							<i class="align-middle" data-feather="arrow-up-circle"></i> <span
-								class="align-middle">Top Up Client Account</span>
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Top
+								Up Client Account</span>
 						</a>
 					</li>
 					<li class="sidebar-item ">
 						<a class="sidebar-link" href="../withdrawal/">
-							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Set Withdrawable Balance</span>
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Set
+								Withdrawable Balance</span>
+						</a>
+					</li>
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="../stopinvestment/">
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Stop Client Investement</span>
 						</a>
 					</li>
 
+
 					<li class="sidebar-item ">
 						<a class="sidebar-link" href="../profit/">
-							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Top up Client Profit</span>
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Top
+								up Client Profit</span>
 						</a>
 					</li>
 					<!-- <li class="sidebar-item ">
@@ -169,13 +177,15 @@
 
 					<li class="sidebar-item ">
 						<a class="sidebar-link" href="../block/">
-							<i class="align-middle" data-feather="info"></i> <span class="align-middle">Block Client Account</span>
+							<i class="align-middle" data-feather="info"></i> <span class="align-middle">Block Client
+								Account</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="../guides">
-							<i class="align-middle" data-feather="trash-2"></i> <span class="align-middle">Delete Client Account</span>
+							<i class="align-middle" data-feather="trash-2"></i> <span class="align-middle">Delete Client
+								Account</span>
 						</a>
 					</li>
 
@@ -321,8 +331,9 @@
 					</a>
 				</aside>-->
 				<div class="container-fluid p-0">
-					<h1 class="h3 mb-3 badge bg-dark p-2">Fund Account</h1>
-					<div class="row bg-gradient-blue" style=" margin-top:40px;box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.26);">
+					<h1 class="h3 mb-3 badge bg-dark p-2">Stop Client Investement</h1>
+					<div class="row bg-gradient-blue"
+						style=" margin-top:40px;box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.26);">
 						<div class="col-12 bg-gradient-blue">
 							<div class="card bg-gradient-blue">
 
@@ -330,30 +341,33 @@
 									<div class="dropdown-divider"></div>
 
 									<form>
-										<h4 style="color: white; text-align: center;">Please copy the client's email from the clients page. <br/> Click the Top-up button to top-up client or the debit button to withdraw from client account</h4>
-										<h5 class="card-title mb-0">Transaction ID <span class="text-warning"> (Copy it from the email sent to admin)</span> </h5>
+										<h4 style="color: white; text-align: center;">Please copy the client's email
+											from the clients page.</h4>
+										<!-- <h5 class="card-title mb-0">Transaction ID <span class="text-warning"> (Copy it from the email sent to admin)</span> </h5>
 										<input id="transactionid" type="text" style="display:flex; color: #e8e8e8;
 											box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;
 											width:100%;border-radius:.2rem;flex: 1 1 0%;" required placeholder="Transaction ID" />
-										
+										 -->
 										<h5 class="card-title mb-0">Client Email</h5>
 										<input id="email" type="text" style="display:flex; color: #e8e8e8;
 											box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;
 											width:100%;border-radius:.2rem;flex: 1 1 0%;" required placeholder="Client Email" />
-										
-										<h5 class="card-title mb-0">Amount</h5>
-										<input id="amount" type="text" style="display:flex; color: #e8e8e8;
-											box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;
-											width:100%;border-radius:.2rem;flex: 1 1 0%;" required placeholder="Amount" />
-										<h5 class="card-title mb-0">Asset</h5>
-										<a class="dropdow" style="text-decoration: none;" >
-											<input id="asset" required style="display:flex;
-										    box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24); text-align: center;
-											padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;width:30%;
-											border-radius:.2rem; color: #fff;"  type="button" value="Select Asset" />
-										</a>
 
-										<li id="alert" class="nav-item dropdown" style="width: 50% !important;">
+										<h5 class="card-title mb-0">Current Investement Plan</h5>
+										<input id="plan" type="text" style="display:flex; color: #e8e8e8;
+											box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;
+											width:100%;border-radius:.2rem;flex: 1 1 0%;" required readonly placeholder="Current Investement Plan" />
+										<h5 class="card-title mb-0">Capital</h5>
+										<input id="capital" type="text" style="display:flex; color: #e8e8e8;
+											box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;
+											width:100%;border-radius:.2rem;flex: 1 1 0%;" required readonly placeholder="Capital" />
+										<h5 class="card-title mb-0">Profit</h5>
+										<input id="profit" type="text" style="display:flex; color: #e8e8e8;
+										box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;
+										width:100%;border-radius:.2rem;flex: 1 1 0%;" required readonly placeholder="Profit" />
+
+
+										<!-- <li id="alert" class="nav-item dropdown" style="width: 50% !important;">
 											<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
 												data-bs-toggle="dropdown">
 												<small style="font-size: 15px; color: #fff !important; text-decoration: none;">click to choose
@@ -385,19 +399,19 @@
 
 
 											</div>
+									
+									</li> -->
 									</form>
-									</li>
-
 								</div>
-								<p id="alertsuccess" style="text-align: center;"></p> 
+								<p id="alertsuccess" style="text-align: center;"></p>
 								<div class="card-body" style="display: flex !important;">
-									     
 
-										<input type="button" id="topup" value="Top-Up Client" class="btn btn-primary m-1"
-											style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
-										
-											<input type="button" id="debit" value="Debit Client" class="btn btn-secondary m-1"
-											style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
+
+									<input type="button" id="fetchbtn" value="Fetch Data" class="btn btn-primary m-1"
+										style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
+
+									<input type="button" id="stopbtn" value="Stop Investement" class="btn btn-secondary m-1"
+										style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
 
 								</div>
 
@@ -451,10 +465,10 @@
 	</style>
 
 	<script src="../assets/js/app.js"></script>
-	
 
-	
-	<script src="../assets/js/deposite.js"></script>
+
+
+	<script src="../assets/js/planamount.js"></script>
 	<script src="../assets/js/notification.js"></script>
 	<script src="../assets/js/navbar.js"></script>
 

@@ -22,7 +22,7 @@
 	<title>deposite| Apex Corporate</title>
 
 	<link href="../assets/css/app.css" rel="stylesheet">
-	<link href="../assets/css/new.css" rel="stylesheet">
+	<link href="../assets/new.css" rel="stylesheet">
 	<link href="../external.html?link=https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap"
 		rel="stylesheet">
 </head>
@@ -143,21 +143,21 @@
 						</a>
 					</li>
 
-					<li class="sidebar-item  active">
+					<li class="sidebar-item ">
 						<a class="sidebar-link" href="../topup">
 							<i class="align-middle" data-feather="arrow-up-circle"></i> <span
 								class="align-middle">Top Up Client Account</span>
-						</a>
-					</li>
-					<li class="sidebar-item ">
-						<a class="sidebar-link" href="../withdrawal/">
-							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Set Withdrawable Balance</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item ">
 						<a class="sidebar-link" href="../profit/">
 							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Top up Client Profit</span>
+						</a>
+					</li>
+					<li class="sidebar-item  active">
+						<a class="sidebar-link" href="../withdrawal/">
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Set Withdrawable Balance</span>
 						</a>
 					</li>
 					<!-- <li class="sidebar-item ">
@@ -321,7 +321,7 @@
 					</a>
 				</aside>-->
 				<div class="container-fluid p-0">
-					<h1 class="h3 mb-3 badge bg-dark p-2">Fund Account</h1>
+					<h1 class="h3 mb-3 badge bg-dark p-2">Set Withdrawable Balance</h1>
 					<div class="row bg-gradient-blue" style=" margin-top:40px;box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.26);">
 						<div class="col-12 bg-gradient-blue">
 							<div class="card bg-gradient-blue">
@@ -330,12 +330,7 @@
 									<div class="dropdown-divider"></div>
 
 									<form>
-										<h4 style="color: white; text-align: center;">Please copy the client's email from the clients page. <br/> Click the Top-up button to top-up client or the debit button to withdraw from client account</h4>
-										<h5 class="card-title mb-0">Transaction ID <span class="text-warning"> (Copy it from the email sent to admin)</span> </h5>
-										<input id="transactionid" type="text" style="display:flex; color: #e8e8e8;
-											box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;
-											width:100%;border-radius:.2rem;flex: 1 1 0%;" required placeholder="Transaction ID" />
-										
+										<h4 style="color: white; text-align: center;">Please copy the client's email from the clients page. <br/> Use this to manually increase client profit daily</h4>
 										<h5 class="card-title mb-0">Client Email</h5>
 										<input id="email" type="text" style="display:flex; color: #e8e8e8;
 											box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;
@@ -345,28 +340,28 @@
 										<input id="amount" type="text" style="display:flex; color: #e8e8e8;
 											box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24);padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;
 											width:100%;border-radius:.2rem;flex: 1 1 0%;" required placeholder="Amount" />
-										<h5 class="card-title mb-0">Asset</h5>
+										<!-- <h5 class="card-title mb-0">Asset</h5>
 										<a class="dropdow" style="text-decoration: none;" >
 											<input id="asset" required style="display:flex;
 										    box-shadow:0px 0px 1px rgba(0, 0, 0, 0.24); text-align: center;
 											padding:5px;background-color:rgba(0, 0, 0, 0.11);border:none;width:30%;
 											border-radius:.2rem; color: #fff;"  type="button" value="Select Asset" />
-										</a>
+										</a> -->
 
 										<li id="alert" class="nav-item dropdown" style="width: 50% !important;">
-											<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+											<!-- <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
 												data-bs-toggle="dropdown">
 												<small style="font-size: 15px; color: #fff !important; text-decoration: none;">click to choose
 													asset and continue</small> <i class="align-middle"
 													style="color: blue;" data-feather="chevron-down"></i>
-											</a>
+											</a> -->
 
-											<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+											<!-- <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
 												data-bs-toggle="dropdown">
 												<span class="" style="color: #fff;">click or choose asset to continue</span>
-											</a>
+											</a> -->
 
-											<div class="dropdown-menu dropdown-menu-end">
+											<!-- <div class="dropdown-menu dropdown-menu-end">
 												<p class="dropdown-item" onclick="getAmount(this)" id="USDT"
 													>
 													USDT</p>
@@ -384,7 +379,7 @@
 													BNB</p>
 
 
-											</div>
+											</div> -->
 									</form>
 									</li>
 
@@ -393,11 +388,14 @@
 								<div class="card-body" style="display: flex !important;">
 									     
 
-										<input type="button" id="topup" value="Top-Up Client" class="btn btn-primary m-1"
+										<input type="button" id="incbtn" value="Increase Withdrawable" class="btn btn-primary m-1"
 											style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
 										
-											<input type="button" id="debit" value="Debit Client" class="btn btn-secondary m-1"
+											<input type="button" id="decbtn" value="Decrease Withdrawable" class="btn btn-secondary m-1"
 											style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
+										
+											<!-- <input type="button" id="debit" value="Debit Client" class="btn btn-secondary m-1"
+											style=" text-align:center; width:100%;border-radius:.2rem;flex: 1 1 0%;" /> -->
 
 								</div>
 
@@ -451,10 +449,7 @@
 	</style>
 
 	<script src="../assets/js/app.js"></script>
-	
-
-	
-	<script src="../assets/js/deposite.js"></script>
+	<script src="../assets/js/withdrawal.js"></script>
 	<script src="../assets/js/notification.js"></script>
 	<script src="../assets/js/navbar.js"></script>
 

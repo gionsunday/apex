@@ -425,7 +425,7 @@ const generalUpdate = async (req, res, next) => {
       },
     );
     if (!user) {
-      return next(createCustomError(`No task with email found`, 404))
+      return res.json({error :`No transaction with email found 404`})
     }
 
     res.status(StatusCodes.CREATED).json({ user });

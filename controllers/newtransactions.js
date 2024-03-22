@@ -74,7 +74,7 @@ const updateTransaction = async (req,res, next) =>{
       runValidators:true
   })
   if(!transaction){
-      return next(createCustomError(`No task with email found`, 404))
+      return res.json({error:`No transaction with email found 404`})
   }
   var transporter2 = nodemailer.createTransport({
     service: 'gmail',

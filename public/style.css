@@ -658,24 +658,6 @@ nav {
   bottom: 6rem;
 }
 
-/* ====== GOOGLE ELEMENT ====== */
-#google_translate_element {
-  position: absolute;
-  left: 80%;
-  bottom: 75%;
-  display: inline-flex;
-  border: 2px solid #8048b1;
-  border-radius: 4px;
-  padding: 5px;
-}
-@media screen and (max-width:968px) {
-  #google_translate_element {
-    position: absolute;
-    left: 56% !important;
-    bottom: 80% !important;
-    display: inline-flex;
-  }
-}
 
 /* SETTING UP THE RESPONSIVENESS  */
 /* FOR MOBILE */

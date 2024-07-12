@@ -10,6 +10,9 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- === IMPORT FOMTS ==== -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,700;1,600&family=Space+Grotesk:wght@300;400;500;700&display=swap");
@@ -23,7 +26,8 @@
     <header class="main">
       <nav class="container">
         <div class="logo-area">
-          <h2>Apex Corporate Finance</h2>
+          <h2><img src="./user/assets/img/uploads/apex-white.jpg" style="width: 120px; height: 50px;" alt="Logo"></h2>
+        
         </div>
 
         <div class="header-right">
@@ -60,11 +64,10 @@
           Get in touch with us and we will respond almost immediately or you can
           use our WhatsApp live chat
         </p>
-        <form action="mailto:anekeiifeanyi@gmail.com">
-          <input type="email" placeholder="email" />
-          <input type="text" placeholder="message" />
-          <button type="submit" class="btn">Send message</button>
-        </form>
+          <input type="email" placeholder="email" id="email" />
+          <textarea type="text" placeholder="Type you message here."  id="message" style=" padding: 5px; border-radius: 5px; height: 200px; width: 100%; margin-top: 5px;"></textarea>
+          <button type="submit" id="sendbtn" class="btn">Send message</button>
+       
       </div>
     </section>
 
@@ -77,7 +80,7 @@
           Select a package suitable to your budget and make as much as 10%
           weekly.
         </p>
-        <a href="" class="btn">Invest Now!</a>
+        <a href="./user/" class="btn">Invest Now!</a>
       </div>
     </section>
 
@@ -91,7 +94,7 @@
             We hire the best traders to serve you better, invest with us today
             and make profit on your investment.
           </p>
-          <a href="">Our Certificates/Docs</a>
+          <a href="./terms.html">Our Certificates/Docs</a>
         </div>
         <div class="foot">
           <h3>Quick Links</h3>
@@ -105,36 +108,36 @@
         <div class="foot">
           <h3>Quick Links Buy Bitcoin Europe</h3>
           <ul>
-            <li><a href="">Coin Mama</a></li>
-            <li><a href="">PayBis</a></li>
-            <li><a href="">CoinBase</a></li>
-            <li><a href="">Luno</a></li>
-            <li><a href="">XCoin</a></li>
-            <li><a href="">Kraken</a></li>
-            <li><a href="">Binance</a></li>
-            <li><a href="">Bit2me</a></li>
+            <li><a href="https://www.coinmama.com/">Coin Mama</a></li>
+            <li><a href="https://paybit.com/">PayBit</a></li>
+            <li><a href="https://www.coinbase.com/">CoinBase</a></li>
+            <li><a href="https://www.luno.com/">Luno</a></li>
+            <li><a href="https://xcoins.com/">XCoin</a></li>
+            <li><a href="https://www.kraken.com/">Kraken</a></li>
+            <li><a href="binance.com">Binance</a></li>
+            <li><a href="https://bit2me.com/">Bit2me</a></li>
           </ul>
         </div>
         <div class="foot">
           <h3>Quick Links Buy Bitcoin America</h3>
           <ul>
-            <li><a href="">Coin Mama</a></li>
-            <li><a href="">PayBis</a></li>
-            <li><a href="">CoinBase</a></li>
-            <li><a href="">Luno</a></li>
-            <li><a href="">XCoin</a></li>
-            <li><a href="">Local Bitcoins</a></li>
-            <li><a href="">Cex</a></li>
+            <li><a href="https://www.coinmama.com/">Coin Mama</a></li>
+            <li><a href="https://paybit.com/">PayBit</a></li>
+            <li><a href="https://www.coinbase.com/">CoinBase</a></li>
+            <li><a href="https://www.luno.com/">Luno</a></li>
+            <li><a href="https://xcoins.com/">XCoin</a></li>
+            <li><a href="https://localbitcoins.com/">Local Bitcoins</a></li>
+            <li><a href="https://cex.io/">Cex</a></li>
           </ul>
         </div>
         <div class="foot">
           <h3>Quick Links Buy Bitcoin Others</h3>
           <ul>
-            <li><a href="">Indodax</a></li>
-            <li><a href="">PayBis</a></li>
-            <li><a href="">Coinhako</a></li>
-            <li><a href="">Wazirx</a></li>
-            <li><a href="">Zebpay</a></li>
+            <li><a href="https://indodax.com/">Indodax</a></li>
+            <li><a href="https://paybit.com/">PayBit</a></li>
+            <li><a href="https://www.coinhako.com/">Coinhako</a></li>
+            <li><a href="https://wazirx.com/">Wazirx</a></li>
+            <li><a href="https://zebpay.com/">Zebpay</a></li>
           </ul>
         </div>
       </div>
@@ -146,7 +149,6 @@
         <p>All rights reserved</p>
       </div>
     </footer>
-
     <!--========== SCROLL UP ==========-->
     <a href="#" class="scrollup" id="scroll-up">
       <img src="./images/chevronup.png" alt="" />
@@ -163,6 +165,7 @@
         );
       }
     </script>
+    <script src="./support.js"></script>
 
     <script
       type="text/javascript"

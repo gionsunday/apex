@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="Cobratate">
+	<meta name="keywords" content="Cobratate,THE MATRIX">
+
+	<link rel="preconnect" href="../external.html?link=https://fonts.gstatic.com/">
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<link rel="canonical" href="dashboard.html" />
+
+	<title>Cobratate | Deposit </title>
+
+	<link href="../assets/css/app.css" rel="stylesheet">
+	<link href="../assets/css/new.css" rel="stylesheet">
+	<link href="../external.html?link=https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+
+
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="dashboard.html">
+					<img src="../assets/img/uploads/apex-white.jpg" width="100%" height="70%" alt="" srcset="">
+
+				</a>
+
+				<ul class="sidebar-nav">
+					<!-- <li class="sidebar-header">
+						Active Plans
+					</li>
+					<ul id="activeplans"
+						style="padding-bottom: 20px; width:80%;font-size: 16px !important; display: flex; justify-content: space-between;">
+
+                       
+					</ul>
+					<button id="stopinvestment">Stop Investement </button> -->
+
+
+					<!-- <li class="sidebar-header">
+						Connected Wallet
+					</li>
+					<ul id="wallet"
+						style="padding-bottom: 20px; color: bisque; width:80%;font-size: 16px !important; display: flex; justify-content: space-between;">
+						None
+
+					</ul> -->
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="https://apexcorporatefinanceltd.com">
+							<i class="align-middle" data-feather="home"></i> <span class="align-middle">Homepage</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="./">
+							<i class="align-middle" data-feather="sliders"></i> <span
+								class="align-middle">Dashboard</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="../clients">
+							<i class="align-middle" data-feather="arrow-down-circle"></i> <span
+								class="align-middle">View All Clients</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="../gtopup">
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span
+								class="align-middle">Manual General Top-Up</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="../topup">
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Top
+								Up Client Account</span>
+						</a>
+					</li>
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="../withdrawal/">
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Set
+								Withdrawable Balance</span>
+						</a>
+					</li>
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="../stopinvestment/">
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Stop
+								Client Investement</span>
+						</a>
+					</li>
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="../activate/">
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span
+								class="align-middle">Active Withdraw From Main Balance</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="../receipts">
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">See
+								Receipts </span>
+						</a>
+					</li>
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="../profit/">
+							<i class="align-middle" data-feather="arrow-up-circle"></i> <span class="align-middle">Top
+								up Client Profit</span>
+						</a>
+					</li>
+					<!-- <li class="sidebar-item ">
+						<a class="sidebar-link" href="../investment">
+							<i class="align-middle" data-feather="feather"></i> <span class="align-middle">Investment
+								Plans</span>
+						</a>
+					</li> -->
+
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="../block/">
+							<i class="align-middle" data-feather="info"></i> <span class="align-middle">Block Client
+								Account</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="../delate/">
+							<i class="align-middle" data-feather="trash-2"></i> <span class="align-middle">Delete Client
+								Account</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="../login" onclick="logOut()">
+							<i class="align-middle" data-feather="log-out"></i> <span class="align-middle"
+								onclick="logOut()">Quit</span>
+						</a>
+					</li>
+
+					<!-- <li class="sidebar-item">
+						<a class="sidebar-link" href="../">
+							<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Open
+								Another Acount</span>
+						</a>
+					</li> -->
+
+
+				</ul>
+
+
+			</div>
+		</nav>
+
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle js-sidebar-toggle" id="hide">
+					<i class="hamburger align-self-center" id="hide"></i>
+
+				</a>
+				<div style="text-align: left; display:flex; justify-content:flex-end; padding:4px">
+					<div id="google_translate_element"></div>
+
+					<script type="text/javascript">
+						function googleTranslateElementInit() {
+							new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.VERTICAL }, 'google_translate_element');
+						}
+					</script>
+
+					<script type="text/javascript"
+						src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+				</div>
+
+
+				<style>
+					.goog-te-gadget-simple {
+						background-color: #fff;
+						border-left: 1px solid #d5d5d5;
+						border-top: 1px solid #9b9b9b;
+						border-bottom: 1px solid #e8e8e8;
+						border-right: 1px solid #d5d5d5;
+						font-size: 10pt;
+						display: inline-block;
+						padding-top: 1px;
+						padding-bottom: 2px;
+						cursor: pointer;
+						zoom: 1;
+						border-radius: 20px;
+					}
+
+					.goog-te-gadget img {
+						vertical-align: middle;
+						display: none;
+						border: none;
+					}
+				</style>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+								<!-- <div class="position-relative">
+									<i class="align-middle" data-feather="bell"></i>
+									<span class="indicator" id="indicator">0</span>
+								</div> -->
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+								aria-labelledby="alertsDropdown">
+								<div class="dropdown-menu-header" id="notifications">
+									<span id="notifications"> No Notifications </span>
+								</div>
+								<div class="list-group">
+
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-warning" data-feather="bell"></i>
+											</div>
+											<div class="col-10" id="appenddiv">
+												<!--<div class="text-dark">Hi! <span id="name"></span></div>
+												<div class="text-muted small mt-1">Welcome to Apex Corporate IC, an investment company for smart people. <b>Check out</b> Investment plans to get started</div>
+												<div class="text-muted small mt-1"> < 1min ago</div>-->
+											</div>
+										</div>
+									</a>
+
+
+
+
+								</div>
+
+							</div>
+						</li>
+
+
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+								data-bs-toggle="dropdown">
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
+
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+								data-bs-toggle="dropdown">
+								<img src="../assets/img/icons/Picon.png" class="avatar img-fluid rounded me-1"
+									alt=" " /> <span class="text-dark" id="user">Admin</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="https://apexcorporatefinanceltd.com"><i
+										class="align-middle me-1" data-feather="home"></i> Go to Hompage</a>
+
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../contact"><i class="align-middle me-1"
+										data-feather="help-circle"></i> Help Center</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../changepassword" id="logout"><i
+										class="align-middle me-1" data-feather="edit"></i>Change Password</a>
+
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../" id="logout"><i class="align-middle me-1"
+										data-feather="log-out"></i>Log out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main class="content">
+				<!-- <aside>
+					<a href="wallets.html">
+						<button id="wallet" class="badge bg-primary p-2 mb-2" style=" border: none; position: absolute; left: 60%; text-decoration: none; color: #fff; text-align:left; "><a href="prehistory.html" style="text-decoration: none; color:white">Withdraw from wallet</a></button>
+				
+					</a>
+				</aside> -->
+				<div class="container-fluid p-0">
+
+					<h1 class="h3 mb-3 badge bg-dark p-2">Fund Account</h1>
+
+					<div class="row" style="margin-top:40px;box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.26);">
+						<div class="col-12">
+							<div class="card">
+								<form id="form">
+
+
+									<div class="card-header">
+										
+										<div class="dropdown-divider"></div>
+										<h5 class="card-title mb-0">Client's Email <input id="client_email" style="border-radius: 10px; padding: 6px; width: 50%;" type="email" required>
+										</h5>
+										<div class="dropdown-divider"></div>
+										<h4 style="text-align: center !important;" class="btn btn-primary" id="datafetch">Fetch Client's Data</h4>
+
+										<div class="dropdown-divider"></div>
+										<h5 class="card-title mb-0">Client's Name: <strong id="client_name"> </strong>
+										</h5>
+										<h5 class="card-title mb-0">
+											CID:<span id="client_id">t6454y554 </span>
+										</h5>
+										<div class="dropdown-divider"></div>
+
+										<h5 >Total Balance: <span id="total_balance"></span>
+											<input type="text" class="p-2"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="newtotal_balance" placeholder="Change Total balance">
+										</h5>
+										<h5 >Investement Capital: <span id="capital"></span>
+											<input type="text" class="p-2"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="newcapital" placeholder="Change Capital">
+										</h5>
+										<h5 >Earning Balance: <span id="earning"></span>
+											<input type="text" class="p-2"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="newearning" placeholder="Change Earning">
+										</h5>
+										<h5 >Investement Plan: <span id="active_plan"></span>
+											<input type="text" class="p-2"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="newplan" placeholder="Change Investement Plan">
+										</h5>
+										<h5 >Current BTC Balance: <span id="btc"></span>
+											<input type="text" class="p-2"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="newbtc" placeholder="Change BTC balance">
+										</h5>
+										<h5>Current USDT Balance: <span id="usdt"></span>
+											<input type="text"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px; background-color: hsl(0, 2%, 69%);  padding:5px; appearance:none; font-size: 14px;"
+												name="" id="newusdt" placeholder="Change USDT balance">
+										</h5>
+										<h5>Current ETH Balance: <span id="eth"></span>
+											<input type="text"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="neweth" placeholder="Change ETH balance">
+										</h5>
+										<h5>Current BNB Balance: <span id="bnb"></span>
+											<input type="text"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="newbnb" placeholder="Change BNB balance">
+										</h5>
+										</h5>
+										<h5>Current Withdrawable Balance: <span id="withdrawalbalance"></span>
+											<input type="text"
+												style=" width: 100%; display:flex; font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="new_withdrawable_balance"
+												placeholder="Change Withdrawable Balance">
+										</h5>
+										<h5>Current Total Deposit: <span id="totalDeposite"></span>
+											<input type="text"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="newtotalDeposite"
+												placeholder="Change Total Deposit balance">
+										</h5>
+										<h5>Current Total Earnings : <span id="totalEarnings"></span>
+											<input type="text"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="newtotalEarnings"
+												placeholder="Change Total Earnings balance">
+										</h5>
+
+										 
+										<h5>Total Withdrawal: <span id="total-withdrawal"></span>
+											<input type="text"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="newtotalwithdrawal"
+												placeholder="Change Total Withdrawal">
+										</h5>
+										
+										<h5>Connected Wallet : <span id="wallet"></span>
+											<input type="text"
+												style=" width: 100%; display:flex;font-weight: 500; padding: 10px !important; border-radius:5px;  background-color: hsl(0, 2%, 69%);  padding:5px;appearance:none; font-size: 14px;"
+												name="" id="newwallet"
+												placeholder="Change Wallet">
+										</h5>
+
+
+										</di>
+										<div class=" mt-4">
+											<h5 class="text-primary"> Click the button below to TOP-UP account
+												<input type="button" id="topupbtn" value="Topup"
+													class="btn btn-primary m-1"
+													style=" text-align:center; display: none; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
+											</h5>
+											<h5 class="text-warning" style="margin-top: 10px;"> Click the button below
+												to WITHDRAW from account.
+
+												<input type="button" id="withdrawbtn" value="Withdraw"
+													class="btn btn-warning m-1"
+													style=" text-align:center; display: none; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
+											</h5>
+										</div>
+
+
+
+
+									</div>
+								</form>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</main>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+							<p class="mb-0">
+								<a class="text-muted" href="../external.html?link=https://Cobratate.io/"
+									target="_blank"><strong></strong></a> &copy;
+							</p>
+						</div>
+						<div class="col-6 text-end">
+							<ul class="list-inline">
+								<li class="list-inline-item">
+									<a class="text-muted" href="../external.html?link=https://Cobratate.io/"
+										target="_blank">Support</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="../external.html?link=https://Cobratate.io/"
+										target="_blank">Help Center</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="../external.html?link=https://Cobratate.io/"
+										target="_blank">Privacy</a>
+								</li>
+								<li class="list-inline-item">
+									<a class="text-muted" href="../external.html?link=https://Cobratate.io/"
+										target="_blank">Terms</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<style>
+		#wallet:hover {
+			opacity: 0.6;
+			background-color: hsl(0, 2%, 69%);
+			
+		}
+	</style>
+	<script>
+		window.addEventListener("load", () =>{
+			const datafetcher =  document.querySelector("#datafetch")
+			const clientEmail = document.querySelector("#client_email")
+
+			datafetcher.addEventListener('click', () =>{
+				localStorage.setItem("fetchClient", clientEmail.value)
+				window.location = "../gtopup"
+			})
+		})
+	</script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/notification.js"></script>
+	<script src="../assets/js/navbar.js"></script>
+	<script src="../assets/js/topup.js"></script>
+	<script src="../assets/js/clipboard.js"></script>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,322 @@
+
+
+element.style {
+}
+.goog-logo-link, .goog-logo-link:link, .goog-logo-link:visited, .goog-logo-link:hover, .goog-logo-link:active {
+    font-size: 12px;
+    font-weight: bold;
+   
+    color: #444;
+    text-decoration: none;
+}
+
+#alertP{
+    display: none;
+}
+#wallet div:hover{
+opacity: 0.7;
+}
+.btn-primary{
+  background-color: #3e2280 !important;
+  border: #a656e1;
+}
+
+.mb-0 .text-muted{
+  color:rgb(246, 141, 207) !important;
+}
+#wallet a{
+    text-decoration: none;
+}
+#firstup{
+    background-image: url('../img/photos/investing2.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.content {
+    background-color: rgba(255, 255, 255, 0)(255, 255, 255, 0.199);
+    background-image: linear-gradient(to bottom right, #fff, #9a509a42);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.card-header{
+    background-color: #512DA8 !important;
+    color: #fff !important;
+}
+@media screen and (min-width:500px) {
+    
+#rows{
+    width:100%;
+}
+ul, li, ul li{
+    list-style-type:none
+}
+#assets{
+    display: flex;
+    flex-direction: row !important;
+}
+}
+
+@media screen and (min-width:700px) and (max-width:900px) {
+    
+    #rows{
+        width:100%;
+     
+    }   
+    
+    }
+    @media screen and (min-width:900px) and (max-width:1024px){
+    
+        #rows{
+            width:50rem;
+        }
+        }
+    #newbtn a{
+        width: 100%;
+        margin-left: 2rem;
+    }
+    ul, li, ul li{
+        list-style-type:none
+    }
+
+    .badge-dark{
+        border-radius:.2rem;
+        color:#fff;
+        display:inline-block;
+        font-size:80%;
+        font-weight:600;
+        line-height:1;
+        padding:.3em .45em;
+        text-align:center;
+        vertical-align:baseline;
+        white-space:nowrap;
+        --bs-bg-opacity:1;
+        background-color:rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important
+    }
+    #wrong-detail-alert{
+        text-align:center;
+        color:red; 
+        align-items: baseline;
+        width: 100%;
+        background-color:rgba(220, 20, 60, 0.082); 
+        font-size:12px;
+    }
+    @media (min-width:1200px) {
+        #rows{
+            
+            width: 1800px;
+            
+        }
+       .row{
+         --bs-gutter-x:24px !important;
+       }
+        #tradingview{
+            padding: 40px 10px 160px 70px !important;
+        }
+        #hide{
+            display: none;
+            }
+        .content .container-fluid{
+            padding-left:1.5rem !important;
+        }
+        #newcol{
+            display: flex !important;
+          padding: 40px 40px 0px 40px;
+            width: 100%;
+            margin-left: 0rem;
+            margin-right: 0rem;
+            
+        }
+        
+    }
+    @media (max-width:767px) {
+      #newcol, .col-md-6, .col-12, .row{
+          width: 100% !important;
+      }
+        #trans{
+            display: flex !important;
+            padding-left: 0rem;
+            padding-right: 0rem;
+            width: 100%;
+            margin-left: 0rem;
+            margin-right: 0rem;
+            
+        }
+        #noleft{
+            margin: 0px 0px 0px 0px !important;
+        }
+        #see{
+            top: 54% !important;
+        }
+       #see span i{
+ margin: 5px;
+       }
+    }
+    
+
+@media (min-width: 768px) and (max-width:1024px){
+.col-md-6 {
+    flex: 0 0 auto;
+    width: 100% !important;
+    
+}
+.row{
+    width: 100% !important;
+    --bs-gutter-x:4px !important;
+}
+
+}
+
+
+.dt-card {
+    display: block
+  }
+  
+  .dt-card__header {
+    margin-bottom: 3rem;
+    padding: 2.8rem 3.2rem 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center
+  }
+  
+  .dt-card__header:first-child {
+    border-radius: calc(.4rem - 0px) calc(.4rem - 0px) 0 0
+  }
+  
+  .dt-card__header .dt-card__tools {
+    margin-left: 5px
+  }
+  
+  .dt-card__header .dt-card__tools .nav.nav-sm {
+    margin-right: -10px
+  }
+  
+  .dt-card__header .dt-card__heading {
+    flex: 1;
+    -ms-flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+  }
+  
+  .dt-card__heading .dt-card__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+  }
+  
+  .dt-card__body {
+    padding: 3.2rem 3.2rem;
+    display: block
+  }
+  
+  .dt-card__body+.dt-card__body, .dt-card__header+.dt-card__body {
+    padding-top: 0
+  }
+  
+  .dt-card__more {
+    display: inline-block;
+    font-weight: 400
+  }
+  
+  .dt-card__title {
+    margin-bottom: 0;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #212121
+  }
+  
+  .dt-card__title:not([class*="f-"]) {
+    font-size: 1.6rem
+  }
+  
+  @media (max-width: 575.98px) {
+    .dt-card__title:not([class*="f-"]) {
+      font-size: 1.8rem
+    }
+  }
+  
+  .dt-card__full-height {
+    height: calc(100% - 3.2rem);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  
+  .dt-card__full-height .card-body, .dt-card__full-height .dt-chart, .dt-card__full-height .dt-chart__body, .dt-card__full-height .dt-card__body {
+    flex: 1;
+    -ms-flex: 1 1 auto
+  }
+  
+  .dt-card__full-height .dt-chart__body:not(:first-child) {
+    -ms-flex: initial;
+    flex: initial;
+    margin-top: auto
+  }
+  
+  .dt-card-carousel .card {
+    box-shadow: none;
+    margin-bottom: 0
+  }
+  
+  .bg-primary {
+    background-color: #512DA8 !important
+  }
+  
+  a.bg-primary:hover, a.bg-primary:focus, button.bg-primary:hover, button.bg-primary:focus {
+    background-color: #3e2280 !important
+  }
+  
+  .bg-secondary {
+    background-color: #FF4081 !important
+  }
+  
+  a.bg-secondary:hover, a.bg-secondary:focus, button.bg-secondary:hover, button.bg-secondary:focus {
+    background-color: #ff0d5f !important
+  }
+  .bg-gradient-blue, .bg-gradient-blue--after:after {
+    background-image: linear-gradient(to right top, #3043c0, #5f49cc, #8450d7, #a656e1, #c75cea);
+    background-repeat: repeat-x
+  }
+  
+  .bg-gradient-purple, .bg-gradient-purple--after:after {
+    background-image: linear-gradient(135deg, #3f3f91, #ec45a0);
+    background-repeat: repeat-x
+  }
+  
+  .bg-gradient-orange, .bg-gradient-orange--after:after {
+    background-image: linear-gradient(90deg, #c01111, #eac519);
+    background-repeat: repeat-x
+  }
+  #form label, .form-label{
+    color: #e8e8e8 !important;
+  }
+  .card-body p, .card-body h1{
+
+    color: #e8e8e8;
+  }
+
+  #stopinvestment{
+    position: relative;
+    left: 30%;
+    margin-bottom: 10px;
+    border: 1px #42258a !important; 
+    color: #a656e1;
+    border-radius: 5px !important; 
+    text-align: center !important;
+  }
+
+  #stopinvestment:hover{
+    background-color: #a656e1; 
+    opacity: 0.8;
+    color: #fff;
+  }

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="Apex Corporate">
+	<meta name="keywords" content="Apex Corporate, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+	<link rel="preconnect" href="../external.html?link=https://fonts.gstatic.com/">
+	<link rel="shortcut icon" href="../img/icons/icon-48x48.png" />
+	    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	
+	
+
+	<link rel="canonical" href="../" />
+
+	<title>Change Password | Apex Corporate </title>
+
+	<link href="../assets/css/app.css" rel="stylesheet">
+	
+	<link href="../assets/css/new.css" rel="stylesheet">
+	<link href="../external.html?link=https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- TradingView Widget BEGIN -->
+	<div class="tradingview-widget-container">
+		<div class="tradingview-widget-container__widget"></div>
+	   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+		{
+		"symbols": [
+		  {
+			"proName": "BITSTAMP:BTCUSD",
+			"title": "Bitcoin"
+		  },
+		  {
+			"proName": "BITSTAMP:ETHUSD",
+			"title": "Ethereum"
+		  },
+		  {
+			"description": "Doge",
+			"proName": "BINANCE:DOGEUSDT" 
+		  },
+		  {
+			"description": "",
+			"proName": "BINANCE:BTCUSDTPERP"
+		  },
+		  {
+			"description": "",
+			"proName": "BINANCE:LINKUSDT"
+		  },
+		  {
+			"description": "",
+			"proName": "BINANCE:SANDUSDT"
+		  },
+		  {
+			"description": "",
+			"proName": "BINANCE:MATICUSDT"
+		  },
+		  {
+			"description": "",
+			"proName": "BINANCE:CHZUSDT"
+		  },
+		  {
+			"description": "",
+			"proName": "BINANCE:ETCUSDT"
+		  },
+		  {
+			"description": "",
+			"proName": "BINANCE:SOLUSDT"
+		  },
+		  {
+			"description": "",
+			"proName": "BINANCE:ADAUSDT"
+		  },
+		  {
+			"description": "",
+			"proName": "BINANCE:ATOMUSDT"
+		  }
+		],
+		"showSymbolLogo": true,
+		"colorTheme": "light",
+		"isTransparent": false,
+		"displayMode": "adaptive",
+		"locale": "en"
+	  }
+		</script>
+	  </div>
+	  <!-- TradingView Widget END -->
+	
+	  
+	  <div style="text-align: left; display:flex; justify-content:flex-end; padding:4px">
+		<div id="google_translate_element"></div>
+	
+		<script type="text/javascript">
+		function googleTranslateElementInit() {
+		  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.VERTICAL }, 'google_translate_element');
+		}
+		</script>
+		
+		<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	  </div>
+	  
+
+	  <style>
+		.goog-te-gadget-simple {
+background-color: #fff;
+border-left: 1px solid #d5d5d5;
+border-top: 1px solid #9b9b9b;
+border-bottom: 1px solid #e8e8e8;
+border-right: 1px solid #d5d5d5;
+font-size: 10pt;
+display: inline-block;
+padding-top: 1px;
+padding-bottom: 2px;
+cursor: pointer;
+zoom: 1;
+border-radius: 20px;
+}
+.goog-te-gadget img {
+vertical-align: middle;
+display: none;
+border: none;
+}
+	  </style>
+	<main class="d-flex w-100">
+		<div class="container d-flex flex-column">
+			<div class="row vh-100">
+				<div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+					<div class="d-table-cell align-middle">
+
+						<div class="text-center mt-4">
+							<h1 class="h2">Change Password</h1>
+							<p class="lead">
+								Hi Dear! Welcome back to Apex Corporate.  
+							
+							</p>
+						</div>
+
+						<div class="card">
+							<div class="card-body">
+								<div class="m-sm-4">
+									<form  id="form"  method="post">
+										
+										<small><label class="form-label" id="error" style="text-align: center !important; width:100% !important; color: crimson;"></label></small>
+										<div class="mb-3">
+											<label class="form-label">New Password</label>
+											<input id="resetpassword"
+											required
+											class="form-control form-control-lg" 
+											type="password" name="password" placeholder="Enter new password " />
+										</div>
+										
+										<div class="mb-3">
+											<label class="form-label">Confirm Password</label>
+											<input id="confirmpassword" class="form-control form-control-lg"
+											required
+											 type="password" name="confirmpassword" placeholder="confirm password" />
+										</div>
+										<p id="passwordnotmatch" style="color: crimson; width:100%; text-align: center; border:1px solid crimson; display: none;">Password not matched</p>
+										
+										<div class="text-center mt-3">
+									<a>
+										<button id="passwordbtn"
+											
+											type="button" class="btn btn-lg btn-primary" > Change Password</button>
+										</a>
+											<!-- <button type="submit" class="btn btn-lg btn-primary">Sign up</button> -->
+										</div>
+										<a href="../forgot">Didn't get code?</a>
+									
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script src="../assets/js/app.js"></script>
+
+	<script src="../assets/js/confrimpassword.js"></script>
+
+	
+
+</body>
+</html>

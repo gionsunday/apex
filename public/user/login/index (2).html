@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Apex Corporate Investement Firm. Invest With Purpose">
+    <meta name="author" content="Apex Corporate">
+    <meta name="keywords" content="Apex Corporate, apex, Cryptocurrency, Investments, Trading">
+
+    <link rel="preconnect" href="../external.html?link=https://fonts.gstatic.com/">
+    <link rel="shortcut icon" href="../img/icons/icon-48x48.png" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="canonical" href="../" />
+
+    <title>Sign In | APEX CORPORATE </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+    <link href="../assets/css/app.css" rel="stylesheet">
+
+    <link href="../assets/css/new.css" rel="stylesheet">
+    <link href="../external.html?link=https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="d-flex w-100" id="firstup">
+        <div class="container d-flex flex-column" style="padding: 0rem 1rem orem 1rem;">
+            <div style="text-align: left; display:flex; justify-content:flex-end; padding:4px; margin:1px ">
+                <div id="google_translate_element"></div>
+
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.VERTICAL }, 'google_translate_element');
+                    }
+                </script>
+
+                <script type="text/javascript"
+                    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </div>
+
+            <div class="row " id="firstpu2">
+                <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                    <div class="d-table-cell align-middle">
+                        <img src="../assets/img/uploads/apex-white.jpg" style="width: 100%; height: 260px;" alt="">
+
+                        <div class="text-center mt-4">
+							<h1 class="h2">Welcome Back</h1>
+							<p class="lead" style="color:rgb(8, 5, 36) !important">
+								Join Apex Corporate Finance
+								Sign In And Explore Apex Corporate Finance .
+
+							</p>
+						</div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="append" class="m-sm-4">
+
+                                    <label id="alert"
+                                        style="width:100% !important;  padding-left: 4rem !important;  text-align:center !important">
+                                        <small id="alert"
+                                            style="width:100% !important; color:crimson !important; text-align:center !important"></small></label>
+                                    <!--<label id="wrong-detail-alert">Wrong Email or Password</label>-->
+                                    <form id="form" action="" method="post">
+                                        <div class="mb-3">
+                                            <label class="form-label">Email</label>
+                                            <input id="email" required class="form-control form-control-lg" type="email"
+                                                name="email" placeholder="Enter your email" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Password</label>
+                                             <input id="password" required class="form-control form-control-lg"
+                                                type="password" name="password" placeholder="Enter your password" />
+                                            <div id="see" style="position: absolute; top: 48%; left: 80%;">
+                                                <span>
+                                                    <i id="eye" style="margin-right: 5px;" onclick="eyeOn()"
+                                                        class="align-middle" data-feather="eye"></i>
+                                                    <i id="eyeoff" style="margin-right: 5px;" onclick="eyeOff()"
+                                                        class="align-middle" data-feather="eye-off"></i>
+                                                </span>
+                                            </div>
+
+                                            <small>
+                                                <a style="text-decoration: none; color:rgb(246, 141, 207)"
+                                                    href="../forgot">Forgot password?</a>
+                                                <a style="text-decoration: none; color:rgb(246, 141, 207)"
+                                                    href="../"><br />Don't have account? Sign Up</a>
+                                            </small>
+                                        </div>
+                                        <div>
+                                            <label class="form-check">
+                                                <input class="form-check-input" id="check" type="checkbox"
+                                                    value="remember-me" name="remember-me">
+                                                <span class="form-check-label">
+                                                    Remember me next time
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="text-center mt-3" style="padding-bottom: 4.4rem;">
+                                            <button id="loginbtn" type="submit" class="btn" style="color: #fff;
+                                            background-color: #42258a;
+                                            border-color: #3e2280 ">Sign
+                                                in</button>
+                                            <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <style>
+        form i {
+            margin-left: -30px;
+            cursor: pointer;
+        }
+    </style>
+         <script>
+            window.addEventListener('load', () =>{
+              localStorage.clear();
+            })
+          </script>
+    <script>
+
+        const eye = document.getElementById("eye")
+        const eye_off = document.getElementById("eyeoff")
+        const password = document.getElementById("password")
+
+
+
+        function eyeOn() {
+            eye.style.display = "none"
+            eye_off.style.left = "100"
+            eye_off.style.display = "none"
+            password.setAttribute("type", "text")
+        }
+        function eyeOff() {
+            eye.style.display = "block"
+            eye_off.style.display = "none"
+            password.setAttribute("type", "password")
+        }
+
+    </script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/login.js"></script>
+
+
+
+</body>
+
+</html>

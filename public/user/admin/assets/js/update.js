@@ -24,11 +24,11 @@ window.addEventListener('load', async () => {
         // const transactionID = transactionIDIn
        // console.log(transaction)
         try {
-         const {asset, amount, transactionType, status, walletAddress } = transaction
+         const {asset, amount, transactionType, status, walletAddress, _id } = transaction
        
 
         const newData = await axios.post('https://apex-h7wm.onrender.com/apex/newtransaction/updatetransaction', {
-            transactionID:transactionIDIn,
+            transactionID:_id,
             status:"Completed",
             email:emailIn,
             amount:amount,

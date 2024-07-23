@@ -27,7 +27,7 @@ window.addEventListener('load', () =>{
         email:emailIn.value
       })
      const user = client.data.user
-  //console.log(user)
+  console.log(user)
          try {
         // console.log(user.dailyEarnings)
             const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/generalupdates', {
@@ -35,7 +35,7 @@ window.addEventListener('load', () =>{
               withdrawableBalance: ( user.withdrawableBalance + Number(amountt.value))
             })
          document.getElementById("alertsuccess").textContent ="Successfull !"
-         window.location = '../dashboard'
+        // window.location = '../dashboard'
          } catch (error) {
           console.log(error)
          }

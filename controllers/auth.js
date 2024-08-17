@@ -435,12 +435,12 @@ const generalUpdate = async (req, res, next) => {
 };
 
 const updateStatusEarning = async (req, res, next) => {
-  const { activePlan, email, amount, dailyEarnings } = req.body;
+  const { activePlan, email, amount, dailyEarnings, totalBalance} = req.body;
   const oldusdt = await User.findOne({email:email})
   const usdt_old = oldusdt.usdt
   const user = await User.findOneAndUpdate(
     { email: email },
-    { activePlan: activePlan, dailyEarnings: dailyEarnings, usdt:(usdt_old - amount),  capital: amount },
+    { activePlan: activePlan, dailyEarnings: dailyEarnings, usdt:(usdt_old - amount), totalBalance:totalBalance, capital: amount },
     {
       new: true,
       runValidators: true,

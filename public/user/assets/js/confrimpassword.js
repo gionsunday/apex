@@ -21,15 +21,14 @@ window.addEventListener('load', () => {
     
     
     else{
+         resetbtn.textContent = 'Processing...'
              try {
-             const {data} = await axios.post(`https://apex-h7wm.onrender.com/apex/auth/forgotpassword/${email}`, {password:password1})
+             const {data} = await axios.post(`/apex/auth/forgotpassword/${email}`, {password:password1})
        
              passwordR.value=""
              passwordC.value =""
          
-             console.log(data)
-           
-
+            //  console.log(data)
              window.location = '../login'
          } catch (error) {
              console.log(error)

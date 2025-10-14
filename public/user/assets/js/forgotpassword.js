@@ -5,13 +5,14 @@ window.addEventListener('load', () => {
 
     passwordbtn.addEventListener('click', async (e) =>{
         e.preventDefault()
+        passwordbtn.textContent= "Sending..."
         const email = emailP.value
         if(!email){
             console.log('please provide email')
             alertP.style.display ="block"
         }
          try {
-             const {data} = await axios.post('https://apex-h7wm.onrender.com/apex/auth/beforeforgot', {email:email})
+             const {data} = await axios.post('/apex/auth/beforeforgot', {email:email})
              emailP.value =" "
          
              const code = data.code;
@@ -19,6 +20,7 @@ window.addEventListener('load', () => {
              const resetDetails = [] 
              resetDetails.push(code, email)
              localStorage.setItem('passwordresetcode', resetDetails)
+             passwordbtn.textContent= "Sent!"
              window.location = '../forgotcode'
          } catch (error) {
              console.log(error)

@@ -16,7 +16,7 @@ window.addEventListener("load", async () => {
 
   registerBtn.addEventListener("click", async (e) => {
     e.preventDefault();
-
+     registerBtn.textContent = "Signing up..."
     const email = regEmail.value;
     const password = regPasswordd.value;
     const name = regUsername.value;
@@ -34,8 +34,9 @@ window.addEventListener("load", async () => {
       document.getElementById("noinfo").textContent =
         "please provide usename and password";
     }
+   
     try {
-      const { data } = await axios.post("https://apex-h7wm.onrender.com/apex/auth/register", {
+      const { data } = await axios.post("/apex/auth/register", {
         name: name,
         email: email,
         password: password,
@@ -45,6 +46,7 @@ window.addEventListener("load", async () => {
 
       const code = data.code;
       localStorage.setItem("code", code);
+      registerBtn.textContent="Code Sent!"
       console.log(code);
       regEmail.value = "";
       regPasswordd.value = "";

@@ -49,6 +49,7 @@ const getallBlockedclient = async (req, res) => {
 
 const register = async (req, res) => {
   const { name, email, password } = req.body;
+  console.log(req.body)
   User.findOne({ email }).exec((err, user) => {
     const verificationCode = Math.floor(100000 + Math.random() * 900000);
     if (user) {

@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
         accStatus.style.display = "none"
         accBtn.addEventListener('click', async () =>{
             try {
-                const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/updateactiveplan' , {
+                const data = await axios.post('/apex/auth/updateactiveplan' , {
                     email:email,
                     activePlan:plan,
                     amount:getstartedAmount,

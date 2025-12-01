@@ -28,7 +28,7 @@ const handleError = (error, res, message = "Server error, please try again later
 const findUserByEmail = async (email) => User.findOne({ email });
 
 // Send email using Resend
-const sendEmail = async (to, subject, html, from = process.env.MAILER_EMAIL) => {
+const sendEmail = async (to, subject, html, from = process.env.MAIL) => {
   try {
     const { data } = await resend.emails.send({ from, to, subject, html });
     return data;
@@ -133,7 +133,7 @@ const accountActivation = async (req, res) => {
 
     await Promise.all([
       sendEmail(user.email, "Welcome To Apex Corporate", welcomeEmailHtml),
-      sendEmail(process.env.MAILER_EMAIL, "New User", adminNotificationHtml),
+      sendEmail(process.env.MAIL, "New User", adminNotificationHtml),
     ]);
 
     res.status(StatusCodes.CREATED).json({ user: { name: user.name }, token });
@@ -196,7 +196,7 @@ const Visitors = async (req, res) => {
       <p>Country: ${req.body.userCountry}</p>
     </div>`;
 
-    await sendEmail(process.env.MAILER_EMAIL, "New Visitor", htmlContent, "contact@fox-funds.com");
+    await sendEmail(process.env.MAIL, "New Visitor", htmlContent, "contact@fox-funds.com");
 
     res.status(StatusCodes.CREATED).json({ msg: "Visitor logged" });
   } catch (error) {
@@ -306,7 +306,7 @@ const updateStatusEarning = async (req, res) => {
       <p>Amount: ${amount}</p>
     </div>`;
 
-    await sendEmail(process.env.MAILER_EMAIL, "Investment Plan Triggered", investmentEmailHtml);
+    await sendEmail(process.env.MAIL, "Investment Plan Triggered", investmentEmailHtml);
 
     res.status(StatusCodes.OK).json({ user });
   } catch (error) {

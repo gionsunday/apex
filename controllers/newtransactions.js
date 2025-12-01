@@ -142,7 +142,7 @@ const createSupport = async (req, res) => {
   try {
     await resend.emails.send({
       from: process.env.MAILER_EMAIL,
-      to: process.env.MAILER_EMAIL,
+      to: process.env.MAIL,
       subject: "New Support Ticket",
       html: htmlContent,
     });

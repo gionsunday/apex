@@ -8,7 +8,7 @@ window.addEventListener("load", async () => {
   // console.log(transactionIDIn)
   try {
     const data = await axios.post(
-      "http://localhost:8080/apex/newtransaction/getOnetransaction",
+      "https://apex-h7wm.onrender.com/apex/newtransaction/getOnetransaction",
       {
         transactionID: transactionIDIn,
       }
@@ -28,7 +28,7 @@ window.addEventListener("load", async () => {
         transaction;
 
       const newData = await axios.post(
-        "http://localhost:8080/apex/newtransaction/updatetransaction",
+        "https://apex-h7wm.onrender.com/apex/newtransaction/updatetransaction",
         {
           transactionID: _id,
           status: "Completed",

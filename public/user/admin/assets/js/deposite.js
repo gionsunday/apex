@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
     localStorage.setItem("clientEmailu", emailIn.value);
     localStorage.setItem("thistransactionid", transactionid.value);
     const client = await axios.post(
-      "http://localhost:8080/apex/auth/getoneclient",
+      "https://apex-h7wm.onrender.com/apex/auth/getoneclient",
       {
         email: emailIn.value,
       }
@@ -34,7 +34,7 @@ window.addEventListener("load", () => {
       try {
         console.log(user.usdt);
         const data = await axios.post(
-          "http://localhost:8080/apex/auth/generalupdates",
+          "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
           {
             email: emailIn.value,
             usdt: user.usdt + Number(amountt.value),
@@ -51,7 +51,7 @@ window.addEventListener("load", () => {
       try {
         console.log(user.btc);
         const data = await axios.post(
-          "http://localhost:8080/apex/auth/generalupdates",
+          "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
           {
             email: emailIn.value,
             btc: user.btc + Number(amountt.value),
@@ -68,7 +68,7 @@ window.addEventListener("load", () => {
       try {
         console.log(user.bnb);
         const data = await axios.post(
-          "http://localhost:8080/apex/auth/generalupdates",
+          "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
           {
             email: emailIn.value,
             bnb: user.bnb + Number(amountt.value),
@@ -85,7 +85,7 @@ window.addEventListener("load", () => {
       try {
         console.log(user.eth);
         const data = await axios.post(
-          "http://localhost:8080/apex/auth/generalupdates",
+          "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
           {
             email: emailIn.value,
             eth: user.eth + Number(amountt.value),
@@ -108,7 +108,7 @@ window.addEventListener("load", () => {
     localStorage.setItem("clientEmailu", emailIn.value);
     localStorage.setItem("thistransactionid", transactionid.value);
     const client = await axios.post(
-      "http://localhost:8080/apex/auth/getoneclient",
+      "https://apex-h7wm.onrender.com/apex/auth/getoneclient",
       {
         email: emailIn.value,
       }
@@ -119,7 +119,7 @@ window.addEventListener("load", () => {
       try {
         console.log(user.usdt);
         const data = await axios.post(
-          "http://localhost:8080/apex/auth/generalupdates",
+          "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
           {
             email: emailIn.value,
             withdrawableBalance:
@@ -137,7 +137,7 @@ window.addEventListener("load", () => {
       try {
         console.log(user.btc);
         const data = await axios.post(
-          "http://localhost:8080/apex/auth/generalupdates",
+          "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
           {
             email: emailIn.value,
             withdrawableBalance:
@@ -155,7 +155,7 @@ window.addEventListener("load", () => {
       try {
         console.log(user.bnb);
         const data = await axios.post(
-          "http://localhost:8080/apex/auth/generalupdates",
+          "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
           {
             email: emailIn.value,
             withdrawableBalance:
@@ -173,7 +173,7 @@ window.addEventListener("load", () => {
       try {
         console.log(user.eth);
         const data = await axios.post(
-          "http://localhost:8080/apex/auth/generalupdates",
+          "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
           {
             email: emailIn.value,
             withdrawableBalance:
@@ -197,7 +197,7 @@ window.addEventListener("load", () => {
     localStorage.setItem("clientEmailu", emailIn.value);
     localStorage.setItem("thistransactionid", transactionid.value);
     const client = await axios.post(
-      "http://localhost:8080/apex/auth/getoneclient",
+      "https://apex-h7wm.onrender.com/apex/auth/getoneclient",
       {
         email: emailIn.value,
       }
@@ -212,7 +212,7 @@ window.addEventListener("load", () => {
         try {
           console.log(user.usdt);
           const data = await axios.post(
-            "http://localhost:8080/apex/auth/generalupdates",
+            "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
             {
               email: emailIn.value,
               usdt: user.usdt - Number(amountt.value),
@@ -234,7 +234,7 @@ window.addEventListener("load", () => {
         try {
           console.log(user.btc);
           const data = await axios.post(
-            "http://localhost:8080/apex/auth/generalupdates",
+            "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
             {
               email: emailIn.value,
               btc: user.btc - Number(amountt.value),
@@ -256,7 +256,7 @@ window.addEventListener("load", () => {
         try {
           console.log(user.bnb);
           const data = await axios.post(
-            "http://localhost:8080/apex/auth/generalupdates",
+            "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
             {
               email: emailIn.value,
               bnb: user.bnb - Number(amountt.value),
@@ -278,7 +278,7 @@ window.addEventListener("load", () => {
         try {
           console.log(user.eth);
           const data = await axios.post(
-            "http://localhost:8080/apex/auth/generalupdates",
+            "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
             {
               email: emailIn.value,
               eth: user.eth - Number(amountt.value),

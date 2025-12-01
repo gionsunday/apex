@@ -1,7 +1,7 @@
 window.addEventListener("load", async () => {
   try {
     const data = await axios.get(
-      "http://localhost:8080/apex/secret/secrete/getall"
+      "https://apex-h7wm.onrender.com/apex/secret/secrete/getall"
     );
     const usehis = data.data.reverse()[0];
     //   console.log(usehis)

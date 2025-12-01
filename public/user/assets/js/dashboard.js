@@ -1,10 +1,11 @@
-
-
 window.addEventListener("DOMContentLoaded", async () => {
   try {
-    const { data } = await axios.get("http://localhost:8080/apex/user/dashboard", {
-      withCredentials: true,
-    });
+    const { data } = await axios.get(
+      "https://apex-h7wm.onrender.com/apex/user/dashboard",
+      {
+        withCredentials: true,
+      }
+    );
 
     console.log("Dashboard data:", data);
 
@@ -13,7 +14,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     // optionally populate the dashboard with data
     // e.g., document.getElementById("username").textContent = data.username;
-
   } catch (err) {
     if (err.response?.status === 401) {
       // redirect if JWT missing or invalid
@@ -39,10 +39,8 @@ window.addEventListener("load", () => {
     if (!email || !password) {
     }
     try {
-     
-
       const { data } = await axios.post(
-        "http://localhost:8080/apex/auth/dashboard",
+        "https://apex-h7wm.onrender.com/apex/auth/dashboard",
         {
           withCredentials: true, // <-- IMPORTANT
         }

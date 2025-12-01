@@ -3,7 +3,7 @@ window.addEventListener("load", async () => {
   const userId = dashboard.split(",")[4];
   console.log(userId);
   const myTransactions = await axios.get(
-    `http://localhost:8080/apex/newtransaction/${userId}`
+    `https://apex-h7wm.onrender.com/apex/newtransaction/${userId}`
   );
   const transactions = myTransactions.data.newtransactions;
   if (transactions.length >= 5) {

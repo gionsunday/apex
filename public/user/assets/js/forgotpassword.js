@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
     }
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/apex/auth/beforeforgot",
+        "https://apex-h7wm.onrender.com/apex/auth/beforeforgot",
         { email: email }
       );
       emailP.value = " ";

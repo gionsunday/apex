@@ -21,7 +21,7 @@ window.addEventListener("load", () => {
   const emailIn = document.getElementById("email");
 
   profitbtn.addEventListener("click", async () => {
-    //   const client = await axios.post('http://localhost:8080/apex/auth/getoneclient',{
+    //   const client = await axios.post('https://apex-h7wm.onrender.com/apex/auth/getoneclient',{
     //     email:emailIn.value
     //   })
     //  const user = client.data.user
@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
     try {
       //  console.log(user.dailyEarnings)
       const data = await axios.post(
-        "http://localhost:8080/apex/auth/generalupdates",
+        "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
         {
           email: emailIn.value,
           status: "Okay",
@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
     try {
       //console.log(user.dailyEarnings)
       const data = await axios.post(
-        "http://localhost:8080/apex/auth/generalupdates",
+        "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
         {
           email: emailIn.value,
           status: "Temporarily Unavailable",

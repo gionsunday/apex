@@ -4,21 +4,20 @@ window.addEventListener("load", () => {
   const assett = document.querySelector("#asset");
   const depositebtn = document.querySelector("#depositebtn");
 
-
   depositebtn.addEventListener("click", async () => {
     const asset = assett.textContent;
     const transactionType = "Deposite";
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/apex/newtransaction",
+        "https://apex-h7wm.onrender.com/apex/newtransaction",
         {
           transactionType: "Deposit",
           asset: asset,
           amount: amountT,
           walletAddress: "Apex wallet address",
-        }
-        , { withCredentials: true }
+        },
+        { withCredentials: true }
       );
       console.log(data);
       const typeT = data.newtransaction.transactionType;

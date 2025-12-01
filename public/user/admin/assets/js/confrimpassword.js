@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
     } else {
       try {
         const { data } = await axios.post(
-          `http://localhost:8080/apex/auth/forgotpassword/${email}`,
+          `https://apex-h7wm.onrender.com/apex/auth/forgotpassword/${email}`,
           { password: password1 }
         );
 

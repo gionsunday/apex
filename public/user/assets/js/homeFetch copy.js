@@ -1,7 +1,6 @@
 window.addEventListener("load", async () => {
-
   const myTransactions = await axios.get(
-    `http://localhost:8080/apex/newtransaction`,
+    `https://apex-h7wm.onrender.com/apex/newtransaction`,
     {
       withCredentials: true,
     }

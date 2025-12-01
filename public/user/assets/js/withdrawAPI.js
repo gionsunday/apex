@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
   withdrawBtn.addEventListener("click", async () => {
     try {
       const data = await axios.post(
-        "http://localhost:8080/apex/newtransaction",
+        "https://apex-h7wm.onrender.com/apex/newtransaction",
         {
           transactionType: "Withdrawal",
           email: email,

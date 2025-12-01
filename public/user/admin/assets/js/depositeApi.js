@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
     console.log(token);
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/apex/newtransaction",
+        "https://apex-h7wm.onrender.com/apex/newtransaction",
         {
           transactionType: "Deposit",
           email: email,

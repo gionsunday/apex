@@ -31,7 +31,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["http://localhost:8080", "https://apexcorporatecbfinanceltd.com"],
+    origin: ["http://localhost:8080", "https://apexcorporatecbfinanceltd.com", "https://apex-h7wm.onrender.com"],
     credentials: true, // allows sending cookies
   })
 );

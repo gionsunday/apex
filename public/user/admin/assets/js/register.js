@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
     }
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/apex/auth/register",
+        "https://apex-h7wm.onrender.com/apex/auth/register",
         {
           name: name,
           email: email,

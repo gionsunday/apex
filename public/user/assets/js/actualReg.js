@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
     if (bCode === code) {
       try {
         const { data } = await axios.post(
-          "http://localhost:8080/apex/auth/register/accountactivation",
+          "https://apex-h7wm.onrender.com/apex/auth/register/accountactivation",
           {
             name: name,
             email: email,

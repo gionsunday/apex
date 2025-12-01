@@ -9,7 +9,7 @@ window.addEventListener("load", async () => {
 
   try {
     const client = await axios.post(
-      "http://localhost:8080/apex/auth/getoneclient",
+      "https://apex-h7wm.onrender.com/apex/auth/getoneclient",
       {
         email: email,
       }

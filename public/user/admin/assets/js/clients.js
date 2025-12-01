@@ -1,7 +1,7 @@
 $(document).ready(async () => {
   try {
     const allClients = await axios.post(
-      "http://localhost:8080/apex/auth/getallclients"
+      "https://apex-h7wm.onrender.com/apex/auth/getallclients"
     );
     // console.log(allClients.data.clients)
 

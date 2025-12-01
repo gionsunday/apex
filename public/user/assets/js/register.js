@@ -8,7 +8,7 @@ window.addEventListener("load", async () => {
   const registerBtn = document.querySelector("#registerBtn");
   try {
     const code = await axios.get(
-      "http://localhost:8080/apex/user/referal/refferer"
+      "https://apex-h7wm.onrender.com/apex/user/referal/refferer"
     );
     console.log(code.data.msg);
     refcode.value = code.data.msg || " Enter referrer code";
@@ -38,7 +38,7 @@ window.addEventListener("load", async () => {
     }
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/apex/auth/register",
+        "https://apex-h7wm.onrender.com/apex/auth/register",
         {
           name: name,
           email: email,

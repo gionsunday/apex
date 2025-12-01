@@ -13,10 +13,13 @@ window.addEventListener("load", () => {
     const password = loginPassword.value.trim();
 
     try {
-      const res = await axios.post("http://localhost:8080/apex/auth/login", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://apex-h7wm.onrender.com/apex/auth/login",
+        {
+          email,
+          password,
+        }
+      );
 
       if (!res?.data) {
         loginBtn.textContent = "Login";
@@ -43,7 +46,6 @@ window.addEventListener("load", () => {
       setTimeout(() => {
         window.location.href = "../dashboard";
       }, 1500);
-
     } catch (error) {
       console.log(error);
       localStorage.removeItem("token");

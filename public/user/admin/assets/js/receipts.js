@@ -1,7 +1,7 @@
 $(document).ready(async () => {
   try {
     const allClients = await axios.get(
-      "http://localhost:8080/apex/pictures/getimageall"
+      "https://apex-h7wm.onrender.com/apex/pictures/getimageall"
     );
     console.log(allClients.data.profileImages);
 

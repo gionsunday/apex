@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
 
   profitbtn.addEventListener("click", async () => {
     const client = await axios.post(
-      "http://localhost:8080/apex/auth/getoneclient",
+      "https://apex-h7wm.onrender.com/apex/auth/getoneclient",
       {
         email: emailIn.value,
       }
@@ -31,7 +31,7 @@ window.addEventListener("load", () => {
     try {
       console.log(user.dailyEarnings);
       const data = await axios.post(
-        "http://localhost:8080/apex/auth/generalupdates",
+        "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
         {
           email: emailIn.value,
           dailyEarnings: user.dailyEarnings + Newnumbe,

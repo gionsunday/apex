@@ -21,7 +21,7 @@ window.addEventListener("load", () => {
     accBtn.addEventListener("click", async () => {
       try {
         const data = await axios.post(
-          "http://localhost:8080/apex/auth/updateactiveplan",
+          "https://apex-h7wm.onrender.com/apex/auth/updateactiveplan",
           {
             email: email,
             activePlan: plan,

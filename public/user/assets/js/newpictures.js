@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
     submitBtn.textContent = "Uploading...";
     try {
       const newData = await axios.post(
-        "http://localhost:8080/apex/pictures/uploadimages",
+        "https://apex-h7wm.onrender.com/apex/pictures/uploadimages",
         data,
         {
           headers: {

@@ -7,10 +7,9 @@ window.addEventListener("load", async function () {
   let profileDetails = [];
   let activeplans = [];
 
-
   try {
     const { data } = await axios.post(
-      "http://localhost:8080/apex/auth/dashboard",
+      "https://apex-h7wm.onrender.com/apex/auth/dashboard",
       {
         withCredentials: true, // <-- IMPORTANT
       }
@@ -338,7 +337,7 @@ window.addEventListener("load", async function () {
           // const newusdt = Math.round(newTotalBal);
           // console.log(newusdt);
           const data = await axios.post(
-            "http://localhost:8080/apex/auth/generalupdates",
+            "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
             {
               email: email,
               usdt: usdt + capital,

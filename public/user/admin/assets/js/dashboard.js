@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
     }
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/apex/auth/dashboard",
+        "https://apex-h7wm.onrender.com/apex/auth/dashboard",
         {
           email: email,
           password: password,

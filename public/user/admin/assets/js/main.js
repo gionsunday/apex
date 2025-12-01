@@ -15,13 +15,16 @@ window.addEventListener("load", async function () {
     console.log("no token");
   }
   try {
-    const data = await axios.post("http://localhost:8080/apex/auth/login", {
-      email,
-      password,
-      Headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const data = await axios.post(
+      "https://apex-h7wm.onrender.com/apex/auth/login",
+      {
+        email,
+        password,
+        Headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
     if (!data) {
       console.log("Wrong email or password");
@@ -325,7 +328,7 @@ window.addEventListener("load", async function () {
         try {
           console.log(email);
           const data = await axios.post(
-            "http://localhost:8080/apex/auth/generalupdates",
+            "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
             {
               email: email,
               usdt: totalAvaliableBalance + capital + dailyEarnings,

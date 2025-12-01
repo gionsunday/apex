@@ -3,10 +3,10 @@ $(document).ready(async () => {
 
   try {
     const allClients = await axios.post(
-      "http://localhost:8080/apex/auth/getallclients"
+      "https://apex-h7wm.onrender.com/apex/auth/getallclients"
     );
     const blockedClients = await axios.post(
-      "http://localhost:8080/apex/auth/getallblockedclients"
+      "https://apex-h7wm.onrender.com/apex/auth/getallblockedclients"
     );
     $("#clients").text(allClients.data.clients.length + " Users");
     $("#activeclients").text(

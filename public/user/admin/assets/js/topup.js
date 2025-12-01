@@ -1,7 +1,7 @@
 window.addEventListener("load", async () => {
   const clientEmail = localStorage.getItem("fetchClient");
   const data = await axios.post(
-    "http://localhost:8080/apex/auth/getallclients"
+    "https://apex-h7wm.onrender.com/apex/auth/getallclients"
   );
   const totalClients = data.data.clients;
   console.log(totalClients);
@@ -90,7 +90,7 @@ window.addEventListener("load", async () => {
 
     try {
       await axios
-        .post("http://localhost:8080/apex/auth/generalupdates", {
+        .post("https://apex-h7wm.onrender.com/apex/auth/generalupdates", {
           email: clientEmail,
           btc: _newbtc + btc,
           usdt: _newusdt + usdt,
@@ -146,7 +146,7 @@ window.addEventListener("load", async () => {
 
     try {
       await axios
-        .post("http://localhost:8080/apex/auth/generalupdates", {
+        .post("https://apex-h7wm.onrender.com/apex/auth/generalupdates", {
           email: clientEmail,
           btc: btc - _newbtc,
           usdt: usdt - _newusdt,

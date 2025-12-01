@@ -53,6 +53,7 @@ window.addEventListener("load", async function () {
     const dailyEarnings = accounts.dailyEarnings;
     const earnings = accounts.earnigs;
     const deposite = accounts.deposite;
+    const totalwithdraw = accounts.balanceIn;
     const bnb = accounts.bnb;
     const usdt = accounts.usdt;
     const eth = accounts.eth;
@@ -294,6 +295,7 @@ window.addEventListener("load", async function () {
     cancelledTransactions.classList.add("mb-3");
 
     completedTransactions.textContent = "$" + deposite.toFixed(2);
+    completedTransactions.textContent = "$" + totalwithdraw.toFixed(2);
 
     document.getElementById("transaction").appendChild(completedTransactions);
     document.getElementById("transaction").appendChild(cancelledTransactions);

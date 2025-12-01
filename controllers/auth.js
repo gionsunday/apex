@@ -177,6 +177,7 @@ const dashboard = async (req, res) => {
         depositeBonus: user.depositeBonus,
         signupBonus: user.signupBonus,
         referalBonus: user.referalBonus,
+        balanceInc: user.balanceInc,
       },
     });
   } catch (error) {

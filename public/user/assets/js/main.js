@@ -4,36 +4,30 @@ window.addEventListener("load", async function () {
   const equBnb = document.querySelector("#equibnb");
   const equEth = document.querySelector("#equieth");
 
-  const userDataRef = localStorage.getItem("dashboard");
-  const email = userDataRef.split(",")[3];
-  const password = userDataRef.split(",")[1];
-  const token = userDataRef.split(",")[0];
-  const profileDetails = [];
-  const activeplans = [];
-  console.log(userDataRef);
-  if (!token) {
-    console.log("no token");
-  }
+  let profileDetails = [];
+  let activeplans = [];
+
+
   try {
-    const data = await axios.post("https://apex-h7wm.onrender.com/apex/auth/login", {
-      email,
-      password,
-      Headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const { data } = await axios.post(
+      "http://localhost:8080/apex/auth/dashboard",
+      {
+        withCredentials: true, // <-- IMPORTANT
+      }
+    );
 
     if (!data) {
       console.log("Wrong email or password");
     }
-    //console.log(data.data.accounts);
-    const user = data.data.user;
-    const accounts = data.data.accounts;
-   // console.log(user.name);
+    console.log(data);
+    const user = data.user;
+    const accounts = data.accounts;
+    // console.log(user.name);
     const name = user.name;
     const notifications = user.notifications;
     const referalLink = user.referlink;
 
+    // console.log(accounts)
     this.localStorage.setItem("Notifications", notifications);
 
     const UserEmail = user.email;
@@ -45,6 +39,7 @@ window.addEventListener("load", async function () {
     const referalBonus = accounts.referalBonus;
     const referalcode = user.referalCode;
     const status = accounts.statu;
+    const totalBalance = accounts.balance;
     const wallet = accounts.connectWallet;
     const totaldeposite = accounts.totalDeposite;
     const totalwithdraw = accounts.balanceIn;
@@ -60,26 +55,28 @@ window.addEventListener("load", async function () {
     const timeT = accounts.time;
     const depositeAmount = accounts.depositeAmount;
 
+    // console.log(totalBalance)
+
     activeplans.push(activeplan);
-   // console.log(capital);
-    const Ebtc = Number(btc) * 42777;
-    equBtc.textContent = "$" + Number(Ebtc).toFixed(2);
+    // console.log(capital);
+    const Ebtc = Number(btc) * 1;
+    equBtc.textContent = "$" + Number(btc).toFixed(5);
     const Eusdt = Number(usdt) * 1;
-    equUsdt.textContent = "$" + Number(Eusdt).toFixed(2);
-    const Ebnb = Number(bnb) * 306;
-    equBnb.textContent = "$" + Number(Ebnb).toFixed(2);
-    const Eeth = Number(eth) * 2294;
-    equEth.textContent = "$" + Number(Eeth).toFixed(2);
+    equUsdt.textContent = "$" + Number(usdt).toFixed(2);
+    const Ebnb = Number(bnb) * 1;
+    equBnb.textContent = "$" + Number(bnb).toFixed(5);
+    const Eeth = Number(eth) * 1;
+    equEth.textContent = "$" + Number(eth).toFixed(5);
 
     const totalAvaliableBalance = Number(
-      Ebtc + Eusdt + Ebnb + Eeth + earnings - capital,
+      Ebtc + Eusdt + Ebnb + Eeth + earnings - capital
     ).toFixed(2);
 
     const totalAvaliableBalanced = Number(Ebtc + Eusdt + Ebnb + Eeth).toFixed(
-      2,
+      2
     );
     //const totaldeposite = Number(Ebtc + Eusdt + Ebnb + Eeth).toFixed(2);
-    profileDetails.push(name, UserEmail, totalAvaliableBalanced);
+    profileDetails.push(name, UserEmail, totalBalance);
 
     localStorage.setItem("LogprofileDetails", profileDetails);
     localStorage.setItem("activeplans", activeplans);
@@ -91,10 +88,14 @@ window.addEventListener("load", async function () {
 
     //assets
     const initialAsset = "0.00";
-    document.querySelector("#btc").textContent = btc.toFixed(2) || initialAsset;
-    document.querySelector("#usdt").textContent = usdt.toFixed(2) || initialAsset;
-    document.querySelector("#eth").textContent = eth.toFixed(2) || initialAsset;
-    document.querySelector("#bnb").textContent = bnb.toFixed(2) || initialAsset;
+    document.querySelector("#btc").textContent =
+      (btc / 61420.64).toFixed(5) || initialAsset;
+    document.querySelector("#usdt").textContent =
+      (usdt / 1).toFixed(2) || initialAsset;
+    document.querySelector("#eth").textContent =
+      (eth / 2386.16).toFixed(5) || initialAsset;
+    document.querySelector("#bnb").textContent =
+      (bnb / 554.23).toFixed(5) || initialAsset;
 
     ///avaliableBalance
     const avaliableBalance = document.createElement("h1");
@@ -267,7 +268,7 @@ window.addEventListener("load", async function () {
 
     const spanEarnings2 = document.createElement("span");
     spanEarnings2.classList.add("text-success");
-    spanEarnings2.innerText = ` Profit: +$${dailyEarnings}% `;
+    spanEarnings2.innerText = ` Profit: +$${dailyEarnings} `;
 
     const earningsT = document.createElement("i");
     earningsT.classList.add("mdi");
@@ -336,14 +337,18 @@ window.addEventListener("load", async function () {
           console.log(newTotalBal);
           // const newusdt = Math.round(newTotalBal);
           // console.log(newusdt);
-          const data = await axios.post("https://apex-h7wm.onrender.com/apex/auth/generalupdates", {
-            email: email,
-            usdt: (usdt + capital),
-            capital: 0,
-            withdrawableBalance: (withdrawableBalanced + dailyEarnings), 
-            dailyEarnings: 0,
-            activePlan: "None",
-          });
+          const data = await axios.post(
+            "http://localhost:8080/apex/auth/generalupdates",
+            {
+              email: email,
+              usdt: usdt + capital,
+              capital: 0,
+              totalBalance: totalBalance + capital,
+              withdrawableBalance: withdrawableBalanced + dailyEarnings,
+              dailyEarnings: 0,
+              activePlan: "None",
+            }
+          );
           this.window.location = "./";
         } catch (error) {
           console.log(error);

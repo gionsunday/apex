@@ -158,7 +158,7 @@ const UserSchema = new mongoose.Schema(
     },
     referalLink: {
       type: String,
-      default: `https://apex-h7wm.onrender.com/user/referal/reffered/${verificationCode}queryVC=${neString}`,
+      default: `http://localhost:8080/user/referal/reffered/${verificationCode}queryVC=${neString}`,
     },
     referee: {
       type: String,
@@ -173,7 +173,7 @@ const UserSchema = new mongoose.Schema(
       ],
     },
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 UserSchema.pre("save", async function () {
@@ -185,7 +185,7 @@ UserSchema.methods.createJWT = function () {
   return jwt.sign(
     { userID: this._id, name: this.name },
     "johnsundayjwtsecret",
-    { expiresIn: "30d" },
+    { expiresIn: "30d" }
   );
 };
 

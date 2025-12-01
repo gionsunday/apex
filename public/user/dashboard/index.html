@@ -10,6 +10,9 @@
 	<meta name="description" content="Apex Corporate Investment Firm">
 	<meta name="author" content="Apex Corporate Investment">
 	<meta name="keywords" content="Apex Corporate Investment">
+	
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5624647931635318"
+     crossorigin="anonymous"></script>
 
 	<link rel="preconnect" href="../external.html?link=https://fonts.gstatic.com/">
 	<link rel="shortcut icon" href="../img/icons/icon-48x48.png" />
@@ -180,9 +183,9 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="../login" onclick="logOut()">
+						<a class="sidebar-link" id="logoutbtn" onclick="">
 							<i class="align-middle" data-feather="log-out"></i> <span class="align-middle"
-								onclick="logOut()">Quit</span>
+								onclick="">Quit</span>
 						</a>
 					</li>
 
@@ -623,14 +626,14 @@
 						<div class="container-fluid p-10" style="margin-top: 40px !important;">
 
 							<div class="mb-3">
-								<h5 class="badge" style="width: 45% !important;color: #fff;
+								<h5 class="badge" style="width: 50% !important;color: #fff;
 									background-color: #42258a;
 									border-color: #3e2280">
 									Investment Plans</h5>
 								</a>
 							</div>
-							<div class="row"
-								style="display:flex; width:50%; flex-wrap: wrap; justify-content:flex-start;">
+							<div class="row invest"
+								style="display:flex; width:56%; flex-wrap: wrap; justify-content:start;">
 
 								<div class="col-12 col-md-6">
 									<div class="card">
@@ -659,7 +662,7 @@
 											</p>
 
 
-											<a href="../getstarted" id="200,Basic Plan" onclick="getstartedAmount(this)"
+											<a href="../setamount" id="200,Basic Plan" onclick="getstartedAmount(this)"
 												class="btn" style="color: #fff;
 												background-color: #42258a;
 												border-color: #3e2280">Get Started</a>
@@ -693,7 +696,7 @@
 											</p>
 
 
-											<a href="../getstarted" id="5000,Standard Plan"
+											<a href="../setamount" id="5000,Standard Plan"
 												onclick="getstartedAmount(this)" class="btn " style="color: #fff;
 												background-color: #42258a;
 												border-color: #3e2280">Get Started</a>
@@ -726,7 +729,7 @@
 												<span>24/7 Premium support</span>
 											</p>
 
-											<a href="../getstarted" id="15000,Silver Plan"
+											<a href="../setamount" id="15000,Silver Plan"
 												onclick="getstartedAmount(this)" class="btn " style="color: #fff;
 												background-color: #42258a;
 												border-color: #3e2280">Get Started</a>
@@ -743,7 +746,7 @@
 							<div class="container-fluid p-10" style="margin-top: 40px !important;">
 
 
-								<div class="row" style="display:flex; width:50%; justify-content:flex-start;">
+								<div class="row" style="display:flex; width:56%; justify-content:flex-start;">
 
 									<div class="col-12 col-md-6">
 										<div class="card">
@@ -774,7 +777,7 @@
 													<span>24/7 Premium support</span>
 												</p>
 
-												<a href="../getstarted" id="50000,Gold Plan"
+												<a href="../setamount" id="50000,Gold Plan"
 													onclick="getstartedAmount(this)" class="btn " style="color: #fff;
 													background-color: #42258a;
 													border-color: #3e2280">Get Started</a>
@@ -810,7 +813,7 @@
 												</p>
 
 
-												<a href="../getstarted" id="100000,Ultimate Plan"
+												<a href="../setamount" id="100000,Ultimate Plan"
 													onclick="getstartedAmount(this)" class="btn" style="color: #fff;
 													background-color: #42258a;
 													border-color: #3e2280">Get Started</a>
@@ -839,7 +842,7 @@
 															class="card-text">10%</small></span></p>
 
 
-												<a href="../getstarted" onclick="getstartedAmount(this)" id="100000,Apex Corporate
+												<a href="../setamount" onclick="getstartedAmount(this)" id="100000,Apex Corporate
 												Enterprise"
 													class="btn " style="color: #fff;
 													background-color: #42258a;
@@ -1121,8 +1124,10 @@
 
 
 	</script>
+	<script src="../assets/js/dashboard.js"></script>
 
 	<script src="../assets/js/app.js"></script>
+
 	<script src="../assets/js/main.js"></script>
 	<script src="../assets/js/logout.js"></script>
 	<script src="../assets/js/navbar.js"></script>
@@ -1134,16 +1139,16 @@
 
 	<script src="../assets/js/activeplan.js"></script>
 
-	<script>
-			window.addEventListener('load', () => {
-				const logout = document.querySelector('#logout')
+	// <script>
+	// 		window.addEventListener('load', () => {
+	// 			const logout = document.querySelector('#logout')
 
-				logout.addEventListener('click', () => {
-					localStorage.removeItem('dashboard')
-					window.location = 'index.html'
-				})
-			})
-	</script>
+	// 			logout.addEventListener('click', () => {
+	// 				localStorage.removeItem('dashboard')
+	// 				window.location = 'index.html'
+	// 			})
+	// 		})
+	// </script>
 	<script>
 			document.addEventListener("DOMContentLoaded", function () {
 				var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");

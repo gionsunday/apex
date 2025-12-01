@@ -762,7 +762,7 @@ progress {
 .col-6 {
   flex: 0 0 auto;
   width: 50%;
-  
+
 }
 
 .col-7 {
@@ -793,7 +793,7 @@ progress {
 .col-12 {
   flex: 0 0 auto;
   width: 100%;
-  
+
   background-image: linear-gradient(to right top, #3043c0, #5f49cc, #8450d7, #a656e1, #c75cea);
 }
 
@@ -1228,7 +1228,7 @@ progress {
   .col-md-6 {
     flex: 0 0 auto;
     width: 30%;
-    margin:4px
+    margin: 4px
   }
 
   .col-md-7 {
@@ -5134,8 +5134,18 @@ fieldset:disabled .btn {
 .card-body {
   flex: 1 1 auto;
   padding: 1.25rem;
-  
   background-image: linear-gradient(to right top, #3043c0, #5f49cc, #8450d7, #a656e1, #c75cea);
+  border-radius: 25px;
+}
+
+@media screen and (min-width:990px) {
+.bg-gradient-blue  .card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    height: 170px;
+    border-radius: 25px;
+    background-image: linear-gradient(to right top, #3043c0, #5f49cc, #8450d7, #a656e1, #c75cea);
+  }
 }
 
 .card-title {
@@ -5160,7 +5170,7 @@ fieldset:disabled .btn {
 }
 
 .card-header {
- 
+
   background-image: linear-gradient(to right top, #3043c0, #5f49cc, #8450d7, #a656e1, #c75cea);
   border-bottom: 0 solid transparent;
   margin-bottom: 0;
@@ -13350,7 +13360,9 @@ fieldset:disabled .btn {
 
 .card {
   box-shadow: 0 0 .875rem 0 rgba(33, 37, 41, .05);
-  margin-bottom: 5px
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, .03);
 }
 
 .card-header {
@@ -13361,6 +13373,9 @@ fieldset:disabled .btn {
   color: #939ba2;
   font-size: .925rem;
   font-weight: 600
+}
+.col-md-6{
+  border-radius: 10px;
 }
 
 .card-subtitle {

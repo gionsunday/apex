@@ -1,54 +1,60 @@
-const userDataRef = []
-const newUserData =  localStorage.getItem('dashboard')
-window.addEventListener ('load', () => {
-const form = document.querySelector('#form');
-const loginEmail = document.querySelector('#email');
-const loginPassword = document.querySelector('#password');
-const loginBtn = document.querySelector('#loginbtn');
+window.addEventListener("load", () => {
+  const form = document.querySelector("#form");
+  const loginEmail = document.querySelector("#email");
+  const loginPassword = document.querySelector("#password");
+  const loginBtn = document.querySelector("#loginbtn");
 
-
-const newUsertoken= newUserData.split(',')[0]
-const newUserEmail = newUserData.split(',')[3]
-const newUserName = newUserData.split(',')[1]
-console.log(newUserEmail,newUserName, newUsertoken)
-
-form.addEventListener('submit', (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    loginBtn.addEventListener('click', async function(){
-    
-     const email= loginEmail.value
-     const password = loginPassword.value
-     const token =  newUsertoken
-     if(!token){
-     console.log('no token')
-     }
-     try {
-       const data = await axios.post('https://apex-h7wm.onrender.com/apex/auth/login', {
-         email, password,
-         Headers:{
-          Authorization:  `Bearer ${token}`,
-        },
-         
-       })
-       console.log(data)
-       userDataRef.push(email, password)
-       if(!data){
-         console.log('Wrong email or password')
-       }
-       
-     
-       localStorage.setItem('userDataLog', userDataRef)
-      // window.location = '../dashboard'
-       
-     } catch (error) {
-       localStorage.removeItem('token')
-       console.log('Not Registred user')
-       document.getElementById('alert').textContent = 'Wrong Value Entered for Email or Password'
-     }
-   
-    
+    loginBtn.textContent = "Logging in...";
 
-})
-})
-})
+    const email = loginEmail.value.trim();
+    const password = loginPassword.value.trim();
+
+    try {
+      const res = await axios.post("http://localhost:8080/apex/auth/login", {
+        email,
+        password,
+      });
+
+      if (!res?.data) {
+        loginBtn.textContent = "Login";
+        return Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: "Wrong email or password.",
+        });
+      }
+
+      // Save token (if available)
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+      }
+
+      Swal.fire({
+        icon: "success",
+        title: "Login Successful !",
+        text: "Redirecting to dashboard...",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+
+      setTimeout(() => {
+        window.location.href = "../dashboard";
+      }, 1500);
+
+    } catch (error) {
+      console.log(error);
+      localStorage.removeItem("token");
+
+      Swal.fire({
+        icon: "error",
+        title: "Login Error",
+        text: "Wrong email or password.",
+      });
+
+      loginBtn.textContent = "Login";
+    }
+  });
+});

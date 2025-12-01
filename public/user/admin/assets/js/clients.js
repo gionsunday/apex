@@ -1,13 +1,12 @@
 $(document).ready(async () => {
-    
+  try {
+    const allClients = await axios.post(
+      "http://localhost:8080/apex/auth/getallclients"
+    );
+    // console.log(allClients.data.clients)
 
-    try {
-
-        const allClients = await axios.post('https://apex-h7wm.onrender.com/apex/auth/getallclients')
-       // console.log(allClients.data.clients)
-
-        allClients.data.clients.forEach(client => {
-            const didiv = $(`<div>
+    allClients.data.clients.forEach((client) => {
+      const didiv = $(`<div>
           <div class="col-12">
 							<div class="card">
 								<form>
@@ -80,16 +79,15 @@ $(document).ready(async () => {
 
 							</div>
 						</div>
-          </div>`)
+          </div>`);
 
-            $('#holdc').append(didiv)
-        });
+      $("#holdc").append(didiv);
+    });
+  } catch (error) {
+    console.log(error);
+  }
 
-    } catch (error) {
-        console.log(error)
-    }
-
-  $('.card').mouseenter(() =>{
-	console.log($('#asset').val())
-  })
-})
+  $(".card").mouseenter(() => {
+    console.log($("#asset").val());
+  });
+});

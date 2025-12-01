@@ -3,7 +3,7 @@ const router = express.Router()
 
 const {
     getAllTransactions,
-    createSuport,
+
     createTransaction,
     updateTransaction,
     getSingleTransaction,
@@ -11,10 +11,10 @@ const {
 
 router.route('/').post(createTransaction)
 
-router.route('/createsupport').post(createSuport)
+
 router.route('/updatetransaction').post(updateTransaction)
 
 router.route('/getOnetransaction/').post(getSingleTransaction)
-router.route('/:id').get(getAllTransactions)
+router.route('/').get(getAllTransactions)
 
 module.exports = router

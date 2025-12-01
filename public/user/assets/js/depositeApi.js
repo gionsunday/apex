@@ -1,47 +1,48 @@
-window.addEventListener('load', () =>{
-    const transaction = []
-    const amountT = localStorage.getItem('amount')
-    const dashboard = localStorage.getItem('dashboard')
-    const assett = document.querySelector('#asset')
-    const depositebtn = document.querySelector('#depositebtn')
-    const email = localStorage.getItem("LogprofileDetails").split(',')[1]
-    console.log(amountT)
+window.addEventListener("load", () => {
+  const transaction = [];
+  const amountT = localStorage.getItem("amount");
+  const assett = document.querySelector("#asset");
+  const depositebtn = document.querySelector("#depositebtn");
 
 
+  depositebtn.addEventListener("click", async () => {
+    const asset = assett.textContent;
+    const transactionType = "Deposite";
 
-    depositebtn.addEventListener('click', async () => {
-        const asset = assett.textContent
-        console.log(asset)
-        const transactionType = 'Deposite'
-        const token = dashboard.split(',')[0]
-        const userId = dashboard.split(',')[4]
-        console.log()
-        try {
-           const {data} = await axios.post('/apex/newtransaction', {
-                transactionType:'Deposit', 
-                email:email,
-                 asset:asset, 
-                 amount:amountT,
-                 createdBy: userId,
-                 walletAddress:"Apex wallet address"
-            
-        })
-        const typeT = data.newtransaction.transactionType
-           const  assetT = data.newtransaction.asset
-           const amount = data.newtransaction.amount
-           const status=data.newtransaction.status
-           const transId = data.newtransaction._id
-            const transwallet = data.newtransaction.walletAddress
-           const time = data.newtransaction.createdAt
-          transaction.push(typeT,assetT,amount,status,transId,transwallet,time)
-
-          localStorage.setItem("transaction", transaction)
-         
-          window.location = "../prehistory"
-         
-        } catch (error) {
-            console.log(error)
+    try {
+      const { data } = await axios.post(
+        "http://localhost:8080/apex/newtransaction",
+        {
+          transactionType: "Deposit",
+          asset: asset,
+          amount: amountT,
+          walletAddress: "Apex wallet address",
         }
-        
-    })
-})
+        , { withCredentials: true }
+      );
+      console.log(data);
+      const typeT = data.newtransaction.transactionType;
+      const assetT = data.newtransaction.asset;
+      const amount = data.newtransaction.amount;
+      const status = data.newtransaction.status;
+      const transId = data.newtransaction._id;
+      const transwallet = data.newtransaction.walletAddress;
+      const time = data.newtransaction.createdAt;
+      transaction.push(
+        typeT,
+        assetT,
+        amount,
+        status,
+        transId,
+        transwallet,
+        time
+      );
+
+      localStorage.setItem("transaction", transaction);
+
+      window.location = "../prehistory";
+    } catch (error) {
+      console.log(error);
+    }
+  });
+});

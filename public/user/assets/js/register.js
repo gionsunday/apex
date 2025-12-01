@@ -7,7 +7,9 @@ window.addEventListener("load", async () => {
   const regPasswordd = document.querySelector("#regpassword");
   const registerBtn = document.querySelector("#registerBtn");
   try {
-    const code = await axios.get("/user/referal/refferer");
+    const code = await axios.get(
+      "http://localhost:8080/apex/user/referal/refferer"
+    );
     console.log(code.data.msg);
     refcode.value = code.data.msg || " Enter referrer code";
   } catch (error) {
@@ -16,7 +18,7 @@ window.addEventListener("load", async () => {
 
   registerBtn.addEventListener("click", async (e) => {
     e.preventDefault();
-     registerBtn.textContent = "Signing up..."
+
     const email = regEmail.value;
     const password = regPasswordd.value;
     const name = regUsername.value;
@@ -34,19 +36,20 @@ window.addEventListener("load", async () => {
       document.getElementById("noinfo").textContent =
         "please provide usename and password";
     }
-   
     try {
-      const { data } = await axios.post("/apex/auth/register", {
-        name: name,
-        email: email,
-        password: password,
-        regTime: date,
-        refererCode: refcode.value,
-      });
+      const { data } = await axios.post(
+        "http://localhost:8080/apex/auth/register",
+        {
+          name: name,
+          email: email,
+          password: password,
+          regTime: date,
+          refererCode: refcode.value,
+        }
+      );
 
       const code = data.code;
       localStorage.setItem("code", code);
-      registerBtn.textContent="Code Sent!"
       console.log(code);
       regEmail.value = "";
       regPasswordd.value = "";

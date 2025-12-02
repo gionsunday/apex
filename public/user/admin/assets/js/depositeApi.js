@@ -15,17 +15,14 @@ window.addEventListener("load", () => {
     const userId = dashboard.split(",")[4];
     console.log(token);
     try {
-      const { data } = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/newtransaction",
-        {
-          transactionType: "Deposit",
-          email: email,
-          asset: asset,
-          amount: amountT,
-          createdBy: userId,
-          walletAddress: "Apex wallet address",
-        }
-      );
+      const { data } = await axios.post("/apex/newtransaction", {
+        transactionType: "Deposit",
+        email: email,
+        asset: asset,
+        amount: amountT,
+        createdBy: userId,
+        walletAddress: "Apex wallet address",
+      });
       const typeT = data.newtransaction.transactionType;
       const assetT = data.newtransaction.asset;
       const amount = data.newtransaction.amount;

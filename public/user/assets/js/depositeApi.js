@@ -5,12 +5,13 @@ window.addEventListener("load", () => {
   const depositebtn = document.querySelector("#depositebtn");
 
   depositebtn.addEventListener("click", async () => {
+    depositebtn.textContent = "Processing...";
     const asset = assett.textContent;
     const transactionType = "Deposite";
 
     try {
       const { data } = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/newtransaction",
+        "/apex/newtransaction",
         {
           transactionType: "Deposit",
           asset: asset,
@@ -38,10 +39,28 @@ window.addEventListener("load", () => {
       );
 
       localStorage.setItem("transaction", transaction);
+      depositebtn.textContent = "Processed";
 
+      Toastify({
+        text: "Deposit request submitted successfully!",
+        duration: 3000,
+        gravity: "top",
+        position: "center",
+        backgroundColor: "#28a745",
+      }).showToast();
+      
       window.location = "../prehistory";
     } catch (error) {
       console.log(error);
+      Toastify({
+        text: error.response?.data?.error || "Failed to submit deposit!",
+        duration: 3000,
+        gravity: "top",
+        position: "center",
+        backgroundColor: "#dc3545",
+      }).showToast();
+
+      depositebtn.textContent = "Try Again";
     }
   });
 });

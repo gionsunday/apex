@@ -19,19 +19,16 @@ window.addEventListener("load", () => {
   const emailIn = document.getElementById("email");
 
   deletebtn.addEventListener("click", async () => {
-    //     const client = await axios.post('https://apex-h7wm.onrender.com/apex/auth/getoneclient',{
+    //     const client = await axios.post('/apex/auth/getoneclient',{
     //       email:emailIn.value
     //     })
     //    const user = client.data.user[0]
     // // console.log(user)
     try {
-      const data = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/auth/deleteoneclient",
-        {
-          email: emailIn.value,
-          blocked: "true",
-        }
-      );
+      const data = await axios.post("/apex/auth/deleteoneclient", {
+        email: emailIn.value,
+        blocked: "true",
+      });
       document.getElementById("alertsuccess").textContent = "User Blocked";
       window.location = "../dashboard";
     } catch (error) {

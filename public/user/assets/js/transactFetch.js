@@ -1,8 +1,7 @@
 window.addEventListener("load", async () => {
-  const myTransactions = await axios.get(
-    `https://apex-h7wm.onrender.com/apex/newtransaction/`,
-    { withCredentials: true }
-  );
+  const myTransactions = await axios.get(`/apex/newtransaction/`, {
+    withCredentials: true,
+  });
   const transactions = myTransactions.data.newtransactions;
   const transactionReversed = transactions.reverse();
 

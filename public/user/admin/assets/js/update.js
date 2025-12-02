@@ -7,12 +7,9 @@ window.addEventListener("load", async () => {
 
   // console.log(transactionIDIn)
   try {
-    const data = await axios.post(
-      "https://apex-h7wm.onrender.com/apex/newtransaction/getOnetransaction",
-      {
-        transactionID: transactionIDIn,
-      }
-    );
+    const data = await axios.post("/apex/newtransaction/getOnetransaction", {
+      transactionID: transactionIDIn,
+    });
     transaction = data.data.newtransactions[0];
     //    console.log(transaction)
   } catch (error) {
@@ -28,7 +25,7 @@ window.addEventListener("load", async () => {
         transaction;
 
       const newData = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/newtransaction/updatetransaction",
+        "/apex/newtransaction/updatetransaction",
         {
           transactionID: _id,
           status: "Completed",

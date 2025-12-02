@@ -11,12 +11,9 @@ window.addEventListener("load", () => {
     fetchBtn.value = "Fetching...";
     e.preventDefault();
     try {
-      const data = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/auth/getoneclient",
-        {
-          email: emailIn.value,
-        }
-      );
+      const data = await axios.post("/apex/auth/getoneclient", {
+        email: emailIn.value,
+      });
       const Nuser = data.data.user;
       fetchBtn.value = "Fetched!";
       const { activePlan, capital, dailyEarnings } = Nuser;
@@ -41,17 +38,14 @@ window.addEventListener("load", () => {
       console.log(newTotalBal);
       // const newusdt = Math.round(newTotalBal);
       // console.log(newusdt);
-      const data = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
-        {
-          email: email,
-          usdt: usdt + capital,
-          withdrawableBalance: withdrawableBalance + dailyEarnings,
-          capital: 0,
-          dailyEarnings: 0,
-          activePlan: "None",
-        }
-      );
+      const data = await axios.post("/apex/auth/admin/generalupdates", {
+        email: email,
+        usdt: usdt + capital,
+        withdrawableBalance: withdrawableBalance + dailyEarnings,
+        capital: 0,
+        dailyEarnings: 0,
+        activePlan: "None",
+      });
       stopbtn.value = "Done Succefully!";
       this.window.location = "../dashboard";
     } catch (error) {

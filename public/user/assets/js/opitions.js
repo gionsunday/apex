@@ -8,12 +8,9 @@ window.addEventListener("load", async () => {
   const witherror = document.querySelector("#witherror");
 
   try {
-    const client = await axios.post(
-      "https://apex-h7wm.onrender.com/apex/auth/getoneclient",
-      {
-        email: email,
-      }
-    );
+    const client = await axios.post("/apex/auth/getoneclient", {
+      email: email,
+    });
     const user = client.data.user;
     // acctbtn.style.display = "block"
     // withbtn.style.display = "block"

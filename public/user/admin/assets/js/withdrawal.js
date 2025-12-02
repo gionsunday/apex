@@ -21,23 +21,17 @@ window.addEventListener("load", () => {
   const emailIn = document.getElementById("email");
 
   incbtn.addEventListener("click", async () => {
-    const client = await axios.post(
-      "https://apex-h7wm.onrender.com/apex/auth/getoneclient",
-      {
-        email: emailIn.value,
-      }
-    );
+    const client = await axios.post("/apex/auth/getoneclient", {
+      email: emailIn.value,
+    });
     const user = client.data.user;
     console.log(user);
     try {
       // console.log(user.dailyEarnings)
-      const data = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
-        {
-          email: emailIn.value,
-          withdrawableBalance: user.withdrawableBalance + Number(amountt.value),
-        }
-      );
+      const data = await axios.post("/apex/auth/admin/generalupdates", {
+        email: emailIn.value,
+        withdrawableBalance: user.withdrawableBalance + Number(amountt.value),
+      });
       document.getElementById("alertsuccess").textContent = "Successfull !";
       // window.location = '../dashboard'
     } catch (error) {
@@ -46,23 +40,17 @@ window.addEventListener("load", () => {
   });
 
   decbtn.addEventListener("click", async () => {
-    const client = await axios.post(
-      "https://apex-h7wm.onrender.com/apex/auth/getoneclient",
-      {
-        email: emailIn.value,
-      }
-    );
+    const client = await axios.post("/apex/auth/getoneclient", {
+      email: emailIn.value,
+    });
     const user = client.data.user;
     console.log(user);
     try {
       console.log(user.dailyEarnings);
-      const data = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
-        {
-          email: emailIn.value,
-          withdrawableBalance: user.withdrawableBalance - Number(amountt.value),
-        }
-      );
+      const data = await axios.post("/apex/auth/admin/generalupdates", {
+        email: emailIn.value,
+        withdrawableBalance: user.withdrawableBalance - Number(amountt.value),
+      });
       document.getElementById("alertsuccess").textContent = "Successfull !";
       window.location = "../dashboard";
     } catch (error) {

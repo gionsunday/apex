@@ -19,15 +19,11 @@ window.addEventListener("load", () => {
     data.append("images", files);
     submitBtn.textContent = "Uploading...";
     try {
-      const newData = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/pictures/uploadimages",
-        data,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const newData = await axios.post("/apex/pictures/uploadimages", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       submitBtn.textContent = "Sent Successfully!";
     } catch (error) {

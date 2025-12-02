@@ -21,20 +21,17 @@ window.addEventListener("load", () => {
   const emailIn = document.getElementById("email");
 
   profitbtn.addEventListener("click", async () => {
-    //   const client = await axios.post('https://apex-h7wm.onrender.com/apex/auth/getoneclient',{
+    //   const client = await axios.post('/apex/auth/getoneclient',{
     //     email:emailIn.value
     //   })
     //  const user = client.data.user
 
     try {
       //  console.log(user.dailyEarnings)
-      const data = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
-        {
-          email: emailIn.value,
-          status: "Okay",
-        }
-      );
+      const data = await axios.post("/apex/auth/admin/generalupdates", {
+        email: emailIn.value,
+        status: "Okay",
+      });
       document.getElementById("alertsuccess").textContent =
         "Main Balance Activation Successfull!";
       window.location = "../dashboard";
@@ -46,13 +43,10 @@ window.addEventListener("load", () => {
   profitbtn2.addEventListener("click", async () => {
     try {
       //console.log(user.dailyEarnings)
-      const data = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
-        {
-          email: emailIn.value,
-          status: "Temporarily Unavailable",
-        }
-      );
+      const data = await axios.post("/apex/auth/admin/generalupdates", {
+        email: emailIn.value,
+        status: "Temporarily Unavailable",
+      });
       document.getElementById("alertsuccess").textContent =
         "Main Balance Deactivation Successfull!";
       window.location = "../dashboard";

@@ -13,13 +13,10 @@ window.addEventListener("load", () => {
     if (!email || !password) {
     }
     try {
-      const { data } = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/auth/dashboard",
-        {
-          email: email,
-          password: password,
-        }
-      );
+      const { data } = await axios.post("/apex/auth/dashboard", {
+        email: email,
+        password: password,
+      });
       const isEmpty = Object.keys(data).length === 0;
       if (isEmpty) {
         console.log("Wrong Value Entered for Email or Passwor");

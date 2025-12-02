@@ -10,39 +10,59 @@ window.addEventListener("load", () => {
 
   const availableAcc = availableAccs.split(",")[2];
   const email = availableAccs.split(",")[1];
-  console.log(availableAcc);
-  console.log(getstartedAmount);
 
   const remaining = availableAcc - getstartedAmount;
-  console.log(remaining);
 
   if (remaining >= 0) {
     accStatus.style.display = "none";
+
     accBtn.addEventListener("click", async () => {
+      accBtn.textContent = "Processing...";
+      
       try {
-        const data = await axios.post(
-          "https://apex-h7wm.onrender.com/apex/auth/updateactiveplan",
-          {
-            email: email,
-            activePlan: plan,
-            amount: getstartedAmount,
-            totalBalance: remaining,
-            dailyEarnings: 0.01,
-          }
-        );
-        console.log(data);
-        window.location = "../dashboard";
+        const data = await axios.post("/apex/auth/updateactiveplan", {
+          email: email,
+          activePlan: plan,
+          amount: getstartedAmount,
+          totalBalance: remaining,
+          dailyEarnings: 0.01,
+        });
+
+        Toastify({
+          text: "Plan activated successfully!",
+          duration: 3000,
+          gravity: "top",
+          position: "center",
+          backgroundColor: "#28a745",
+        }).showToast();
+
+        setTimeout(() => {
+          window.location = "../dashboard";
+        }, 1200);
+
       } catch (error) {
-        console.log(error);
+        Toastify({
+          text: error.response?.data?.error || "Error occurred!",
+          duration: 3000,
+          gravity: "top",
+          position: "center",
+          backgroundColor: "#dc3545",
+        }).showToast();
       }
     });
   } else {
+
+    Toastify({
+      text: "Insufficient Balance. Deposit to continue.",
+      duration: 3000,
+      gravity: "top",
+      position: "center",
+      backgroundColor: "#dc3545",
+    }).showToast();
+
     accBtn.style.opacity = "0.1";
     accStatus.style.display = "block";
-    accStatus.classList.add("text-danger");
-    accStatus.style.fontSize = "16px";
-    accValue.style.fontSize = "16px";
-    accValue.textContent = `Insuficient Balance: Deposit $${remaining} to continue`;
-    accStatus.textContent = `Insuficient Balance: Deposit $${remaining} to continue`;
+    accValue.textContent = `Insufficient Balance: Deposit $${remaining} to continue`;
+    accStatus.textContent = `Insufficient Balance: Deposit $${remaining} to continue`;
   }
 });

@@ -3,6 +3,7 @@
 
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,9 +13,13 @@
 	<meta name="keywords" content="Apex CorporateIC,  web">
 
 	<link rel="preconnect" href="../external.html?link=https://fonts.gstatic.com/">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 	<link rel="shortcut icon" href="../img/icons/icon-48x48.png" />
 
@@ -24,75 +29,76 @@
 
 	<link href="../assets/css/app.css" rel="stylesheet">
 	<link href="../assets/css/new.css" rel="stylesheet">
-	<link href="../external.html?link=https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
+	
 </head>
 
 <body>
 
-		<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-    {
-    "symbols": [
-      {
-        "proName": "BITSTAMP:BTCUSD",
-        "title": "Bitcoin"
-      },
-      {
-        "proName": "BITSTAMP:ETHUSD",
-        "title": "Ethereum"
-      },
-      {
-        "description": "Doge",
-        "proName": "BINANCE:DOGEUSDT" 
-      },
-      {
-        "description": "",
-        "proName": "BINANCE:BTCUSDTPERP"
-      },
-      {
-        "description": "",
-        "proName": "BINANCE:LINKUSDT"
-      },
-      {
-        "description": "",
-        "proName": "BINANCE:SANDUSDT"
-      },
-      {
-        "description": "",
-        "proName": "BINANCE:MATICUSDT"
-      },
-      {
-        "description": "",
-        "proName": "BINANCE:CHZUSDT"
-      },
-      {
-        "description": "",
-        "proName": "BINANCE:ETCUSDT"
-      },
-      {
-        "description": "",
-        "proName": "BINANCE:SOLUSDT"
-      },
-      {
-        "description": "",
-        "proName": "BINANCE:ADAUSDT"
-      },
-      {
-        "description": "",
-        "proName": "BINANCE:ATOMUSDT"
-      }
-    ],
-    "showSymbolLogo": true,
-    "colorTheme": "light",
-    "isTransparent": false,
-    "displayMode": "adaptive",
-    "locale": "en"
-  }
-    </script>
-  </div>
-  <!-- TradingView Widget END -->
+	<!-- TradingView Widget BEGIN -->
+	<div class="tradingview-widget-container">
+		<div class="tradingview-widget-container__widget"></div>
+		<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+			async>
+				{
+					"symbols": [
+						{
+							"proName": "BITSTAMP:BTCUSD",
+							"title": "Bitcoin"
+						},
+						{
+							"proName": "BITSTAMP:ETHUSD",
+							"title": "Ethereum"
+						},
+						{
+							"description": "Doge",
+							"proName": "BINANCE:DOGEUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:BTCUSDTPERP"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:LINKUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:SANDUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:MATICUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:CHZUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:ETCUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:SOLUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:ADAUSDT"
+						},
+						{
+							"description": "",
+							"proName": "BINANCE:ATOMUSDT"
+						}
+					],
+						"showSymbolLogo": true,
+							"colorTheme": "light",
+								"isTransparent": false,
+									"displayMode": "adaptive",
+										"locale": "en"
+				}
+			</script>
+	</div>
+	<!-- TradingView Widget END -->
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
@@ -319,35 +325,35 @@
 							<div class="card">
 								<form>
 
-								
+
 									<div class="card-header">
 										<div class="dropdown-divider"></div>
-									
+
 										<span>
-											<input type="button" value="From Account" 
-											class="btn btn-primary m-2" id="acctbtn"
-											style=" text-align:center; margin-bottom: 80px; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
-											<small style="padding:10px;" id="accountstatus" ><strong id="accvalue" class="text-dark"></strong></small>
-											
+											<input type="button" value="From Account" class="btn btn-primary m-2"
+												id="acctbtn"
+												style=" text-align:center; margin-bottom: 80px; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
+											<small style="padding:10px;" id="accountstatus"><strong id="accvalue"
+													class="text-dark"></strong></small>
+
 										</span>
 
-										
-										<a href="../deposite1" >
-											<input type="button" value="Deposit" 
-											class="btn btn-secondary m-2" 
-											style=" text-align:center; margin-top: 80px; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
-											
+
+										<a href="../deposite1">
+											<input type="button" value="Deposit" class="btn btn-secondary m-2"
+												style=" text-align:center; margin-top: 80px; width:100%;border-radius:.2rem;flex: 1 1 0%;" />
+
 										</a>
-										
-									
-											
-							
-						</li>
-										
+
+
+
+
+										</li>
+
 									</div>
-									
+
 								</form>
-								
+
 							</div>
 						</div>
 					</div>
@@ -360,22 +366,27 @@
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-								<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/" target="_blank"><strong>Apex CorporateIC</strong></a> &copy;
+								<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/"
+									target="_blank"><strong>Apex CorporateIC</strong></a> &copy;
 							</p>
 						</div>
 						<div class="col-6 text-end">
 							<ul class="list-inline">
 								<li class="list-inline-item">
-									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/" target="_blank">Support</a>
+									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/"
+										target="_blank">Support</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/" target="_blank">Help Center</a>
+									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/"
+										target="_blank">Help Center</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/" target="_blank">Privacy</a>
+									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/"
+										target="_blank">Privacy</a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/" target="_blank">Terms</a>
+									<a class="text-muted" href="../external.html?link=https://Apex CorporateIC.io/"
+										target="_blank">Terms</a>
 								</li>
 							</ul>
 						</div>
@@ -384,7 +395,7 @@
 			</footer>
 		</div>
 	</div>
-<script src="../assets/js/notification.js"></script>
+	<script src="../assets/js/notification.js"></script>
 	<script src="../assets/js/app.js"></script>
 	<script src="../assets/js/getstarted.js"></script>
 
@@ -392,4 +403,5 @@
 
 
 <!-- Mirrored from demo-basic.Apex CorporateIC.io/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 04 Apr 2022 11:06:22 GMT -->
+
 </html>

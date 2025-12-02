@@ -5,13 +5,10 @@ window.addEventListener("load", async () => {
 
   sendbtn.addEventListener("click", async (e) => {
     try {
-      const data = await axios.post(
-        "https://apex-h7wm.onrender.com/apex/newtransaction/createsupport",
-        {
-          email: email.value,
-          message: nmessage.value,
-        }
-      );
+      const data = await axios.post("/apex/newtransaction/createsupport", {
+        email: email.value,
+        message: nmessage.value,
+      });
       sendbtn.value = "Message Sent!";
       nmessage.value = "";
       email.value = "";

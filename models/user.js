@@ -158,7 +158,7 @@ const UserSchema = new mongoose.Schema(
     },
     referalLink: {
       type: String,
-      default: `https://apex-h7wm.onrender.com/user/referal/reffered/${verificationCode}queryVC=${neString}`,
+      default: `/user/referal/reffered/${verificationCode}queryVC=${neString}`,
     },
     referee: {
       type: String,

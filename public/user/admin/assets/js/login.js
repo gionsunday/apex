@@ -22,16 +22,13 @@ window.addEventListener("load", () => {
         console.log("no token");
       }
       try {
-        const data = await axios.post(
-          "https://apex-h7wm.onrender.com/apex/auth/login",
-          {
-            email,
-            password,
-            Headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const data = await axios.post("/apex/auth/login", {
+          email,
+          password,
+          Headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         userDataRef.push(email, password);
         if (!data) {

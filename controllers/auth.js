@@ -6,8 +6,32 @@ const { ResponseMessage } = require("../utils/responseMessage.js");
 const bcrypt = require("bcryptjs");
 const { Resend } = require("resend");
 const { StatusCodes } = require("http-status-codes");
-const { BadRequestError, unAuthenticatedError } = require("../errors/errorsIndex");
+const {
+  BadRequestError,
+  unAuthenticatedError,
+} = require("../errors/errorsIndex");
 
+
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+
+  const formattedDate = date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+
+  const formattedTime = date.toLocaleTimeString('en-GB', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  });
+
+  return {
+    date: formattedDate,
+    time: formattedTime,
+  };
+};
 // Initialize Resend
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -19,7 +43,11 @@ const generateVerificationCode = (digits = 6) =>
   Math.floor(10 ** (digits - 1) + Math.random() * 9 * 10 ** (digits - 1));
 
 // Centralized error handler
-const handleError = (error, res, message = "Server error, please try again later.") => {
+const handleError = (
+  error,
+  res,
+  message = "Server error, please try again later."
+) => {
   console.error(message, error);
   return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: message });
 };
@@ -28,7 +56,7 @@ const handleError = (error, res, message = "Server error, please try again later
 const findUserByEmail = async (email) => User.findOne({ email });
 
 // Send email using Resend
-const sendEmail = async (to, subject, html, from = process.env.MAIL) => {
+const sendEmail = async (to, subject, html, from = process.env.MAILER_EMAIL) => {
   try {
     const { data } = await resend.emails.send({ from, to, subject, html });
     return data;
@@ -54,7 +82,10 @@ const getallclient = async (req, res) => {
 const getOneclient = async (req, res) => {
   try {
     const user = await findUserByEmail(req.body.email);
-    if (!user) return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
+    if (!user)
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ error: "User not found" });
     res.status(StatusCodes.OK).json({ user });
   } catch (error) {
     handleError(error, res);
@@ -65,7 +96,10 @@ const getOneclient = async (req, res) => {
 const deleteOneclient = async (req, res) => {
   try {
     const user = await User.findOneAndDelete({ email: req.body.email });
-    if (!user) return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
+    if (!user)
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ error: "User not found" });
     res.status(StatusCodes.OK).json({ user });
   } catch (error) {
     handleError(error, res);
@@ -88,11 +122,17 @@ const register = async (req, res) => {
     const { name, email, password } = req.body;
 
     if (await findUserByEmail(email)) {
-      return res.status(StatusCodes.BAD_REQUEST).json({ error: "User with this email already exists." });
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ error: "User with this email already exists." });
     }
 
     const verificationCode = generateVerificationCode();
-    const token = jwt.sign({ name, email, password }, process.env.JWT_SECRET || "johnsundayjwtsecret", JWT_CONFIG);
+    const token = jwt.sign(
+      { name, email, password },
+      process.env.JWT_SECRET || "johnsundayjwtsecret",
+      JWT_CONFIG
+    );
 
     const emailHtml = `
       <div style="text-align:left; padding:20px">
@@ -148,7 +188,10 @@ const dashboard = async (req, res) => {
     const token = req.cookies?.jwt;
     if (!token) throw new unAuthenticatedError("No token found, please login");
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || "johnsundayjwtsecret");
+    const decoded = jwt.verify(
+      token,
+      process.env.JWT_SECRET || "johnsundayjwtsecret"
+    );
     const user = await User.findById(decoded.userId);
     if (!user) throw new unAuthenticatedError("User not found");
 
@@ -172,12 +215,18 @@ const dashboard = async (req, res) => {
         withdrawableBalance: user.withdrawableBalance,
         dailyEarnings: user.dailyEarnings,
         activeplan: user.activePlan,
+         earnigs :user.totalEarnings,
         status: user.status,
         connectWallet: user.wallet,
         depositeBonus: user.depositeBonus,
         signupBonus: user.signupBonus,
         referalBonus: user.referalBonus,
         balanceInc: user.balanceInc,
+        bnb: user.bnb,
+        usdt: user.usdt,
+        eth: user.eth,
+        btc: user.btc,
+        time: formatDate(user.createdAt).date,
       },
     });
   } catch (error) {
@@ -197,7 +246,12 @@ const Visitors = async (req, res) => {
       <p>Country: ${req.body.userCountry}</p>
     </div>`;
 
-    await sendEmail(process.env.MAIL, "New Visitor", htmlContent, "contact@fox-funds.com");
+    await sendEmail(
+      process.env.MAIL,
+      "New Visitor",
+      htmlContent,
+      "contact@fox-funds.com"
+    );
 
     res.status(StatusCodes.CREATED).json({ msg: "Visitor logged" });
   } catch (error) {
@@ -209,7 +263,9 @@ const Visitors = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    if (!email || !password) throw new BadRequestError("Provide email and password");
+
+    if (!email || !password)
+      throw new BadRequestError("Provide email and password");
 
     const user = await findUserByEmail(email);
     if (!user) throw new unAuthenticatedError("User not registered");
@@ -217,9 +273,13 @@ const login = async (req, res) => {
     const isPasswordCorrect = await user.comparePassword(password);
     if (!isPasswordCorrect) throw new unAuthenticatedError("Wrong password");
 
-    generateToken(user._id, res);
+    const token = generateToken(user._id, res);
 
-    res.status(StatusCodes.OK).json({ message: "Login Successful" });
+    res.status(StatusCodes.OK).json({
+      message: "Login Successful",
+      accountType: user.accountType, // <-- return account type
+      token, // optional: if you're sending token in body
+    });
   } catch (error) {
     handleError(error, res);
   }
@@ -230,10 +290,17 @@ const beforePassword = async (req, res) => {
   try {
     const { email } = req.body;
     const user = await findUserByEmail(email);
-    if (!user) return res.status(StatusCodes.BAD_REQUEST).json({ error: "User does not exist" });
+    if (!user)
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ error: "User does not exist" });
 
     const verificationCode = generateVerificationCode(7);
-    const token = jwt.sign({ email }, process.env.JWT_SECRET || "johnsundayjwtsecret", JWT_CONFIG);
+    const token = jwt.sign(
+      { email },
+      process.env.JWT_SECRET || "johnsundayjwtsecret",
+      JWT_CONFIG
+    );
 
     const resetEmailHtml = `<div style="padding:20px">
       <p>Use this code to reset your password:</p>
@@ -263,7 +330,10 @@ const forgotPassword = async (req, res) => {
       { new: true, runValidators: true }
     );
 
-    if (!user) return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
+    if (!user)
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ error: "User not found" });
 
     const htmlContent = `<div style="padding:20px">
       <p>Your password has been changed. If this wasn't you, contact support.</p>
@@ -279,9 +349,45 @@ const forgotPassword = async (req, res) => {
 
 // General user update
 const generalUpdate = async (req, res) => {
+  const jwtToken = req.cookies?.jwt;
+  if (!jwtToken)
+    return res
+      .status(StatusCodes.UNAUTHORIZED)
+      .json({ error: "Unauthorized: No token provided" });  
+      const decoded = jwt.verify(
+        jwtToken,
+        process.env.JWT_SECRET || "johnsundayjwtsecret"
+      );
+      // console.log(decoded);
+
   try {
-    const user = await User.findOneAndUpdate({ email: req.body.email }, req.body, { new: true, runValidators: true });
-    if (!user) return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
+    const user = await User.findOneAndUpdate(
+      { _id:decoded.userId },
+      req.body,
+      { new: true, runValidators: true }
+    );
+    if (!user)
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ error: "User not found" });
+    res.status(StatusCodes.OK).json({ user });
+  } catch (error) {
+    handleError(error, res);
+  }
+};
+
+
+const adminGeneralUpdate = async (req, res) => {
+  try {
+    const user = await User.findOneAndUpdate(
+      { email:req.body.email },
+      req.body,
+      { new: true, runValidators: true }
+    );
+    if (!user)
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ error: "User not found" });
     res.status(StatusCodes.OK).json({ user });
   } catch (error) {
     handleError(error, res);
@@ -293,11 +399,20 @@ const updateStatusEarning = async (req, res) => {
   try {
     const { activePlan, email, amount, dailyEarnings, totalBalance } = req.body;
     const oldUser = await findUserByEmail(email);
-    if (!oldUser) return res.status(StatusCodes.NOT_FOUND).json({ error: "User not found" });
+    if (!oldUser)
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ error: "User not found" });
 
     const user = await User.findOneAndUpdate(
       { email },
-      { activePlan, dailyEarnings, usdt: oldUser.usdt - amount, totalBalance, capital: amount },
+      {
+        activePlan,
+        dailyEarnings,
+        usdt: oldUser.usdt - amount,
+        totalBalance,
+        capital: amount,
+      },
       { new: true, runValidators: true }
     );
 
@@ -307,21 +422,39 @@ const updateStatusEarning = async (req, res) => {
       <p>Amount: ${amount}</p>
     </div>`;
 
-    await sendEmail(process.env.MAIL, "Investment Plan Triggered", investmentEmailHtml);
+    await sendEmail(
+      process.env.MAIL,
+      "Investment Plan Triggered",
+      investmentEmailHtml
+    );
 
     res.status(StatusCodes.OK).json({ user });
   } catch (error) {
     handleError(error, res);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: "Could not update earning status" }); 
   }
 };
 
 // Logout
 const logoutUser = async (req, res) => {
   try {
-    res.cookie("jwt", "", { httpOnly: true, secure: true, sameSite: "none", expires: new Date(0), path: "/", maxAge: 1 });
-    return res.status(200).json(new ResponseMessage("success", 200, "User logged out successfully"));
+    res.cookie("jwt", "", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      expires: new Date(0),
+      path: "/",
+      maxAge: 1,
+    });
+    return res
+      .status(200)
+      .json(
+        new ResponseMessage("success", 200, "User logged out successfully")
+      );
   } catch (error) {
-    return res.status(500).json(new ResponseMessage("error", 500, "Could not logout user"));
+    return res
+      .status(500)
+      .json(new ResponseMessage("error", 500, "Could not logout user"));
   }
 };
 
@@ -340,4 +473,5 @@ module.exports = {
   beforePassword,
   forgotPassword,
   Visitors,
+  adminGeneralUpdate
 };

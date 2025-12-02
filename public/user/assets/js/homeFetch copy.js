@@ -1,11 +1,8 @@
 window.addEventListener("load", async () => {
-  const myTransactions = await axios.get(
-    `https://apex-h7wm.onrender.com/apex/newtransaction`,
-    {
-      withCredentials: true,
-    }
-  );
-  const transactions = myTransactions.data.newtransactions;
+  const myTransactions = await axios.get(`/apex/newtransaction`, {
+    withCredentials: true,
+  });
+  const transactions = (myTransactions.data.newtransactions).reverse();
   if (transactions.length >= 5) {
     const length = transactions.length;
     const newtransactions = transactions.slice(-5);

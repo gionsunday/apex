@@ -8,12 +8,9 @@ window.addEventListener("load", async function () {
   let activeplans = [];
 
   try {
-    const { data } = await axios.post(
-      "https://apex-h7wm.onrender.com/apex/auth/dashboard",
-      {
-        withCredentials: true, // <-- IMPORTANT
-      }
-    );
+    const { data } = await axios.post("/apex/auth/dashboard", {
+      withCredentials: true, // <-- IMPORTANT
+    });
 
     if (!data) {
       console.log("Wrong email or password");
@@ -41,7 +38,7 @@ window.addEventListener("load", async function () {
     const totalBalance = accounts.balance;
     const wallet = accounts.connectWallet;
     const totaldeposite = accounts.totalDeposite;
-    const totalwithdraw = accounts.balanceIn;
+    const totalwithdraw = accounts.balanceInc;
     const capital = accounts.capital;
     const dailyEarnings = accounts.dailyEarnings;
     const earnings = accounts.earnigs;
@@ -70,6 +67,8 @@ window.addEventListener("load", async function () {
     const totalAvaliableBalance = Number(
       Ebtc + Eusdt + Ebnb + Eeth + earnings - capital
     ).toFixed(2);
+
+    console.log(totalAvaliableBalance);
 
     const totalAvaliableBalanced = Number(Ebtc + Eusdt + Ebnb + Eeth).toFixed(
       2
@@ -234,7 +233,7 @@ window.addEventListener("load", async function () {
 
     const spandeposite = document.createElement("span");
     spandeposite.classList.add("text-primary");
-    spandeposite.textContent = "Since ";
+    spandeposite.textContent = "Since: ";
 
     const depositeT = document.createElement("i");
     depositeT.classList.add("mdi");
@@ -302,7 +301,7 @@ window.addEventListener("load", async function () {
 
     const spanTransaction = document.createElement("span");
     spanTransaction.classList.add("text-primary");
-    spanTransaction.textContent = "Since ";
+    spanTransaction.textContent = "Since:  ";
 
     const transaction = document.createElement("i");
     transaction.classList.add("mdi");
@@ -325,7 +324,7 @@ window.addEventListener("load", async function () {
       .addEventListener("click", async (e) => {
         e.preventDefault();
         try {
-          console.log(email);
+          // console.log(email);
           const newTotalBal =
             Math.round(totalAvaliableBalance) +
             Math.round(capital) +
@@ -336,18 +335,16 @@ window.addEventListener("load", async function () {
           console.log(newTotalBal);
           // const newusdt = Math.round(newTotalBal);
           // console.log(newusdt);
-          const data = await axios.post(
-            "https://apex-h7wm.onrender.com/apex/auth/generalupdates",
-            {
-              email: email,
-              usdt: usdt + capital,
-              capital: 0,
-              totalBalance: totalBalance + capital,
-              withdrawableBalance: withdrawableBalanced + dailyEarnings,
-              dailyEarnings: 0,
-              activePlan: "None",
-            }
-          );
+          const data = await axios.post("/apex/auth/generalupdates", {
+            usdt: usdt + capital,
+            capital: 0,
+            totalBalance: totalBalance + capital,
+            withdrawableBalance: withdrawableBalanced + dailyEarnings,
+            dailyEarnings: 0,
+            activePlan: "None",
+          },
+          { withCredentials: true }
+        );
           this.window.location = "./";
         } catch (error) {
           console.log(error);
